@@ -32,24 +32,24 @@ export function DemoCard({
   return (
     <div
       id={id}
-      className={`antd-demo-card ${fullWidth ? "antd-demo-card-full-width" : ""} ${className}`.trim()}
+      className={`cinder-demo-card ${fullWidth ? "cinder-demo-card-full-width" : ""} ${className}`.trim()}
     >
       {/* Live Preview Area */}
-      <div className="antd-demo-preview">
+      <div className="cinder-demo-preview">
         {children}
       </div>
 
       {/* Meta Area: Title & Description */}
-      <div className="antd-demo-meta">
-        <div className="antd-demo-title">{title}</div>
-        <div className="antd-demo-desc">{description}</div>
+      <div className="cinder-demo-meta">
+        <div className="cinder-demo-title">{title}</div>
+        <div className="cinder-demo-desc">{description}</div>
 
-        {/* Action Toolbar (Like AntD) */}
-        <div className="antd-demo-actions">
+        {/* Action Toolbar (Like Cinder) */}
+        <div className="cinder-demo-actions">
           <button
             type="button"
             onClick={handleCopy}
-            className="antd-demo-action-btn"
+            className="cinder-demo-action-btn"
             title={copied ? "Copied code!" : "Copy code"}
             aria-label="Copy code"
           >
@@ -58,7 +58,7 @@ export function DemoCard({
           <button
             type="button"
             onClick={() => setShowCode(!showCode)}
-            className={`antd-demo-action-btn ${showCode ? "antd-demo-action-active" : ""}`}
+            className={`cinder-demo-action-btn ${showCode ? "cinder-demo-action-active" : ""}`}
             title={showCode ? "Hide source code" : "Show source code"}
             aria-label="Toggle code"
           >
@@ -69,8 +69,8 @@ export function DemoCard({
 
       {/* Expandable Code Area */}
       {showCode && (
-        <div className="antd-demo-code-wrapper">
-          <pre className="antd-demo-code">
+        <div className="cinder-demo-code-wrapper">
+          <pre className="cinder-demo-code">
             <code>{code}</code>
           </pre>
         </div>

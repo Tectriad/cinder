@@ -67,21 +67,21 @@ export function FloatButtonDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDFloatButton / Floating Actions</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDFloatButton / Floating Actions</h1>
+        <p className="cinder-doc-lead">
           Floating action buttons that hover above content in viewport or container corners, supporting square and circle shapes, customizable locations, and expandable multi-action speed dials upon click.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDFloatButton, FloatButton, CDFloatButtonGroup &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>For primary persistent actions that remain accessible regardless of scroll position.</li>
           <li>For collapsible multi-action menus (Speed Dial) where clicking reveals secondary operations.</li>
           <li>Supports square small presets (<code>shape="square"</code>, <code>size="sm"</code> or <code>size="xs"</code>) for compact workspace interfaces.</li>
@@ -89,10 +89,10 @@ export function FloatButtonDocPage(): ReactElement {
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Interactive Location & Shape Switcher */}
           <DemoCard
             title="Location Changing & Square Small"
@@ -372,7 +372,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDFloatButton API" data={floatButtonProps} />
       </section>
     </div>

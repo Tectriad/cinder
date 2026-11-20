@@ -99,31 +99,31 @@ export function DropdownDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDDropdown / Dropdown</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDDropdown / Dropdown</h1>
+        <p className="cinder-doc-lead">
           Floating action menu that attaches to any trigger element (button, link, or badge) to present contextual commands, shortcuts, and cascading options.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDDropdown, Dropdown &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When an element triggers multiple secondary operations that don't need dedicated buttons on the page.</li>
           <li>For account menus, overflow menus ("..."), batch operations, and contextual action lists.</li>
           <li>Unlike <code>CDSelect</code> (which updates a form value), <code>CDDropdown</code> executes actions upon click.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic Dropdown */}
           <DemoCard
             title="Basic Usage"
@@ -329,7 +329,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDDropdownProps API" data={dropdownProps} />
       </section>
     </div>

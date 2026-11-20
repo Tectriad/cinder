@@ -22,30 +22,30 @@ export function PaginationDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDPagination / Pagination</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDPagination / Pagination</h1>
+        <p className="cinder-doc-lead">
           Interactive page navigation control for splitting large datasets into manageable pages with page size changers and direct jumpers.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDPagination, Pagination &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When tables, lists, or search results contain more than 10-25 items and require pagination.</li>
           <li>To allow users to switch page sizes and quickly jump across large data partitions.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic & Sizing */}
           <DemoCard
             title="Basic Pagination & Sizing"
@@ -116,8 +116,8 @@ export default () => {
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={paginationProps} />
       </section>
     </div>

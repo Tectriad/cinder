@@ -59,31 +59,31 @@ export function SelectDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDSelect / Select</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDSelect / Select</h1>
+        <p className="cinder-doc-lead">
           Form control to select one or multiple options from a floating dropdown list with search, clearing, tags, and rich option metadata.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDSelect, Select, CDOption &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When there are 5 or more options to select from, saving vertical screen real estate.</li>
           <li>For tagging, category classification, multi-filter selection, or environment picking.</li>
           <li>Provides search capability for long option catalogs.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic Single Select */}
           <DemoCard
             title="Basic Usage"
@@ -306,7 +306,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDSelectProps API" data={selectProps} />
       </section>
     </div>

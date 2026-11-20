@@ -22,34 +22,34 @@ export function ToastDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
+    <div className="cinder-doc-page">
       {/* Toast container supporting multi-placement portals */}
       <CDToastContainer />
 
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDToast / Toast / Snackbar</h1>
-        <p className="antd-doc-lead">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDToast / Toast / Snackbar</h1>
+        <p className="cinder-doc-lead">
           Floating feedback message that slides in at any screen location with configurable ease-in/ease-out animations, countdown progress bar, and user-customizable surface colors and durations.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; toast, CDToastContainer, CDToast &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>To display non-blocking operational feedback in any screen location (top, bottom, left, center, right).</li>
           <li>Auto-dismisses with a visible countdown bar, with pause-on-hover capability.</li>
           <li>Elevated in body portals at `z-index: 2000` above modals, drawers, and headers.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Placement Locations */}
           <DemoCard
             title="Screen Placements & Locations"
@@ -314,8 +314,8 @@ export default () => (
       </section>
 
       {/* API Reference */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={toastOptionsProps} />
       </section>
     </div>

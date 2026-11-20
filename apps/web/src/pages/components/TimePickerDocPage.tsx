@@ -41,24 +41,24 @@ export function TimePickerDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
+    <div className="cinder-doc-page">
       {/* Page Header */}
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDTimePicker / TimePicker</h1>
-        <p className="antd-doc-lead">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDTimePicker / TimePicker</h1>
+        <p className="cinder-doc-lead">
           Precision time picker with columnar virtual scrolling, 12-hour AM/PM meridiem support, step intervals,
           disabled bounds, and body portal elevation.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDTimePicker, TimePicker &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
       {/* When To Use Section */}
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When users need to select a precise time value (hours, minutes, seconds) rather than a full date.</li>
           <li>For scheduling meetings, batch job runtimes, operational maintenance intervals, or alarms.</li>
           <li>Use <code>use12Hours</code> for consumer-friendly AM/PM meridiem selection.</li>
@@ -67,10 +67,10 @@ export function TimePickerDocPage(): ReactElement {
       </section>
 
       {/* Examples Section */}
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic 24-Hour Picker */}
           <DemoCard
             title="Basic 24-Hour Time Picker"
@@ -217,8 +217,8 @@ const disabledHours = () => [0,1,2,3,4,5,6,7,8,19,20,21,22,23];
       </section>
 
       {/* API Specification Section */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Specification</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Specification</h2>
         <ApiTable title="CDTimePicker API" data={timePickerApi} />
       </section>
     </div>

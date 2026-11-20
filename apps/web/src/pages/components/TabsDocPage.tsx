@@ -18,30 +18,30 @@ export function TabsDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDTabs / Tabs</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDTabs / Tabs</h1>
+        <p className="cinder-doc-lead">
           Versatile tabbed switching primitive supporting line underlines, enclosed folders, pills, and segmented controls with full keyboard accessibility.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDTabs, CDTabList, CDTab, CDTabPanel, Tabs &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>To switch between related views or data filters within the same context without page reloads.</li>
           <li>For multi-view editors, settings dialogs, or dashboard panel segmentations.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Declarative Tab Items */}
           <DemoCard
             title="Line & Segment Variants"
@@ -122,8 +122,8 @@ export default () => {
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={tabsProps} />
       </section>
     </div>

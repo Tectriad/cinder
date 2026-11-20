@@ -17,30 +17,30 @@ export function StepperDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDStepper / Stepper</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDStepper / Stepper</h1>
+        <p className="cinder-doc-lead">
           Workflow progress indicator for multi-step wizards, onboarding setups, and staged task progressions with full-width responsive connectors.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDStepper, CDStep, Stepper &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>For guiding users through structured multi-step forms or onboarding processes.</li>
           <li>To communicate completed, active, pending, or erroneous steps in a pipeline.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Full-Width Interactive Wizard */}
           <DemoCard
             fullWidth
@@ -187,8 +187,8 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={stepperProps} />
       </section>
     </div>

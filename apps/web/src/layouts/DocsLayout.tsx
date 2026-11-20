@@ -130,35 +130,35 @@ export function DocsLayout(): ReactElement {
   ).filter((cat: ComponentCategory) => cat.items.length > 0);
 
   return (
-    <div className="antd-docs-layout">
+    <div className="cinder-docs-layout">
       {/* Top Navigation Bar */}
-      <header className="antd-top-nav">
-        <div className="antd-top-nav-left">
+      <header className="cinder-top-nav">
+        <div className="cinder-top-nav-left">
           {/* Brand */}
-          <Link to="/" className="antd-brand">
-            <div className="antd-brand-icon">
+          <Link to="/" className="cinder-brand">
+            <div className="cinder-brand-icon">
               <CinderLogo size={24} />
             </div>
-            <span className="antd-brand-title">CINDER UI</span>
+            <span className="cinder-brand-title">CINDER UI</span>
           </Link>
 
           {/* Multiple Component Library Switcher */}
-          <div className="antd-lib-switcher">
+          <div className="cinder-lib-switcher">
             <button
-              className="antd-lib-btn"
+              className="cinder-lib-btn"
               onClick={() => setShowLibDropdown(!showLibDropdown)}
               aria-expanded={showLibDropdown}
               type="button"
             >
-              <span className="antd-lib-tag">{activeLibrary}</span>
-              <span className="antd-lib-version">v0.1.0</span>
+              <span className="cinder-lib-tag">{activeLibrary}</span>
+              <span className="cinder-lib-version">v0.1.0</span>
               <CDIcons.ChevronDown size={14} color="var(--cinder-muted)" />
             </button>
 
             {showLibDropdown && (
-              <div className="antd-lib-menu">
+              <div className="cinder-lib-menu">
                 <div
-                  className={`antd-lib-menu-item ${activeLibrary === "@cinder-ui/core" ? "active" : ""}`}
+                  className={`cinder-lib-menu-item ${activeLibrary === "@cinder-ui/core" ? "active" : ""}`}
                   onClick={() => {
                     setActiveLibrary("@cinder-ui/core");
                     setShowLibDropdown(false);
@@ -175,7 +175,7 @@ export function DocsLayout(): ReactElement {
                   </div>
                 </div>
                 <div
-                  className="antd-lib-menu-item"
+                  className="cinder-lib-menu-item"
                   style={{ opacity: 0.6 }}
                   onClick={() => setShowLibDropdown(false)}
                   role="button"
@@ -190,7 +190,7 @@ export function DocsLayout(): ReactElement {
                   </div>
                 </div>
                 <div
-                  className="antd-lib-menu-item"
+                  className="cinder-lib-menu-item"
                   style={{ opacity: 0.6 }}
                   onClick={() => setShowLibDropdown(false)}
                   role="button"
@@ -210,26 +210,26 @@ export function DocsLayout(): ReactElement {
         </div>
 
         {/* Global Search & Nav Links */}
-        <div className="antd-top-nav-right">
-          <div className="antd-nav-search">
+        <div className="cinder-top-nav-right">
+          <div className="cinder-nav-search">
             <CDIcons.Search size={14} color="var(--cinder-muted)" />
             <input
               type="text"
               placeholder="Search components... (e.g. Button, Icon, Input)"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="antd-nav-search-input"
+              className="cinder-nav-search-input"
             />
           </div>
 
-          <nav className="antd-nav-menu">
-            <NavLink to="/" className={({ isActive }) => `antd-nav-link ${isActive ? "active" : ""}`}>
+          <nav className="cinder-nav-menu">
+            <NavLink to="/" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Home
             </NavLink>
-            <NavLink to="/components/button" className={({ isActive }) => `antd-nav-link ${isActive ? "active" : ""}`}>
+            <NavLink to="/components/button" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Components
             </NavLink>
-            <NavLink to="/tokens" className={({ isActive }) => `antd-nav-link ${isActive ? "active" : ""}`}>
+            <NavLink to="/tokens" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Design Tokens
             </NavLink>
           </nav>
@@ -246,15 +246,15 @@ export function DocsLayout(): ReactElement {
       </header>
 
       {/* Main Body: Sidebar + Content */}
-      <div className="antd-body-container">
+      <div className="cinder-body-container">
         {/* Left Sidebar */}
-        <aside className="antd-sidebar">
+        <aside className="cinder-sidebar">
           {/* Quick Overview Link */}
           <div style={{ padding: "16px 16px 8px 16px" }}>
             <NavLink
               to="/components/overview"
               className={({ isActive }) =>
-                `antd-sidebar-item antd-overview-item ${isActive ? "active" : ""}`
+                `cinder-sidebar-item cinder-overview-item ${isActive ? "active" : ""}`
               }
             >
               <CDIcons.Box size={14} />
@@ -263,22 +263,22 @@ export function DocsLayout(): ReactElement {
           </div>
 
           {/* Categorized Nav Groups */}
-          <div className="antd-sidebar-groups">
+          <div className="cinder-sidebar-groups">
             {filteredCategories.map((cat: ComponentCategory, idx: number) => (
-              <div key={idx} className="antd-sidebar-group">
-                <div className="antd-sidebar-group-title">{cat.title}</div>
-                <div className="antd-sidebar-items">
+              <div key={idx} className="cinder-sidebar-group">
+                <div className="cinder-sidebar-group-title">{cat.title}</div>
+                <div className="cinder-sidebar-items">
                   {cat.items.map((item: ComponentNavItem) => (
                     <NavLink
                       key={item.path}
                       to={item.path}
                       className={({ isActive }) =>
-                        `antd-sidebar-item ${isActive ? "active" : ""}`
+                        `cinder-sidebar-item ${isActive ? "active" : ""}`
                       }
                     >
-                      <div className="antd-sidebar-item-main">
-                        <div className="antd-sidebar-item-row">
-                          <span className="antd-sidebar-item-name">{item.name}</span>
+                      <div className="cinder-sidebar-item-main">
+                        <div className="cinder-sidebar-item-row">
+                          <span className="cinder-sidebar-item-name">{item.name}</span>
                           {item.badge && (
                             <Badge
                               variant="accent"
@@ -292,7 +292,7 @@ export function DocsLayout(): ReactElement {
                             </Badge>
                           )}
                         </div>
-                        <span className="antd-sidebar-item-sub">{item.subtitle}</span>
+                        <span className="cinder-sidebar-item-sub">{item.subtitle}</span>
                       </div>
                     </NavLink>
                   ))}
@@ -303,7 +303,7 @@ export function DocsLayout(): ReactElement {
         </aside>
 
         {/* Main Content Area */}
-        <main className="antd-main-content">
+        <main className="cinder-main-content">
           <Outlet />
         </main>
       </div>

@@ -26,30 +26,30 @@ export function NavbarDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDNavbar / Header</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDNavbar / Header</h1>
+        <p className="cinder-doc-lead">
           Top-level application navigation header featuring brand logo slots, categorized links, action trays, full-width presentation, and mobile responsiveness.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDNavbar, CDNavbarBrand, CDNavbarNav, CDNavbarItem, CDNavbarAction &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>As the primary top application header containing branding, global navigation, and user controls.</li>
           <li>For sticky or fixed application bars that remain anchored while scrolling.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Full-Width Standard Application Header */}
           <DemoCard
             fullWidth
@@ -185,8 +185,8 @@ export default () => {
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={navbarProps} />
       </section>
     </div>

@@ -32,31 +32,31 @@ export function TagDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDTag / Tag / CDChip / Chip</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDTag / Tag / CDChip / Chip</h1>
+        <p className="cinder-doc-lead">
           Compact visual label used for categorization, keyword tagging, filtering chips, and contextual status display.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDTag, Tag, CDChip, Chip &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>To mark and categorize content with keywords.</li>
           <li>For filtering items dynamically using selectable chips.</li>
           <li>To display dismissible metadata items such as active search filters or recipient lists.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Variants & Colors */}
           <DemoCard
             title="Semantic Status Variants"
@@ -187,7 +187,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDTagProps API" data={tagProps} />
       </section>
     </div>

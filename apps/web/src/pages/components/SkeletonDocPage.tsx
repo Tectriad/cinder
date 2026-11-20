@@ -22,31 +22,31 @@ export function SkeletonDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDSkeleton / Skeleton</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDSkeleton / Skeleton</h1>
+        <p className="cinder-doc-lead">
           Content placeholder preview indicating that a section is loading, reducing perceived latency before data arrives.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDSkeleton, Skeleton &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>To show a visual preview of incoming data during initial page loads and network queries.</li>
           <li>Provides a smoother, lower-stress experience compared to abrupt spinner popping.</li>
           <li>High-precision shimmer wave animation matching Cinder Slate surface tokens.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Multi-Line Text */}
           <DemoCard
             title="Multi-Line Paragraph"
@@ -163,8 +163,8 @@ export default () => {
       </section>
 
       {/* API Reference */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={skeletonProps} />
       </section>
     </div>

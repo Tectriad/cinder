@@ -151,24 +151,24 @@ export function CalendarDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
+    <div className="cinder-doc-page">
       {/* Page Header */}
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDCalendar / Outlook Scheduler</h1>
-        <p className="antd-doc-lead">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDCalendar / Outlook Scheduler</h1>
+        <p className="cinder-doc-lead">
           Full-featured Outlook scheduler supporting Day, Week, Month, and Year views, 24h/business-hours time grids,
           Zoom (Fullscreen) mode, and click-to-open modals with custom component injection.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDOutlookCalendar, OutlookCalendar, CDCalendar, Calendar &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
       {/* When To Use Section */}
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>For scheduling visibility across Day, Week, Month, and Year calendar views.</li>
           <li>Click the <strong>Zoom</strong> button in the toolbar to expand the calendar into an immersive full-screen display.</li>
           <li>Click any event block to inspect details or trigger custom actions in an overlay modal.</li>
@@ -177,10 +177,10 @@ export function CalendarDocPage(): ReactElement {
       </section>
 
       {/* Examples Section */}
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Outlook Calendar with Zoom & Modal Support */}
           <DemoCard
             title="Outlook Scheduler with Zoom & Interactive Modal"
@@ -362,8 +362,8 @@ export function OutlookExample() {
       </section>
 
       {/* API Specification Section */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Specification</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Specification</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
           <ApiTable title="CDOutlookCalendar API" data={outlookCalendarApi} />
           <ApiTable title="CDCalendarEvent Data Model" data={calendarEventApi} />

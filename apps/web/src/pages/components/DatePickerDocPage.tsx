@@ -60,24 +60,24 @@ export function DatePickerDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
+    <div className="cinder-doc-page">
       {/* Page Header */}
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDDatePicker / DatePicker</h1>
-        <p className="antd-doc-lead">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDDatePicker / DatePicker</h1>
+        <p className="cinder-doc-lead">
           High-performance date picker and calendar matrix selector supporting day, ISO week, month, and year
           granularity, range selection bands, disabled bounds, and portal elevation.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDDatePicker, DatePicker, CDDateRangePicker, DateRangePicker &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
       {/* When To Use Section */}
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When the user needs to select or enter a single calendar date, ISO week, month, or year.</li>
           <li>For booking scheduling, analytics interval filtering, or release date assignment.</li>
           <li>Use <code>CDDateRangePicker</code> to pick a continuous start and end date period with range hover highlights.</li>
@@ -86,10 +86,10 @@ export function DatePickerDocPage(): ReactElement {
       </section>
 
       {/* Examples Section */}
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic Usage */}
           <DemoCard
             title="Basic Usage"
@@ -282,8 +282,8 @@ const disableWeekends = (date: Date) => date.getDay() === 0 || date.getDay() ===
       </section>
 
       {/* API Specification Section */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Specification</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Specification</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
           <ApiTable title="CDDatePicker API" data={datePickerApi} />
           <ApiTable title="CDDateRangePicker API" data={rangePickerApi} />

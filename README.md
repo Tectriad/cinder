@@ -31,11 +31,11 @@ cinder/
 │       ├── tsup.config.ts      # Dual ESM/CJS build pipeline with .d.ts generation
 │       └── package.json
 └── apps/
-    └── web/                    # @cinder-ui/web: Ant Design style documentation portal
+    └── web/                    # @cinder-ui/web: Cinder style documentation portal
         ├── src/
         │   ├── components/     # Documentation widgets (DemoCard, ApiTable, TokensTable)
-        │   ├── pages/          # Ant Design style documentation pages
-        │   ├── layouts/        # Ant Design documentation layout & multi-library switcher
+        │   ├── pages/          # Cinder style documentation pages
+        │   ├── layouts/        # Cinder documentation layout & multi-library switcher
         │   ├── styles/         # Modular CSS (< 500 lines per module)
         │   │   ├── base.css    # Typography, reset, atmosphere
         │   │   ├── landing.css # Landing page sections

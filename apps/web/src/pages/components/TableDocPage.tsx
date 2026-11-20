@@ -110,31 +110,31 @@ export function TableDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDTable / Table / DataGrid</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDTable / Table / DataGrid</h1>
+        <p className="cinder-doc-lead">
           Enterprise-grade tabular data grid featuring column sorting, multi-row selection, pagination, and loading states.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDTable, Table, CDDataGrid, DataGrid &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>To display large volumes of structured records with sorting and pagination.</li>
           <li>When users need to compare numerical values or status across rows.</li>
           <li>When multi-select operations (bulk actions, exports, deletions) are needed.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Full Enterprise Table */}
           <DemoCard
             fullWidth
@@ -192,7 +192,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDTableProps API" data={tableProps} />
         <div style={{ marginTop: "32px" }}>
           <ApiTable title="CDTableColumn API" data={columnProps} />

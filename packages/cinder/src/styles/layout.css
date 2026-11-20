@@ -154,7 +154,7 @@
   border-left-style: dashed;
 }
 
-/* Divider with inner text (Ant Design layout pattern) */
+/* Divider with inner text (Cinder layout pattern) */
 .cinder-divider-with-text {
   display: flex;
   align-items: center;

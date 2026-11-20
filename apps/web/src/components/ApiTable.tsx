@@ -13,10 +13,10 @@ export interface ApiTableProps {
 
 export function ApiTable({ title = "API Specification", data }: ApiTableProps) {
   return (
-    <div className="antd-api-section">
-      <h3 className="antd-api-title">{title}</h3>
-      <div className="antd-api-table-wrapper">
-        <table className="antd-api-table">
+    <div className="cinder-api-section">
+      <h3 className="cinder-api-title">{title}</h3>
+      <div className="cinder-api-table-wrapper">
+        <table className="cinder-api-table">
           <thead>
             <tr>
               <th>Property</th>
@@ -29,15 +29,15 @@ export function ApiTable({ title = "API Specification", data }: ApiTableProps) {
           <tbody>
             {data.map((item, idx) => (
               <tr key={idx}>
-                <td className="antd-api-prop">{item.property}</td>
-                <td className="antd-api-desc">{item.description}</td>
-                <td className="antd-api-type">
+                <td className="cinder-api-prop">{item.property}</td>
+                <td className="cinder-api-desc">{item.description}</td>
+                <td className="cinder-api-type">
                   <code>{item.type}</code>
                 </td>
-                <td className="antd-api-default">
+                <td className="cinder-api-default">
                   <code>{item.default || "-"}</code>
                 </td>
-                <td className="antd-api-version">{item.version || "0.1.0"}</td>
+                <td className="cinder-api-version">{item.version || "0.1.0"}</td>
               </tr>
             ))}
           </tbody>

@@ -18,33 +18,33 @@ export function InputDocPage() {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">
           CDInput / Input
         </h1>
-        <p className="antd-doc-lead">
+        <p className="cinder-doc-lead">
           A basic text field for entering text with support for prefix, suffix, helper text, and high-contrast focus rings.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDInput, Input &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>A user input in a form or dialog where typed text is required.</li>
           <li>Search boxes, authentication forms, or parameter entry controls.</li>
           <li>In Cinder UI, Inputs feature a <code>var(--cinder-surface)</code> background and a <code>var(--cinder-primary)</code> focus ring.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           <DemoCard
             title="Basic Usage"
             description="Standard input field with placeholder and label."
@@ -160,7 +160,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="Input API" data={inputProps} />
       </section>
     </div>

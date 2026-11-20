@@ -69,23 +69,23 @@ export function LayoutDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">Layout Primitives</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">Layout Primitives</h1>
+        <p className="cinder-doc-lead">
           Spatial foundation suite featuring Box, Container, Grid, Stack (HStack &amp; VStack), Divider, and Spacer for constructing structured, responsive viewports.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>
             import &#123; CDBox, CDContainer, CDGrid, CDGridItem, CDStack, CDHStack, CDVStack, CDDivider, CDSpacer &#125; from &apos;@cinder-ui/core&apos;;
           </code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li><strong>CDBox</strong>: For generic layout wrappers with responsive padding, surface fills, borders, and rounded corners.</li>
           <li><strong>CDContainer</strong>: To center page content and establish maximum width bounds across standard breakpoints.</li>
           <li><strong>CDGrid</strong>: For two-dimensional multi-column layouts, dashboards, and responsive auto-fill card arrays.</li>
@@ -95,10 +95,10 @@ export function LayoutDocPage(): ReactElement {
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Stack & Flexbox Alignment */}
           <DemoCard
             fullWidth
@@ -332,8 +332,8 @@ export default () => (
       </section>
 
       {/* API Specification */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Specification</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Specification</h2>
         <ApiTable title="CDBox / Box Props" data={boxProps} />
         <ApiTable title="CDContainer / Container Props" data={containerProps} />
         <ApiTable title="CDGrid / Grid Props" data={gridProps} />

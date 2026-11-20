@@ -97,23 +97,23 @@ export function FilePickerDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDFilePicker / FilePicker</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDFilePicker / FilePicker</h1>
+        <p className="cinder-doc-lead">
           Comprehensive file upload and selection primitive with automated thumbnails, interactive image lightbox preview, drag-and-drop dropzones, and picture card grids.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>
             import &#123; CDFilePicker, FilePicker, CDFilePickerDragger &#125; from &apos;@cinder-ui/core&apos;;
           </code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When users need to upload images, documents, certificates, or code archives with live visual feedback.</li>
           <li>For drag-and-drop file ingestion zones with hover elevation, drag-over highlights, and format validations.</li>
           <li>When users need to preview images in an interactive lightbox modal with zoom and rotation before submitting.</li>
@@ -121,10 +121,10 @@ export function FilePickerDocPage(): ReactElement {
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic File Picker with Button Trigger */}
           <DemoCard
             fullWidth
@@ -318,8 +318,8 @@ export default () => (
       </section>
 
       {/* API Specification */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Specification</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Specification</h2>
         <ApiTable title="CDFilePicker / FilePicker Props" data={filePickerProps} />
         <ApiTable title="CDFilePickerDragger Props" data={draggerProps} />
         <ApiTable title="CDFileItem Properties" data={fileItemProps} />

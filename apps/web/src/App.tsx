@@ -55,7 +55,7 @@ export function App(): ReactElement {
           {/* Main Landing Route */}
           <Route path="/" element={<HomePage />} />
 
-          {/* Component Documentation Routes (Ant Design Architecture) */}
+          {/* Component Documentation Routes (Cinder Architecture) */}
           <Route path="/components" element={<DocsLayout />}>
             <Route index element={<Navigate to="/components/button" replace />} />
             <Route path="overview" element={<ComponentOverviewPage />} />

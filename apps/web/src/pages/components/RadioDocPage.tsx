@@ -37,30 +37,30 @@ export function RadioDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDRadio / Radio</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDRadio / Radio</h1>
+        <p className="cinder-doc-lead">
           Single-choice selector from a mutually exclusive set of options, with standard circular indicators, selectable cards, and segmented button tabs.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDRadio, CDRadioGroup, CDRadioButton, Radio, RadioGroup &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When users need to select exactly one option from a list of two or more mutually exclusive choices.</li>
           <li>For pricing plan cards, server region pickers, or segmented frequency toggles.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic Radio Group */}
           <DemoCard
             title="Basic Radio Group"
@@ -194,11 +194,11 @@ export default () => {
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference - CDRadio</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference - CDRadio</h2>
         <ApiTable data={radioProps} />
 
-        <h2 className="antd-section-heading" style={{ marginTop: "32px" }}>API Reference - CDRadioGroup</h2>
+        <h2 className="cinder-section-heading" style={{ marginTop: "32px" }}>API Reference - CDRadioGroup</h2>
         <ApiTable data={radioGroupProps} />
       </section>
     </div>

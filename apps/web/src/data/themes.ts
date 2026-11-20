@@ -37,7 +37,7 @@ export const THEME_REFERENCES: ThemeReference[] = [
     badge: "Official Theme",
     accentColor: "#3b82f6",
     isPrimaryChoice: true,
-    inspirations: ["Tailwind Slate", "Ant Design", "Vercel", "GitHub"],
+    inspirations: ["Tailwind Slate", "Cinder", "Vercel", "GitHub"],
     attributes: {
       radii: "8px (Modern Standard)",
       borderStyle: "1px Slate Border (#27272a / #e4e4e7)",

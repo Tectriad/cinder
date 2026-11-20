@@ -12,30 +12,30 @@ export function BreadcrumbDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDBreadcrumb / Breadcrumbs</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDBreadcrumb / Breadcrumbs</h1>
+        <p className="cinder-doc-lead">
           Hierarchy navigation indicator displaying the user position within an application site structure with automatic middle collapsing.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDBreadcrumb, CDBreadcrumbItem, Breadcrumb &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When an application has a deep hierarchical structure with 2 or more levels.</li>
           <li>To help users understand their current page context and easily navigate back to parent levels.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Basic & Icon Breadcrumbs */}
           <DemoCard
             title="Basic & Icon Breadcrumbs"
@@ -98,8 +98,8 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={breadcrumbProps} />
       </section>
     </div>

@@ -17,7 +17,7 @@ export function HomePage() {
           <div className="app-container">
             <div className="hero-pill-wrapper">
               <Badge variant="accent" size="md" dot pulse>
-                Ant Design Style Documentation &amp; Multiple Libraries Ready
+                Cinder Style Documentation &amp; Multiple Libraries Ready
               </Badge>
             </div>
 
@@ -118,7 +118,7 @@ export function HomePage() {
                   }}>
                     <ShieldCheck size={16} />
                   </div>
-                  <Badge variant="success" size="sm">AntD Style</Badge>
+                  <Badge variant="success" size="sm">Cinder Style</Badge>
                 </div>
                 <CardTitle style={{ fontSize: "16px" }}>Rich Documentation</CardTitle>
                 <CardDescription style={{ fontSize: "12px", marginTop: "6px" }}>
@@ -161,7 +161,7 @@ export function HomePage() {
               </div>
               <h2 className="section-title">Component Categories</h2>
               <p className="section-desc">
-                Browse our primitives organized in Ant Design category patterns.
+                Browse our primitives organized in Cinder category patterns.
               </p>
             </div>
 

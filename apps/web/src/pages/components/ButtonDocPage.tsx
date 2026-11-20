@@ -60,21 +60,21 @@ export function ButtonDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDButton / Button</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDButton / Button</h1>
+        <p className="cinder-doc-lead">
           To trigger an operation, navigate, or submit form data with flexible hierarchy, shapes, controlled border radius, and elevation hover states.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDButton, Button, CDButtonGroup, CDButtonDropdown, CDCopyButton &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li><strong>Primary Action</strong>: Use vibrant Slate Blue for the single main call to action on the screen.</li>
           <li><strong>Round Buttons</strong>: Use <code>isRound</code> or <code>shape="round"</code> for friendly CTAs, badges, floating triggers, and pill designs.</li>
           <li><strong>Controlled Radius &amp; Shadows</strong>: Tune border radius (<code>none</code> to <code>full</code>) and elevation hover responses (<code>sm</code>, <code>md</code>, <code>lg</code>) to harmonize with your layout.</li>
@@ -82,10 +82,10 @@ export function ButtonDocPage(): ReactElement {
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Button Hierarchy */}
           <DemoCard
             title="Button Hierarchy"
@@ -476,7 +476,7 @@ export default () => (
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
+      <section id="api" className="cinder-doc-section">
         <ApiTable title="CDButtonProps API" data={buttonProps} />
       </section>
     </div>

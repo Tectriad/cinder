@@ -98,31 +98,31 @@ export function SidebarDocPage(): ReactElement {
   );
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDSidebar / Sidebar</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDSidebar / Sidebar</h1>
+        <p className="cinder-doc-lead">
           Versatile navigation bar supporting Left, Right, Top, and Bottom placements, collapsible modes with directional chevrons, and floating island styling.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDSidebar, CDSidebarHeader, CDSidebarContent, CDSidebarFooter, CDSidebarGroup, CDSidebarItem &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>For multi-level dashboard layouts requiring quick access to different modules on the left or right.</li>
           <li>For top or bottom horizontal navigation bars that collapse smoothly.</li>
           <li>In floating island mode when elevation and rounded glassmorphism borders are preferred over edge-to-edge docking.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Full-Width Interactive Placement & Floating Workbench */}
           <DemoCard
             fullWidth
@@ -271,8 +271,8 @@ export default () => {
         </div>
       </section>
 
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={sidebarProps} />
       </section>
     </div>

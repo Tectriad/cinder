@@ -18,31 +18,31 @@ export function AlertDocPage(): ReactElement {
   ];
 
   return (
-    <div className="antd-doc-page">
-      <div className="antd-doc-header">
-        <h1 className="antd-doc-title">CDAlert / Alert / Banner</h1>
-        <p className="antd-doc-lead">
+    <div className="cinder-doc-page">
+      <div className="cinder-doc-header">
+        <h1 className="cinder-doc-title">CDAlert / Alert / Banner</h1>
+        <p className="cinder-doc-lead">
           Displays an important, contextual feedback message or persistent announcement bar for user actions and system status.
         </p>
 
-        <div className="antd-doc-import">
+        <div className="cinder-doc-import">
           <code>import &#123; CDAlert, Alert, CDBanner &#125; from '@cinder-ui/core';</code>
         </div>
       </div>
 
-      <section id="when-to-use" className="antd-doc-section">
-        <h2 className="antd-section-heading">When To Use</h2>
-        <ul className="antd-doc-list">
+      <section id="when-to-use" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">When To Use</h2>
+        <ul className="cinder-doc-list">
           <li>When you need to alert the user with non-modal operational feedback.</li>
           <li>For system notifications, deployment announcements, warnings, or errors.</li>
           <li>Banner mode for sticky, full-bleed notices at the top of pages or cards.</li>
         </ul>
       </section>
 
-      <section id="examples" className="antd-doc-section">
-        <h2 className="antd-section-heading">Examples</h2>
+      <section id="examples" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">Examples</h2>
 
-        <div className="antd-demos-grid">
+        <div className="cinder-demos-grid">
           {/* Demo 1: Semantic Types */}
           <DemoCard
             title="Semantic Alert Types"
@@ -178,8 +178,8 @@ export default () => (
       </section>
 
       {/* API Reference */}
-      <section id="api" className="antd-doc-section">
-        <h2 className="antd-section-heading">API Reference</h2>
+      <section id="api" className="cinder-doc-section">
+        <h2 className="cinder-section-heading">API Reference</h2>
         <ApiTable data={alertProps} />
       </section>
     </div>
