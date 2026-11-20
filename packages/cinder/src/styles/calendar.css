@@ -1,0 +1,301 @@
+/**
+ * Cinder UI - Outlook Calendar & Scheduler Master Stylesheet
+ * Adheres to Cinder Slate Design Tokens (< 500 lines)
+ */
+
+@import "./calendar-views.css";
+
+.cinder-outlook-calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  color: var(--cinder-text);
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Fullscreen / Zoom Mode --- */
+.cinder-outlook-calendar.cinder-outlook-fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background-color: var(--cinder-bg);
+}
+
+.cinder-outlook-fullscreen .cinder-outlook-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--cinder-surface);
+  border-bottom: 1px solid var(--cinder-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 12px 24px;
+}
+
+.cinder-outlook-fullscreen .cinder-outlook-body {
+  flex: 1;
+  height: calc(100vh - 62px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-outlook-fullscreen .cinder-outlook-grid-container,
+.cinder-outlook-fullscreen .cinder-outlook-week-grid-container {
+  max-height: calc(100vh - 124px);
+  flex: 1;
+}
+
+.cinder-outlook-fullscreen .cinder-outlook-month-view,
+.cinder-outlook-fullscreen .cinder-outlook-year-view {
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 62px);
+}
+
+.cinder-outlook-fullscreen .cinder-outlook-month-cell {
+  min-height: calc((100vh - 124px) / 6);
+}
+
+/* --- Outlook Toolbar --- */
+.cinder-outlook-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-outlook-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cinder-outlook-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cinder-outlook-toolbar-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+.cinder-outlook-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-outlook-view-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background-color: var(--cinder-surface-hover);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md, 8px);
+}
+
+.cinder-outlook-switcher-btn {
+  background: transparent;
+  border: none;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cinder-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-outlook-switcher-btn:hover {
+  color: var(--cinder-text);
+}
+
+.cinder-outlook-switcher-btn.cinder-outlook-switcher-active {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(59, 130, 246, 0.35);
+}
+
+/* --- Common Time Grid & Gutter --- */
+.cinder-outlook-time-gutter {
+  width: 68px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-outlook-gutter-slot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.cinder-outlook-gutter-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cinder-muted);
+  transform: translateY(-8px);
+}
+
+.cinder-outlook-hour-slot {
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--cinder-border);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.cinder-outlook-hour-slot:hover {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-outlook-half-hour-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dashed var(--cinder-border);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* --- Current Live Time Indicator --- */
+.cinder-outlook-current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ef4444;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cinder-outlook-current-time-dot {
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+/* --- Event Cards (Day & Week View) --- */
+.cinder-outlook-event-card {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border-left: 3px solid var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-text);
+  box-sizing: border-box;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  z-index: 5;
+}
+
+.cinder-outlook-event-card:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 6;
+}
+
+.cinder-outlook-event-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.cinder-outlook-event-title {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinder-outlook-event-time {
+  font-size: 10px;
+  color: var(--cinder-muted);
+  white-space: nowrap;
+}
+
+.cinder-outlook-event-location {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinder-outlook-event-desc {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  opacity: 0.85;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Variants */
+.cinder-outlook-card-primary {
+  border-left-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.14);
+}
+.cinder-outlook-card-success {
+  border-left-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.14);
+}
+.cinder-outlook-card-warning {
+  border-left-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.14);
+}
+.cinder-outlook-card-danger {
+  border-left-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.14);
+}
+.cinder-outlook-card-purple {
+  border-left-color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.14);
+}
+.cinder-outlook-card-cyan {
+  border-left-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.14);
+}
+.cinder-outlook-card-orange {
+  border-left-color: #f97316;
+  background-color: rgba(249, 115, 22, 0.14);
+}

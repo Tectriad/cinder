@@ -1,0 +1,447 @@
+/**
+ * Cinder UI - Outlook Calendar Specific Views (Day, Week, Month, Year)
+ * Modular Sub-Stylesheet (< 500 lines)
+ */
+
+/* --- Day View Specifics --- */
+.cinder-outlook-day-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-outlook-day-header {
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-outlook-day-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cinder-outlook-day-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cinder-text);
+}
+
+.cinder-outlook-today-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+}
+
+.cinder-outlook-allday-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface-hover);
+  min-height: 38px;
+}
+
+.cinder-outlook-allday-label {
+  width: 68px;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--cinder-muted);
+  text-align: right;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.cinder-outlook-allday-events {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 10px;
+}
+
+.cinder-outlook-event-chip {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  transition: opacity 0.15s ease;
+}
+
+.cinder-outlook-event-chip:hover {
+  opacity: 0.9;
+}
+
+.cinder-outlook-variant-primary { background-color: #3b82f6; }
+.cinder-outlook-variant-success { background-color: #10b981; }
+.cinder-outlook-variant-warning { background-color: #f59e0b; color: #000000; }
+.cinder-outlook-variant-danger { background-color: #ef4444; }
+.cinder-outlook-variant-purple { background-color: #a855f7; }
+.cinder-outlook-variant-cyan { background-color: #06b6d4; }
+.cinder-outlook-variant-orange { background-color: #f97316; }
+
+.cinder-outlook-grid-container {
+  display: flex;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.cinder-outlook-day-column {
+  flex: 1;
+  position: relative;
+}
+
+/* --- Week View Specifics --- */
+.cinder-outlook-week-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-outlook-week-header {
+  display: flex;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-outlook-gutter-placeholder {
+  width: 68px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--cinder-border);
+}
+
+.cinder-outlook-week-header-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cinder-outlook-week-header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  border-right: 1px solid var(--cinder-border);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.cinder-outlook-week-header-cell:last-child {
+  border-right: none;
+}
+
+.cinder-outlook-week-header-cell:hover {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-outlook-week-day-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cinder-muted);
+  text-transform: uppercase;
+}
+
+.cinder-outlook-week-day-num {
+  font-size: 15px;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  color: var(--cinder-text);
+}
+
+.cinder-outlook-header-today .cinder-outlook-week-day-num {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+}
+
+.cinder-outlook-week-allday-row {
+  display: flex;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface-hover);
+  min-height: 34px;
+}
+
+.cinder-outlook-week-allday-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cinder-outlook-week-allday-col {
+  padding: 4px;
+  border-right: 1px solid var(--cinder-border);
+  box-sizing: border-box;
+}
+
+.cinder-outlook-week-allday-col:last-child {
+  border-right: none;
+}
+
+.cinder-outlook-week-grid-container {
+  display: flex;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.cinder-outlook-week-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cinder-outlook-week-day-col {
+  position: relative;
+  border-right: 1px solid var(--cinder-border);
+  box-sizing: border-box;
+}
+
+.cinder-outlook-week-day-col:last-child {
+  border-right: none;
+}
+
+.cinder-outlook-day-col-today {
+  background-color: rgba(59, 130, 246, 0.03);
+}
+
+/* --- Month View Specifics --- */
+.cinder-outlook-month-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-outlook-month-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-outlook-month-header-cell {
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  text-transform: uppercase;
+  border-right: 1px solid var(--cinder-border);
+}
+
+.cinder-outlook-month-header-cell:last-child {
+  border-right: none;
+}
+
+.cinder-outlook-month-matrix {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cinder-outlook-month-cell {
+  min-height: 105px;
+  border-right: 1px solid var(--cinder-border);
+  border-bottom: 1px solid var(--cinder-border);
+  padding: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-outlook-month-cell:nth-child(7n) {
+  border-right: none;
+}
+
+.cinder-outlook-month-cell:hover {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-outlook-cell-other-month {
+  opacity: 0.45;
+}
+
+.cinder-outlook-month-cell-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+
+.cinder-outlook-month-day-number {
+  font-size: 12px;
+  font-weight: 500;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--cinder-text);
+}
+
+.cinder-outlook-day-number-today {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cinder-outlook-month-events-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.cinder-outlook-month-event-pill {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.cinder-outlook-month-event-pill:hover {
+  filter: brightness(1.1);
+}
+
+.cinder-outlook-pill-primary { background-color: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+.cinder-outlook-pill-success { background-color: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+.cinder-outlook-pill-warning { background-color: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+.cinder-outlook-pill-danger  { background-color: rgba(239, 68, 68, 0.2);  color: #fca5a5; }
+.cinder-outlook-pill-purple  { background-color: rgba(168, 85, 247, 0.2); color: #d8b4fe; }
+.cinder-outlook-pill-cyan    { background-color: rgba(6, 182, 212, 0.2);  color: #67e8f9; }
+.cinder-outlook-pill-orange  { background-color: rgba(249, 115, 22, 0.2); color: #fdba74; }
+
+.cinder-outlook-pill-time {
+  font-weight: 600;
+  opacity: 0.85;
+  margin-right: 4px;
+}
+
+.cinder-outlook-month-more-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-primary);
+  padding: 1px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.cinder-outlook-month-more-badge:hover {
+  text-decoration: underline;
+}
+
+/* --- Year View Specifics --- */
+.cinder-outlook-year-view {
+  padding: 16px;
+}
+
+.cinder-outlook-year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.cinder-outlook-mini-month-card {
+  border: 1px solid var(--cinder-border);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: var(--cinder-surface);
+  transition: border-color 0.15s ease;
+}
+
+.cinder-outlook-mini-month-card:hover {
+  border-color: var(--cinder-primary);
+}
+
+.cinder-outlook-mini-month-active {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 1px var(--cinder-primary);
+}
+
+.cinder-outlook-mini-month-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cinder-text);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.cinder-outlook-mini-month-header:hover {
+  color: var(--cinder-primary);
+}
+
+.cinder-outlook-mini-day-headers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.cinder-outlook-mini-day-header {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+}
+
+.cinder-outlook-mini-matrix {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cinder-outlook-mini-cell {
+  position: relative;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+  color: var(--cinder-text);
+  transition: background-color 0.1s ease;
+}
+
+.cinder-outlook-mini-cell:hover {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-outlook-mini-cell-other {
+  opacity: 0.25;
+}
+
+.cinder-outlook-mini-cell-today {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cinder-outlook-mini-cell-selected:not(.cinder-outlook-mini-cell-today) {
+  border: 1px solid var(--cinder-primary);
+}
+
+.cinder-outlook-mini-event-dot {
+  position: absolute;
+  bottom: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--cinder-primary);
+}

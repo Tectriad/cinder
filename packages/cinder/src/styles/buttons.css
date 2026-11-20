@@ -1,0 +1,429 @@
+/* ==========================================================================
+   Button Component Styles
+   ========================================================================== */
+
+.cinder-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  line-height: 1;
+}
+
+.cinder-btn:focus-visible {
+  outline: 2px solid var(--custom-btn-focus-ring, var(--cinder-primary));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--cinder-focus-ring);
+}
+
+.cinder-btn:active {
+  transform: scale(0.98);
+}
+
+.cinder-btn:disabled,
+.cinder-btn[disabled],
+.cinder-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Sizes */
+.cinder-btn-xs {
+  height: 26px;
+  padding: 0 8px;
+  font-size: 11px;
+  border-radius: var(--cinder-radius-xs);
+  gap: 4px;
+}
+
+.cinder-btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: var(--cinder-radius-sm);
+  gap: 6px;
+}
+
+.cinder-btn-md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 13px;
+  border-radius: var(--cinder-radius-md);
+  gap: 8px;
+}
+
+.cinder-btn-lg {
+  height: 48px;
+  padding: 0 22px;
+  font-size: 15px;
+  border-radius: var(--cinder-radius-md);
+  gap: 10px;
+}
+
+.cinder-btn-xl {
+  height: 54px;
+  padding: 0 28px;
+  font-size: 16px;
+  border-radius: var(--cinder-radius-lg);
+  gap: 12px;
+}
+
+.cinder-btn-full {
+  width: 100%;
+}
+
+/* Shapes & Round Buttons */
+.cinder-btn-round {
+  border-radius: var(--cinder-radius-full) !important;
+}
+
+.cinder-btn-circle {
+  border-radius: 50% !important;
+  padding: 0 !important;
+}
+
+.cinder-btn-circle.cinder-btn-xs { width: 26px; height: 26px; }
+.cinder-btn-circle.cinder-btn-sm { width: 32px; height: 32px; }
+.cinder-btn-circle.cinder-btn-md { width: 40px; height: 40px; }
+.cinder-btn-circle.cinder-btn-lg { width: 48px; height: 48px; }
+.cinder-btn-circle.cinder-btn-xl { width: 54px; height: 54px; }
+
+/* Controlled Border Radius */
+.cinder-btn-radius-none { border-radius: 0 !important; }
+.cinder-btn-radius-xs { border-radius: var(--cinder-radius-xs) !important; }
+.cinder-btn-radius-sm { border-radius: var(--cinder-radius-sm) !important; }
+.cinder-btn-radius-md { border-radius: var(--cinder-radius-md) !important; }
+.cinder-btn-radius-lg { border-radius: var(--cinder-radius-lg) !important; }
+.cinder-btn-radius-full { border-radius: var(--cinder-radius-full) !important; }
+
+/* Controlled Normal Shadow */
+.cinder-btn-shadow-none { box-shadow: none !important; }
+.cinder-btn-shadow-sm { box-shadow: var(--cinder-shadow-sm) !important; }
+.cinder-btn-shadow-md { box-shadow: var(--cinder-shadow-md) !important; }
+.cinder-btn-shadow-lg { box-shadow: var(--cinder-shadow-lg) !important; }
+
+/* Controlled On-Hover Elevation & Shadow */
+.cinder-btn-hover-shadow-none:hover:not(:disabled) {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.cinder-btn-hover-shadow-sm:hover:not(:disabled) {
+  box-shadow: var(--cinder-shadow-sm) !important;
+  transform: translateY(-1px);
+}
+
+.cinder-btn-hover-shadow-md:hover:not(:disabled) {
+  box-shadow: var(--cinder-shadow-md) !important;
+  transform: translateY(-2px);
+}
+
+.cinder-btn-hover-shadow-lg:hover:not(:disabled) {
+  box-shadow: var(--cinder-shadow-lg) !important;
+  transform: translateY(-3px);
+}
+
+/* Variants */
+
+/* 1. Primary (Blue) */
+.cinder-btn-primary {
+  background-color: var(--cinder-primary);
+  color: var(--cinder-primary-text);
+  border-color: var(--cinder-primary);
+  box-shadow: var(--cinder-shadow-sm);
+}
+
+.cinder-btn-primary:hover:not(:disabled) {
+  background-color: var(--cinder-primary-hover);
+  border-color: var(--cinder-primary-hover);
+  box-shadow: 0 4px 14px -1px var(--cinder-focus-ring);
+}
+
+/* 2. Secondary (Slate Outline / Accent) */
+.cinder-btn-secondary {
+  background-color: var(--cinder-surface);
+  color: var(--cinder-text);
+  border-color: var(--cinder-border);
+  box-shadow: var(--cinder-shadow-sm);
+}
+
+.cinder-btn-secondary:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  border-color: var(--cinder-primary);
+  color: var(--cinder-primary);
+}
+
+/* 3. Tertiary (Subtle border) */
+.cinder-btn-tertiary {
+  background-color: transparent;
+  color: var(--cinder-text);
+  border-color: var(--cinder-border);
+}
+
+.cinder-btn-tertiary:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  border-color: var(--cinder-border-strong);
+}
+
+/* 4. Ghost */
+.cinder-btn-ghost {
+  background-color: transparent;
+  color: var(--cinder-text);
+}
+
+.cinder-btn-ghost:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+}
+
+/* 5. Glass (Frosted Blur) */
+.cinder-btn-glass {
+  background-color: var(--cinder-glass);
+  color: var(--cinder-text);
+  border-color: var(--cinder-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.cinder-btn-glass:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  border-color: var(--cinder-primary);
+}
+
+/* 6. Danger */
+.cinder-btn-danger {
+  background-color: var(--cinder-danger);
+  color: #ffffff;
+  border-color: var(--cinder-danger);
+  box-shadow: var(--cinder-shadow-sm);
+}
+
+.cinder-btn-danger:hover:not(:disabled) {
+  background-color: var(--cinder-danger-hover);
+  border-color: var(--cinder-danger-hover);
+}
+
+/* Custom Theme Injection */
+.cinder-btn-custom-theme {
+  background-color: var(--custom-btn-bg, var(--cinder-primary)) !important;
+  color: var(--custom-btn-fg, #ffffff) !important;
+  border-color: var(--custom-btn-border, var(--custom-btn-bg, transparent)) !important;
+}
+
+.cinder-btn-custom-theme:hover:not(:disabled) {
+  background-color: var(--custom-btn-hover-bg, var(--custom-btn-bg)) !important;
+  border-color: var(--custom-btn-hover-border, var(--custom-btn-border)) !important;
+  color: var(--custom-btn-hover-fg, var(--custom-btn-fg)) !important;
+}
+
+/* Spinner & Loading */
+.cinder-btn-spinner-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: cinderSpin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes cinderSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cinder-btn-prefix,
+.cinder-btn-suffix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+/* ==========================================================================
+   IconButton Component
+   ========================================================================== */
+
+.cinder-icon-btn {
+  padding: 0 !important;
+}
+
+.cinder-icon-btn.cinder-btn-xs { width: 26px; }
+.cinder-icon-btn.cinder-btn-sm { width: 32px; }
+.cinder-icon-btn.cinder-btn-md { width: 40px; }
+.cinder-icon-btn.cinder-btn-lg { width: 48px; }
+.cinder-icon-btn.cinder-btn-xl { width: 54px; }
+
+.cinder-icon-btn-round {
+  border-radius: 50% !important;
+}
+
+.cinder-icon-btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   ButtonGroup Component
+   ========================================================================== */
+
+.cinder-btn-group {
+  display: inline-flex;
+  position: relative;
+}
+
+.cinder-btn-group-horizontal {
+  flex-direction: row;
+}
+
+.cinder-btn-group-vertical {
+  flex-direction: column;
+}
+
+.cinder-btn-group-attached.cinder-btn-group-horizontal > .cinder-btn:not(:first-child) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.cinder-btn-group-attached.cinder-btn-group-horizontal > .cinder-btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cinder-btn-group-attached.cinder-btn-group-horizontal > .cinder-btn:hover {
+  z-index: 2;
+}
+
+.cinder-btn-group-attached.cinder-btn-group-horizontal > .cinder-btn:focus-visible {
+  z-index: 3;
+}
+
+/* ==========================================================================
+   CopyButton Component
+   ========================================================================== */
+
+.cinder-copy-button {
+  transition: all 0.2s ease;
+}
+
+.cinder-copy-button-copied {
+  border-color: var(--cinder-success) !important;
+  color: var(--cinder-success) !important;
+}
+
+.cinder-copy-check {
+  color: var(--cinder-success);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   ButtonDropdown Component
+   ========================================================================== */
+
+.cinder-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cinder-dropdown-chevron {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.cinder-dropdown-chevron-open {
+  transform: rotate(180deg);
+}
+
+.cinder-dropdown-trigger-split {
+  padding: 0 10px !important;
+}
+
+.cinder-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  z-index: 200;
+  min-width: 180px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  box-shadow: var(--cinder-shadow-md);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: cinderFadeIn 0.15s ease-out;
+}
+
+@keyframes cinderFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cinder-dropdown-menu-left { left: 0; }
+.cinder-dropdown-menu-right { right: 0; }
+
+.cinder-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--cinder-radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--cinder-text);
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  width: 100%;
+}
+
+.cinder-dropdown-item:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-primary);
+}
+
+.cinder-dropdown-item-danger {
+  color: var(--cinder-danger);
+}
+
+.cinder-dropdown-item-danger:hover:not(:disabled) {
+  background-color: var(--cinder-danger-bg) !important;
+  color: var(--cinder-danger) !important;
+}
+
+.cinder-dropdown-item-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cinder-dropdown-divider {
+  height: 1px;
+  background-color: var(--cinder-border);
+  margin: 4px 0;
+}

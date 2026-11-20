@@ -1,0 +1,262 @@
+/* ==========================================================================
+   Cinder UI — File Picker & Dropzone Styles (Cinder Slate Semantic Tokens)
+   ========================================================================== */
+
+.cinder-file-picker {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cinder-file-trigger {
+  display: inline-block;
+  cursor: pointer;
+  width: fit-content;
+}
+
+/* ==========================================================================
+   File Picker Dragger (Dropzone)
+   ========================================================================== */
+
+.cinder-file-dragger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 36px 24px;
+  border: 1.5px dashed var(--cinder-border);
+  border-radius: 8px;
+  background-color: var(--cinder-surface);
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  user-select: none;
+}
+
+.cinder-file-dragger:hover,
+.cinder-file-dragger:focus-visible {
+  border-color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.04);
+}
+
+.cinder-file-dragger:focus-visible {
+  box-shadow: 0 0 0 2px var(--cinder-canvas), 0 0 0 4px var(--cinder-primary);
+}
+
+.cinder-file-dragger-active {
+  border-color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.cinder-file-dragger-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cinder-file-dragger-icon {
+  color: var(--cinder-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 150ms ease;
+}
+
+.cinder-file-dragger:hover .cinder-file-dragger-icon {
+  transform: translateY(-2px);
+}
+
+.cinder-file-dragger-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cinder-file-dragger-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+.cinder-file-dragger-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--cinder-muted);
+}
+
+.cinder-file-dragger-custom {
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   File List (Compact Row Format)
+   ========================================================================== */
+
+.cinder-file-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.cinder-file-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.cinder-file-list-item:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="light"] .cinder-file-list-item:hover {
+  border-color: #d4d4d8;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.cinder-file-item-error {
+  border-color: #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+.cinder-file-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cinder-file-item-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cinder-file-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cinder-file-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cinder-file-item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cinder-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cinder-file-item-size {
+  font-size: 11px;
+  font-family: var(--cinder-font-mono, monospace);
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+}
+
+.cinder-file-item-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-file-item-progress-track {
+  flex: 1;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+[data-theme="light"] .cinder-file-item-progress-track {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.cinder-file-item-progress-fill {
+  height: 100%;
+  background-color: var(--cinder-primary);
+  border-radius: 2px;
+  transition: width 120ms ease;
+}
+
+.cinder-file-item-progress-text {
+  font-size: 10px;
+  font-family: var(--cinder-font-mono, monospace);
+  color: var(--cinder-muted);
+  min-width: 28px;
+  text-align: right;
+}
+
+.cinder-file-item-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #ef4444;
+}
+
+.cinder-file-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.cinder-file-item-status-icon.cinder-file-success {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+}
+
+.cinder-file-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  transition: all 120ms ease;
+  padding: 0;
+}
+
+.cinder-file-action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--cinder-text);
+}
+
+.cinder-file-action-btn.cinder-file-remove-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}

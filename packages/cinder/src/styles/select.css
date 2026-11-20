@@ -1,0 +1,313 @@
+/* ==========================================================================
+   Select Component Styles (Cinder Slate)
+   ========================================================================== */
+
+.cinder-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  font-family: var(--cinder-font-sans);
+  width: 100%;
+}
+
+.cinder-select-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cinder-text);
+  line-height: 1.2;
+}
+
+.cinder-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  color: var(--cinder-text);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.cinder-select:hover:not(.cinder-select-disabled) {
+  border-color: var(--cinder-border-strong);
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-select.cinder-select-focused,
+.cinder-select:focus-visible {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 3px var(--cinder-focus-ring);
+  background-color: var(--cinder-surface);
+}
+
+.cinder-select-error {
+  border-color: var(--cinder-danger) !important;
+}
+
+.cinder-select-error.cinder-select-focused {
+  box-shadow: 0 0 0 3px var(--cinder-danger-bg) !important;
+}
+
+.cinder-select-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--cinder-surface) !important;
+  border-color: var(--cinder-border) !important;
+}
+
+/* Sizes */
+.cinder-select-sm {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+  gap: 6px;
+  border-radius: var(--cinder-radius-sm);
+}
+
+.cinder-select-md {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 13px;
+  gap: 8px;
+  border-radius: var(--cinder-radius-md);
+}
+
+.cinder-select-lg {
+  min-height: 48px;
+  padding: 0 16px;
+  font-size: 15px;
+  gap: 10px;
+  border-radius: var(--cinder-radius-lg);
+}
+
+/* Content Area */
+.cinder-select-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cinder-select-placeholder {
+  color: var(--cinder-muted);
+}
+
+.cinder-select-single-value {
+  color: var(--cinder-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Multiple Selection Tags */
+.cinder-select-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--cinder-surface-hover);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-xs);
+  padding: 1px 6px;
+  font-size: 11px;
+  color: var(--cinder-text);
+  line-height: 1.4;
+}
+
+.cinder-select-tag-remove {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-muted);
+  transition: color 0.12s ease;
+}
+
+.cinder-select-tag-remove:hover {
+  color: var(--cinder-danger);
+}
+
+/* Affixes & Actions */
+.cinder-select-prefix {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+}
+
+.cinder-select-suffix-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.cinder-select-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--cinder-muted);
+  transition: color 0.12s ease;
+}
+
+.cinder-select-clear-btn:hover {
+  color: var(--cinder-text);
+}
+
+.cinder-select-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-muted);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-select-arrow-open {
+  transform: rotate(180deg);
+}
+
+/* Floating Dropdown Panel */
+.cinder-select-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  box-shadow: var(--cinder-shadow-md);
+  padding: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: cinderSelectFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-select-dropdown-top {
+  animation: cinderSelectFadeInTop 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cinderSelectFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cinderSelectFadeInTop {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Search input inside dropdown */
+.cinder-select-search-box {
+  padding: 4px 6px 8px 6px;
+  border-bottom: 1px solid var(--cinder-border);
+  margin-bottom: 4px;
+}
+
+.cinder-select-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--cinder-bg);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-sm);
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--cinder-text);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.cinder-select-search-input:focus {
+  border-color: var(--cinder-primary);
+}
+
+/* Options */
+.cinder-select-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cinder-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--cinder-radius-sm);
+  font-size: 13px;
+  color: var(--cinder-text);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  user-select: none;
+}
+
+.cinder-select-option:hover:not(.cinder-select-option-disabled) {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-select-option-selected {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-primary);
+  font-weight: 500;
+}
+
+.cinder-select-option-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cinder-select-option-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cinder-select-option-desc {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  margin-top: 2px;
+}
+
+.cinder-select-option-check {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-primary);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.cinder-select-empty {
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--cinder-muted);
+}
+
+.cinder-select-helper {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.2;
+}
+
+.cinder-select-helper-error {
+  color: var(--cinder-danger);
+}

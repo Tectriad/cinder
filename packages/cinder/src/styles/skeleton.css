@@ -1,0 +1,116 @@
+/**
+ * Cinder UI - Skeleton Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderSkeletonWave {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes cinderSkeletonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* =========================================
+   BASE SKELETON
+   ========================================= */
+.cinder-skeleton {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--cinder-surface-hover);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Wave Animation */
+.cinder-skeleton-anim-wave {
+  background: linear-gradient(
+    90deg,
+    var(--cinder-surface-hover) 25%,
+    rgba(255, 255, 255, 0.08) 37%,
+    var(--cinder-surface-hover) 63%
+  );
+  background-size: 400% 100%;
+  animation: cinderSkeletonWave 1.4s ease infinite;
+}
+
+:root[data-theme="light"] .cinder-skeleton-anim-wave {
+  background: linear-gradient(
+    90deg,
+    #e4e4e7 25%,
+    #f4f4f5 37%,
+    #e4e4e7 63%
+  );
+  background-size: 400% 100%;
+}
+
+/* Pulse Animation */
+.cinder-skeleton-anim-pulse {
+  animation: cinderSkeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* Shape Variants */
+.cinder-skeleton-circle {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cinder-skeleton-rect {
+  border-radius: var(--cinder-radius-md, 8px);
+}
+
+.cinder-skeleton-button {
+  border-radius: var(--cinder-radius-md, 8px);
+}
+
+/* Paragraph Layout */
+.cinder-skeleton-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.cinder-skeleton-line {
+  display: block;
+}
+
+/* =========================================
+   CARD PRESET
+   ========================================= */
+.cinder-skeleton-card-preset {
+  width: 100%;
+  padding: 20px;
+  border-radius: var(--cinder-radius-lg, 12px);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  box-sizing: border-box;
+}
+
+.cinder-skeleton-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.cinder-skeleton-card-titles {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cinder-skeleton-card-body {
+  display: flex;
+  flex-direction: column;
+}

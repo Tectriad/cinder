@@ -1,0 +1,170 @@
+/**
+ * Cinder UI - Dropdown Menu Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderDropdownMenuScaleTop {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-100%) scale(1);
+  }
+}
+
+@keyframes cinderDropdownMenuScaleBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   MENU OVERLAY
+   ========================================= */
+.cinder-dropdown-menu-overlay {
+  position: absolute;
+  z-index: 1050;
+  padding: 4px;
+  border-radius: var(--cinder-radius-md, 8px);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  animation: cinderDropdownMenuScaleBottom 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+:root[data-theme="light"] .cinder-dropdown-menu-overlay {
+  background-color: #ffffff;
+  box-shadow: 0 12px 32px rgba(9, 9, 11, 0.12);
+}
+
+.cinder-dropdown-menu-placement-top,
+.cinder-dropdown-menu-placement-top-left,
+.cinder-dropdown-menu-placement-top-right {
+  animation: cinderDropdownMenuScaleTop 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-dropdown-menu-placement-bottom-right,
+.cinder-dropdown-menu-placement-top-right {
+  transform-origin: top right;
+  left: auto !important;
+  right: calc(100vw - var(--right, 0px));
+}
+
+/* =========================================
+   MENU ITEMS
+   ========================================= */
+.cinder-dropdown-menu-item-wrapper {
+  width: 100%;
+}
+
+.cinder-dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--cinder-text);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  gap: 8px;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.cinder-dropdown-menu-item:hover:not(.cinder-dropdown-menu-item-disabled) {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-text);
+}
+
+:root[data-theme="light"] .cinder-dropdown-menu-item:hover:not(.cinder-dropdown-menu-item-disabled) {
+  background-color: #f4f4f5;
+}
+
+.cinder-dropdown-menu-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+}
+
+.cinder-dropdown-menu-item:hover:not(.cinder-dropdown-menu-item-disabled) .cinder-dropdown-menu-item-icon {
+  color: var(--cinder-text);
+}
+
+.cinder-dropdown-menu-item-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-dropdown-menu-item-shortcut {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--cinder-muted);
+  font-family: var(--cinder-font-mono, monospace);
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+:root[data-theme="light"] .cinder-dropdown-menu-item-shortcut {
+  background-color: rgba(9, 9, 11, 0.05);
+}
+
+/* Danger Item */
+.cinder-dropdown-menu-item-danger {
+  color: var(--cinder-danger);
+}
+
+.cinder-dropdown-menu-item-danger .cinder-dropdown-menu-item-icon {
+  color: var(--cinder-danger);
+}
+
+.cinder-dropdown-menu-item-danger:hover:not(.cinder-dropdown-menu-item-disabled) {
+  background-color: var(--cinder-danger-bg);
+  color: var(--cinder-danger);
+}
+
+/* Disabled */
+.cinder-dropdown-menu-item-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Divider */
+.cinder-dropdown-menu-divider {
+  height: 1px;
+  margin: 4px 0;
+  background-color: var(--cinder-border);
+}
+
+/* Label header */
+.cinder-dropdown-menu-label {
+  padding: 6px 10px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cinder-muted);
+}

@@ -1,0 +1,117 @@
+/**
+ * Cinder UI - Link Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              text-decoration-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  border-radius: 2px;
+}
+
+/* Sizing */
+.cinder-link-sm {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cinder-link-md {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cinder-link-lg {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Variants */
+.cinder-link-primary {
+  color: var(--cinder-primary);
+}
+.cinder-link-primary:hover:not(.cinder-link-disabled) {
+  color: var(--cinder-hover);
+}
+
+.cinder-link-default {
+  color: var(--cinder-text);
+}
+.cinder-link-default:hover:not(.cinder-link-disabled) {
+  color: var(--cinder-primary);
+}
+
+.cinder-link-muted {
+  color: var(--cinder-muted);
+}
+.cinder-link-muted:hover:not(.cinder-link-disabled) {
+  color: var(--cinder-text);
+}
+
+.cinder-link-subtle {
+  color: var(--cinder-muted);
+}
+.cinder-link-subtle:hover:not(.cinder-link-disabled) {
+  color: var(--cinder-primary);
+}
+
+.cinder-link-danger {
+  color: #ef4444;
+}
+.cinder-link-danger:hover:not(.cinder-link-disabled) {
+  color: #dc2626;
+}
+
+/* Underline styles */
+.cinder-link-underline-none {
+  text-decoration: none;
+}
+
+.cinder-link-underline-hover {
+  text-decoration: none;
+}
+.cinder-link-underline-hover:hover:not(.cinder-link-disabled) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cinder-link-underline-always {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Focus and accessibility */
+.cinder-link:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Disabled state */
+.cinder-link-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none !important;
+}
+
+/* Icons */
+.cinder-link-icon-prefix,
+.cinder-link-icon-suffix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

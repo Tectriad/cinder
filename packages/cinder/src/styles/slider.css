@@ -1,0 +1,205 @@
+/**
+ * Cinder UI - Slider Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-slider {
+  position: relative;
+  box-sizing: border-box;
+  font-family: inherit;
+  user-select: none;
+  touch-action: none;
+}
+
+.cinder-slider-horizontal {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.cinder-slider-vertical {
+  height: 200px;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+/* Track Rail */
+.cinder-slider-rail {
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  transition: background-color 150ms ease;
+}
+
+[data-theme="light"] .cinder-slider-rail {
+  background-color: #e4e4e7;
+}
+
+.cinder-slider-horizontal .cinder-slider-rail {
+  height: 6px;
+  width: 100%;
+}
+
+.cinder-slider-vertical .cinder-slider-rail {
+  width: 6px;
+  height: 100%;
+}
+
+/* Active Highlight Track */
+.cinder-slider-track {
+  position: absolute;
+  background-color: var(--cinder-primary);
+  border-radius: 9999px;
+  transition: background-color 150ms ease;
+}
+
+.cinder-slider-horizontal .cinder-slider-track {
+  height: 100%;
+  top: 0;
+}
+
+.cinder-slider-vertical .cinder-slider-track {
+  width: 100%;
+  left: 0;
+}
+
+/* Handle Thumb */
+.cinder-slider-handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid var(--cinder-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: grab;
+  outline: none;
+  z-index: 2;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-sizing: border-box;
+}
+
+.cinder-slider-handle:hover,
+.cinder-slider-handle-active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.15) !important;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.22);
+}
+
+.cinder-slider-vertical .cinder-slider-handle:hover,
+.cinder-slider-vertical .cinder-slider-handle-active {
+  transform: translate(-50%, 50%) scale(1.15) !important;
+}
+
+.cinder-slider-handle:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 3px;
+}
+
+/* Floating Tooltip Bubble */
+.cinder-slider-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: opacity 120ms ease, transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.cinder-slider-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: var(--cinder-surface) transparent transparent transparent;
+}
+
+.cinder-slider-handle:hover .cinder-slider-tooltip,
+.cinder-slider-tooltip-visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Discrete Step Dots */
+.cinder-slider-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cinder-slider-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+}
+
+.cinder-slider-dot-active {
+  border-color: var(--cinder-primary);
+}
+
+/* Marks & Text */
+.cinder-slider-marks {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.cinder-slider-vertical .cinder-slider-marks {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: auto;
+  margin-top: 0;
+}
+
+.cinder-slider-mark-text {
+  position: absolute;
+  font-size: 12px;
+  color: var(--cinder-muted);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.cinder-slider-mark-text-active {
+  color: var(--cinder-text);
+  font-weight: 500;
+}
+
+/* Disabled State */
+.cinder-slider-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cinder-slider-disabled .cinder-slider-handle {
+  border-color: var(--cinder-muted);
+}
+
+.cinder-slider-disabled .cinder-slider-track {
+  background-color: var(--cinder-muted);
+}

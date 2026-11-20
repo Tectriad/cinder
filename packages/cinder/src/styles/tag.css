@@ -1,0 +1,155 @@
+/**
+ * Cinder UI - Tag & Chip Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+.cinder-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--cinder-radius-sm, 4px);
+  border: 1px solid transparent;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Sizes */
+.cinder-tag-sm {
+  font-size: 11px;
+  padding: 2px 7px;
+  height: 22px;
+}
+
+.cinder-tag-md {
+  font-size: 12px;
+  padding: 3px 9px;
+  height: 26px;
+}
+
+.cinder-tag-lg {
+  font-size: 13px;
+  padding: 5px 12px;
+  height: 30px;
+}
+
+/* Shapes */
+.cinder-tag-round {
+  border-radius: var(--cinder-radius-full, 9999px);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Variants (Dark Mode Default) */
+.cinder-tag-default {
+  background-color: var(--cinder-surface);
+  color: var(--cinder-text);
+  border-color: var(--cinder-border);
+}
+
+.cinder-tag-primary {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-primary);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.cinder-tag-success {
+  background-color: var(--cinder-success-bg, rgba(16, 185, 129, 0.12));
+  color: var(--cinder-success);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.cinder-tag-warning {
+  background-color: var(--cinder-warning-bg, rgba(245, 158, 11, 0.12));
+  color: var(--cinder-warning);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.cinder-tag-error {
+  background-color: var(--cinder-error-bg, rgba(239, 68, 68, 0.12));
+  color: var(--cinder-error);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.cinder-tag-info {
+  background-color: rgba(96, 165, 250, 0.12);
+  color: var(--cinder-accent, #60a5fa);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Light Mode Overrides */
+:root[data-theme="light"] .cinder-tag-default {
+  background-color: #f4f4f5;
+  color: var(--cinder-text);
+  border-color: var(--cinder-border);
+}
+
+:root[data-theme="light"] .cinder-tag-primary {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--cinder-primary);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+/* Icon & Content Slots */
+.cinder-tag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinder-tag-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Close Button */
+.cinder-tag-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 2px;
+  cursor: pointer;
+  color: currentColor;
+  opacity: 0.65;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  line-height: 1;
+}
+
+.cinder-tag-close-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Checkable Tag (Chip Mode) */
+.cinder-tag-checkable {
+  cursor: pointer;
+}
+
+.cinder-tag-checkable:hover {
+  opacity: 0.85;
+  border-color: var(--cinder-primary);
+}
+
+.cinder-tag-checked {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  border-color: var(--cinder-primary);
+}
+
+.cinder-tag-checked .cinder-tag-close-btn {
+  color: #ffffff;
+}
+
+/* Disabled */
+.cinder-tag-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}

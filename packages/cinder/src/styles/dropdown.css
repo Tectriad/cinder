@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Dropdown Component Styles (Cinder Slate)
+   ========================================================================== */
+
+.cinder-dropdown-trigger-wrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+.cinder-dropdown-overlay {
+  position: absolute;
+  z-index: 1050;
+  min-width: 180px;
+  max-width: 320px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  box-shadow: var(--cinder-shadow-md);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: cinderDropdownFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+@keyframes cinderDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Placements */
+.cinder-dropdown-placement-bottomLeft {
+  top: calc(100% + 6px);
+  left: 0;
+}
+
+.cinder-dropdown-placement-bottomRight {
+  top: calc(100% + 6px);
+  right: 0;
+}
+
+.cinder-dropdown-placement-bottomCenter {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cinder-dropdown-placement-topLeft {
+  bottom: calc(100% + 6px);
+  left: 0;
+}
+
+.cinder-dropdown-placement-topRight {
+  bottom: calc(100% + 6px);
+  right: 0;
+}
+
+.cinder-dropdown-placement-topCenter {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Items */
+.cinder-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--cinder-radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--cinder-text);
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  width: 100%;
+  user-select: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.cinder-dropdown-item:hover:not(.cinder-dropdown-item-disabled) {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-primary);
+}
+
+.cinder-dropdown-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+}
+
+.cinder-dropdown-item:hover:not(.cinder-dropdown-item-disabled) .cinder-dropdown-item-icon {
+  color: var(--cinder-primary);
+}
+
+.cinder-dropdown-item-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cinder-dropdown-item-extra {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  margin-left: auto;
+  padding-left: 8px;
+}
+
+.cinder-dropdown-item-danger {
+  color: var(--cinder-danger);
+}
+
+.cinder-dropdown-item-danger .cinder-dropdown-item-icon {
+  color: var(--cinder-danger);
+}
+
+.cinder-dropdown-item-danger:hover:not(.cinder-dropdown-item-disabled) {
+  background-color: var(--cinder-danger-bg) !important;
+  color: var(--cinder-danger) !important;
+}
+
+.cinder-dropdown-item-danger:hover:not(.cinder-dropdown-item-disabled) .cinder-dropdown-item-icon {
+  color: var(--cinder-danger) !important;
+}
+
+.cinder-dropdown-item-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cinder-dropdown-divider {
+  height: 1px;
+  background-color: var(--cinder-border);
+  margin: 4px 0;
+}
+
+.cinder-dropdown-group-title {
+  padding: 6px 12px 2px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cinder-muted);
+}

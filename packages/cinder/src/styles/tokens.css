@@ -1,0 +1,119 @@
+/**
+ * Cinder UI - Official Cinder Slate Design System Stylesheet
+ * Supports both Dark (Default) and Light Modes
+ */
+
+/* =========================================
+   CINDER SLATE — DARK THEME (Default)
+   ========================================= */
+:root,
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --cinder-bg: #09090b;
+  --cinder-surface: #121215;
+  --cinder-surface-hover: #1a1a1f;
+  --cinder-glass: rgba(18, 18, 21, 0.8);
+
+  /* Brand & Actions */
+  --cinder-primary: #3b82f6;
+  --cinder-primary-hover: #2563eb;
+  --cinder-primary-text: #ffffff;
+  --cinder-primary-fg: #ffffff;
+  --cinder-focus-ring: rgba(59, 130, 246, 0.35);
+
+  /* Secondary / Accent */
+  --cinder-accent: #60a5fa;
+  --cinder-accent-hover: #3b82f6;
+  --cinder-accent-fg: #09090b;
+
+  /* Borders & Elevation */
+  --cinder-border: #27272a;
+  --cinder-border-strong: #3f3f46;
+  --cinder-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --cinder-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --cinder-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+
+  /* Typography */
+  --cinder-text: #fafafa;
+  --cinder-muted: #a1a1aa;
+
+  /* Semantic Status (Dark) */
+  --cinder-success: #34d399;
+  --cinder-success-bg: rgba(52, 211, 153, 0.12);
+  --cinder-warning: #fbbf24;
+  --cinder-warning-bg: rgba(251, 191, 36, 0.12);
+  --cinder-danger: #f87171;
+  --cinder-danger-hover: #ef4444;
+  --cinder-danger-bg: rgba(248, 113, 113, 0.12);
+
+  /* Geometry & Fonts */
+  --cinder-radius-xs: 4px;
+  --cinder-radius-sm: 6px;
+  --cinder-radius-md: 8px;
+  --cinder-radius-lg: 12px;
+  --cinder-radius-full: 9999px;
+
+  --cinder-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --cinder-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* =========================================
+   CINDER SLATE — LIGHT THEME
+   ========================================= */
+:root[data-theme="light"],
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --cinder-bg: #fafafa;
+  --cinder-surface: #ffffff;
+  --cinder-surface-hover: #f4f4f5;
+  --cinder-glass: rgba(255, 255, 255, 0.82);
+
+  /* Brand & Actions */
+  --cinder-primary: #2563eb;
+  --cinder-primary-hover: #1d4ed8;
+  --cinder-primary-text: #ffffff;
+  --cinder-primary-fg: #ffffff;
+  --cinder-focus-ring: rgba(37, 99, 235, 0.25);
+
+  /* Secondary / Accent */
+  --cinder-accent: #3b82f6;
+  --cinder-accent-hover: #2563eb;
+  --cinder-accent-fg: #ffffff;
+
+  /* Borders & Elevation */
+  --cinder-border: #e4e4e7;
+  --cinder-border-strong: #d4d4d8;
+  --cinder-shadow-sm: 0 1px 2px rgba(9, 9, 11, 0.04);
+  --cinder-shadow-md: 0 8px 24px rgba(9, 9, 11, 0.08);
+  --cinder-shadow-lg: 0 12px 32px rgba(9, 9, 11, 0.12);
+
+  /* Typography */
+  --cinder-text: #09090b;
+  --cinder-muted: #71717a;
+
+  /* Semantic Status (Light - darkened for contrast) */
+  --cinder-success: #059669;
+  --cinder-success-bg: rgba(5, 150, 105, 0.1);
+  --cinder-warning: #d97706;
+  --cinder-warning-bg: rgba(217, 119, 6, 0.1);
+  --cinder-danger: #dc2626;
+  --cinder-danger-hover: #b91c1c;
+  --cinder-danger-bg: rgba(220, 38, 38, 0.1);
+}
+
+/* Base resets within components */
+.cinder-btn,
+.cinder-badge,
+.cinder-card,
+.cinder-input-wrapper,
+.cinder-glass-panel,
+.cinder-snippet,
+.cinder-dropdown-wrapper {
+  box-sizing: border-box;
+  font-family: var(--cinder-font-sans);
+}

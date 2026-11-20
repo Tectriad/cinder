@@ -1,0 +1,203 @@
+/**
+ * Cinder UI - Drawer & Sheet Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderDrawerMaskFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cinderDrawerSlideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes cinderDrawerSlideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes cinderDrawerSlideInTop {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes cinderDrawerSlideInBottom {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* =========================================
+   DRAWER ROOT OVERLAY
+   ========================================= */
+.cinder-drawer-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  box-sizing: border-box;
+}
+
+/* Backdrop Mask */
+.cinder-drawer-mask {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
+  cursor: pointer;
+  animation: cinderDrawerMaskFade 0.2s ease-out;
+}
+
+:root[data-theme="light"] .cinder-drawer-mask {
+  background-color: rgba(9, 9, 11, 0.45);
+}
+
+/* =========================================
+   PANEL CONTAINER
+   ========================================= */
+.cinder-drawer-panel {
+  position: fixed;
+  z-index: 1;
+  background-color: var(--cinder-surface);
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--cinder-text);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+:root[data-theme="light"] .cinder-drawer-panel {
+  background-color: #ffffff;
+  box-shadow: 0 20px 48px rgba(9, 9, 11, 0.16);
+}
+
+/* Placements */
+.cinder-drawer-placement-right .cinder-drawer-panel {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  border-left: 1px solid var(--cinder-border);
+  animation: cinderDrawerSlideInRight 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-drawer-placement-left .cinder-drawer-panel {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  border-right: 1px solid var(--cinder-border);
+  animation: cinderDrawerSlideInLeft 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-drawer-placement-top .cinder-drawer-panel {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--cinder-border);
+  animation: cinderDrawerSlideInTop 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-drawer-placement-bottom .cinder-drawer-panel {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid var(--cinder-border);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  animation: cinderDrawerSlideInBottom 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.cinder-drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-drawer-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-drawer-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+.cinder-drawer-description {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--cinder-muted);
+  line-height: 1.45;
+}
+
+.cinder-drawer-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cinder-drawer-close-btn:hover {
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-drawer-close-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--cinder-focus-ring);
+}
+
+/* =========================================
+   BODY
+   ========================================= */
+.cinder-drawer-body {
+  flex: 1;
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cinder-text);
+  overflow-y: auto;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.cinder-drawer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+:root[data-theme="light"] .cinder-drawer-footer {
+  background-color: #fafafa;
+}

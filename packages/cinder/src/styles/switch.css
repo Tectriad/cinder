@@ -1,0 +1,158 @@
+/**
+ * Cinder UI - Switch / Toggle Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+  user-select: none;
+  padding: 2px;
+  outline: none;
+  font-family: inherit;
+  transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] .cinder-switch {
+  background-color: #d4d4d8;
+}
+
+/* Checked State */
+.cinder-switch-checked {
+  background-color: var(--cinder-primary);
+}
+
+/* Hover State */
+.cinder-switch:hover:not(.cinder-switch-disabled) {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+[data-theme="light"] .cinder-switch:hover:not(.cinder-switch-disabled) {
+  background-color: #a1a1aa;
+}
+
+.cinder-switch-checked:hover:not(.cinder-switch-disabled) {
+  background-color: var(--cinder-hover);
+}
+
+/* Focus Visible */
+.cinder-switch:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+.cinder-switch-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Handle Knob */
+.cinder-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              width 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Inner Content (Labels / Icons) */
+.cinder-switch-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+  transition: margin 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Sizing - Small */
+.cinder-switch-sm {
+  width: 32px;
+  height: 18px;
+}
+.cinder-switch-sm .cinder-switch-handle {
+  width: 12px;
+  height: 12px;
+}
+.cinder-switch-sm.cinder-switch-checked .cinder-switch-handle {
+  transform: translateX(14px);
+}
+.cinder-switch-sm .cinder-switch-inner {
+  margin-left: 14px;
+  margin-right: 4px;
+}
+.cinder-switch-sm.cinder-switch-checked .cinder-switch-inner {
+  margin-left: 4px;
+  margin-right: 14px;
+}
+
+/* Sizing - Medium (Default) */
+.cinder-switch-md {
+  width: 44px;
+  height: 24px;
+}
+.cinder-switch-md .cinder-switch-handle {
+  width: 18px;
+  height: 18px;
+}
+.cinder-switch-md.cinder-switch-checked .cinder-switch-handle {
+  transform: translateX(20px);
+}
+.cinder-switch-md .cinder-switch-inner {
+  margin-left: 20px;
+  margin-right: 6px;
+}
+.cinder-switch-md.cinder-switch-checked .cinder-switch-inner {
+  margin-left: 6px;
+  margin-right: 20px;
+}
+
+/* Sizing - Large */
+.cinder-switch-lg {
+  width: 56px;
+  height: 30px;
+}
+.cinder-switch-lg .cinder-switch-handle {
+  width: 24px;
+  height: 24px;
+}
+.cinder-switch-lg.cinder-switch-checked .cinder-switch-handle {
+  transform: translateX(26px);
+}
+.cinder-switch-lg .cinder-switch-inner {
+  margin-left: 26px;
+  margin-right: 8px;
+  font-size: 12px;
+}
+.cinder-switch-lg.cinder-switch-checked .cinder-switch-inner {
+  margin-left: 8px;
+  margin-right: 26px;
+}
+
+/* Thumb Icon */
+.cinder-switch-thumb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+}

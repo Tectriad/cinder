@@ -1,0 +1,284 @@
+/**
+ * Cinder UI - Radio & Radio Group Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+/* Container */
+.cinder-radio {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: var(--cinder-text);
+  gap: 10px;
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-radio-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hidden Accessible Native Input */
+.cinder-radio-input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cinder-radio-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Styled Circle Indicator */
+.cinder-radio-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--cinder-surface);
+  border: 1.5px solid var(--cinder-border);
+  box-sizing: border-box;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-radio:hover:not(.cinder-radio-disabled) .cinder-radio-circle {
+  border-color: var(--cinder-primary);
+}
+
+.cinder-radio-checked .cinder-radio-circle {
+  border-color: var(--cinder-primary);
+  background-color: var(--cinder-surface);
+}
+
+/* Inner Dot Indicator */
+.cinder-radio-dot {
+  display: block;
+  border-radius: 50%;
+  background-color: var(--cinder-primary);
+  transform: scale(0);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-radio-checked .cinder-radio-dot {
+  transform: scale(1);
+}
+
+/* Focus Ring */
+.cinder-radio-input:focus-visible + .cinder-radio-circle {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+/* Sizing */
+.cinder-radio-sm .cinder-radio-circle {
+  width: 14px;
+  height: 14px;
+}
+.cinder-radio-sm .cinder-radio-dot {
+  width: 6px;
+  height: 6px;
+}
+.cinder-radio-sm .cinder-radio-label {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.cinder-radio-md .cinder-radio-circle {
+  width: 16px;
+  height: 16px;
+}
+.cinder-radio-md .cinder-radio-dot {
+  width: 8px;
+  height: 8px;
+}
+.cinder-radio-md .cinder-radio-label {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cinder-radio-lg .cinder-radio-circle {
+  width: 20px;
+  height: 20px;
+}
+.cinder-radio-lg .cinder-radio-dot {
+  width: 10px;
+  height: 10px;
+}
+.cinder-radio-lg .cinder-radio-label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Label & Content */
+.cinder-radio-content {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cinder-radio-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cinder-radio-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cinder-radio-label {
+  font-weight: 500;
+  color: var(--cinder-text);
+  line-height: 1.4;
+}
+
+.cinder-radio-description {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.4;
+}
+
+/* Card Variant */
+.cinder-radio-card {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.cinder-radio-card:hover:not(.cinder-radio-disabled) {
+  border-color: var(--cinder-border-strong, #3f3f46);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.cinder-radio-card.cinder-radio-checked {
+  border-color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+[data-theme="light"] .cinder-radio-card.cinder-radio-checked {
+  background-color: rgba(37, 99, 235, 0.04);
+}
+
+/* Radio Group */
+.cinder-radio-group {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.cinder-radio-group-horizontal {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cinder-radio-group-vertical {
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Radio Button Variant (Segmented Button Tab) */
+.cinder-radio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  outline: none;
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  margin-left: -1px;
+}
+
+.cinder-radio-group-horizontal .cinder-radio-button:first-child {
+  margin-left: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+.cinder-radio-group-horizontal .cinder-radio-button:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.cinder-radio-group-horizontal .cinder-radio-button:only-child {
+  border-radius: 6px;
+}
+
+.cinder-radio-button:hover:not(.cinder-radio-button-disabled) {
+  color: var(--cinder-text);
+  border-color: var(--cinder-primary);
+  z-index: 1;
+}
+
+.cinder-radio-button:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 1px;
+  z-index: 2;
+}
+
+.cinder-radio-button-checked {
+  color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.08);
+  font-weight: 600;
+  z-index: 1;
+}
+
+.cinder-radio-button-solid.cinder-radio-button-checked {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+}
+
+.cinder-radio-button-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Radio Button Sizing */
+.cinder-radio-button-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.cinder-radio-button-md {
+  height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.cinder-radio-button-lg {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+}

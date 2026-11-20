@@ -1,0 +1,154 @@
+/**
+ * Cinder UI - Popover Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderPopoverScaleTop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% + 6px)) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
+  }
+}
+
+@keyframes cinderPopoverScaleBottom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes cinderPopoverScaleLeft {
+  from {
+    opacity: 0;
+    transform: translate(calc(-100% + 6px), -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-100%, -50%) scale(1);
+  }
+}
+
+@keyframes cinderPopoverScaleRight {
+  from {
+    opacity: 0;
+    transform: translate(-6px, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+/* =========================================
+   POPOVER WRAPPER
+   ========================================= */
+.cinder-popover {
+  position: absolute;
+  z-index: 1050;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Placements */
+.cinder-popover-placement-top {
+  transform: translate(-50%, -100%);
+  animation: cinderPopoverScaleTop 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-popover-placement-bottom {
+  transform: translate(-50%, 0);
+  animation: cinderPopoverScaleBottom 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-popover-placement-left {
+  transform: translate(-100%, -50%);
+  animation: cinderPopoverScaleLeft 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-popover-placement-right {
+  transform: translate(0, -50%);
+  animation: cinderPopoverScaleRight 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Inner Card */
+.cinder-popover-inner {
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 10px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  min-width: 180px;
+  max-width: 340px;
+  overflow: hidden;
+  color: var(--cinder-text);
+}
+
+:root[data-theme="light"] .cinder-popover-inner {
+  background-color: #ffffff;
+  box-shadow: 0 12px 32px rgba(9, 9, 11, 0.12);
+}
+
+/* Header Title */
+.cinder-popover-title {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+/* Body Content */
+.cinder-popover-content {
+  padding: 12px 14px;
+  color: var(--cinder-text);
+}
+
+/* Arrow */
+.cinder-popover-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.cinder-popover-placement-top .cinder-popover-arrow {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-color: var(--cinder-border) transparent transparent transparent;
+}
+
+.cinder-popover-placement-bottom .cinder-popover-arrow {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent var(--cinder-border) transparent;
+}
+
+.cinder-popover-placement-left .cinder-popover-arrow {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent var(--cinder-border);
+}
+
+.cinder-popover-placement-right .cinder-popover-arrow {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 6px 6px 0;
+  border-color: transparent var(--cinder-border) transparent transparent;
+}

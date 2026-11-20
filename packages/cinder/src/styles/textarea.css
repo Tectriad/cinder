@@ -1,0 +1,139 @@
+/**
+ * Cinder UI - TextArea Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-textarea-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.cinder-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 150ms ease;
+}
+
+.cinder-textarea::placeholder {
+  color: var(--cinder-muted);
+  opacity: 0.7;
+}
+
+.cinder-textarea:hover:not(:disabled):not([readonly]) {
+  border-color: var(--cinder-border-strong, #3f3f46);
+}
+
+.cinder-textarea:focus {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+/* Statuses */
+.cinder-textarea-error .cinder-textarea {
+  border-color: #ef4444 !important;
+}
+
+.cinder-textarea-error .cinder-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+.cinder-textarea-warning .cinder-textarea {
+  border-color: #f59e0b !important;
+}
+
+.cinder-textarea-warning .cinder-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18) !important;
+}
+
+/* Sizing */
+.cinder-textarea-sm .cinder-textarea {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.cinder-textarea-md .cinder-textarea {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.cinder-textarea-lg .cinder-textarea {
+  font-size: 16px;
+  padding: 10px 14px;
+}
+
+/* Disabled & ReadOnly */
+.cinder-textarea-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cinder-textarea-disabled .cinder-textarea {
+  cursor: not-allowed;
+}
+
+.cinder-textarea-readonly .cinder-textarea {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Clear Button */
+.cinder-textarea-clear-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cinder-border);
+  border: none;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  outline: none;
+  transition: all 120ms ease;
+  z-index: 2;
+}
+
+.cinder-textarea-clear-btn:hover {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+}
+
+/* Character Counter */
+.cinder-textarea-count {
+  align-self: flex-end;
+  font-size: 11px;
+  color: var(--cinder-muted);
+  margin-top: 4px;
+  padding: 0 2px;
+}
+
+.cinder-textarea-count-exceeded {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Subtle Scrollbar */
+.cinder-textarea::-webkit-scrollbar {
+  width: 5px;
+}
+.cinder-textarea::-webkit-scrollbar-thumb {
+  background: var(--cinder-border);
+  border-radius: 4px;
+}

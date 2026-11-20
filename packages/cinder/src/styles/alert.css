@@ -1,0 +1,213 @@
+/**
+ * Cinder UI - Alert & Banner Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+.cinder-alert {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--cinder-radius-md, 8px);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-alert-banner {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+/* =========================================
+   ICON
+   ========================================= */
+.cinder-alert-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 12px;
+  margin-top: 2px;
+}
+
+/* =========================================
+   BODY CONTENT
+   ========================================= */
+.cinder-alert-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-alert-title {
+  font-weight: 600;
+  color: var(--cinder-text);
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.cinder-alert-description {
+  font-size: 13px;
+  color: var(--cinder-muted);
+  line-height: 1.45;
+}
+
+/* =========================================
+   ACTION & CLOSE
+   ========================================= */
+.cinder-alert-action {
+  margin-left: 14px;
+  flex-shrink: 0;
+}
+
+.cinder-alert-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cinder-alert-close-btn:hover {
+  color: var(--cinder-text);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="light"] .cinder-alert-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.cinder-alert-close-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--cinder-focus-ring);
+}
+
+/* =========================================
+   TYPES & VARIANTS
+   ========================================= */
+/* Info (Blue) */
+.cinder-alert-type-info.cinder-alert-variant-subtle,
+.cinder-alert-type-info.cinder-alert-variant-banner {
+  background-color: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+.cinder-alert-type-info .cinder-alert-icon-wrapper {
+  color: var(--cinder-primary);
+}
+
+/* Success (Emerald) */
+.cinder-alert-type-success.cinder-alert-variant-subtle,
+.cinder-alert-type-success.cinder-alert-variant-banner {
+  background-color: var(--cinder-success-bg);
+  border-color: rgba(52, 211, 153, 0.25);
+}
+.cinder-alert-type-success .cinder-alert-icon-wrapper {
+  color: var(--cinder-success);
+}
+
+/* Warning (Amber) */
+.cinder-alert-type-warning.cinder-alert-variant-subtle,
+.cinder-alert-type-warning.cinder-alert-variant-banner {
+  background-color: var(--cinder-warning-bg);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+.cinder-alert-type-warning .cinder-alert-icon-wrapper {
+  color: var(--cinder-warning);
+}
+
+/* Danger (Red) */
+.cinder-alert-type-danger.cinder-alert-variant-subtle,
+.cinder-alert-type-danger.cinder-alert-variant-banner {
+  background-color: var(--cinder-danger-bg);
+  border-color: rgba(248, 113, 113, 0.25);
+}
+.cinder-alert-type-danger .cinder-alert-icon-wrapper {
+  color: var(--cinder-danger);
+}
+
+/* Neutral */
+.cinder-alert-type-neutral.cinder-alert-variant-subtle,
+.cinder-alert-type-neutral.cinder-alert-variant-banner {
+  background-color: var(--cinder-surface-hover);
+  border-color: var(--cinder-border);
+}
+.cinder-alert-type-neutral .cinder-alert-icon-wrapper {
+  color: var(--cinder-muted);
+}
+
+/* Solid Variant */
+.cinder-alert-variant-solid.cinder-alert-type-info {
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+}
+.cinder-alert-variant-solid.cinder-alert-type-info .cinder-alert-title,
+.cinder-alert-variant-solid.cinder-alert-type-info .cinder-alert-description,
+.cinder-alert-variant-solid.cinder-alert-type-info .cinder-alert-icon-wrapper,
+.cinder-alert-variant-solid.cinder-alert-type-info .cinder-alert-close-btn {
+  color: #ffffff;
+}
+
+.cinder-alert-variant-solid.cinder-alert-type-success {
+  background-color: var(--cinder-success);
+  color: #ffffff;
+}
+.cinder-alert-variant-solid.cinder-alert-type-success .cinder-alert-title,
+.cinder-alert-variant-solid.cinder-alert-type-success .cinder-alert-description,
+.cinder-alert-variant-solid.cinder-alert-type-success .cinder-alert-icon-wrapper,
+.cinder-alert-variant-solid.cinder-alert-type-success .cinder-alert-close-btn {
+  color: #ffffff;
+}
+
+.cinder-alert-variant-solid.cinder-alert-type-warning {
+  background-color: var(--cinder-warning);
+  color: #09090b;
+}
+.cinder-alert-variant-solid.cinder-alert-type-warning .cinder-alert-title,
+.cinder-alert-variant-solid.cinder-alert-type-warning .cinder-alert-description,
+.cinder-alert-variant-solid.cinder-alert-type-warning .cinder-alert-icon-wrapper,
+.cinder-alert-variant-solid.cinder-alert-type-warning .cinder-alert-close-btn {
+  color: #09090b;
+}
+
+.cinder-alert-variant-solid.cinder-alert-type-danger {
+  background-color: var(--cinder-danger);
+  color: #ffffff;
+}
+.cinder-alert-variant-solid.cinder-alert-type-danger .cinder-alert-title,
+.cinder-alert-variant-solid.cinder-alert-type-danger .cinder-alert-description,
+.cinder-alert-variant-solid.cinder-alert-type-danger .cinder-alert-icon-wrapper,
+.cinder-alert-variant-solid.cinder-alert-type-danger .cinder-alert-close-btn {
+  color: #ffffff;
+}
+
+/* Outline Variant */
+.cinder-alert-variant-outline {
+  background-color: transparent;
+}
+.cinder-alert-variant-outline.cinder-alert-type-info {
+  border-color: var(--cinder-primary);
+}
+.cinder-alert-variant-outline.cinder-alert-type-success {
+  border-color: var(--cinder-success);
+}
+.cinder-alert-variant-outline.cinder-alert-type-warning {
+  border-color: var(--cinder-warning);
+}
+.cinder-alert-variant-outline.cinder-alert-type-danger {
+  border-color: var(--cinder-danger);
+}

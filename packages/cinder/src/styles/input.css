@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Input Component Styles
+   ========================================================================== */
+
+.cinder-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.cinder-input-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinder-text);
+}
+
+.cinder-input-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+  overflow: hidden;
+  padding: 0 12px;
+}
+
+.cinder-input-container:focus-within {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 3px var(--cinder-focus-ring);
+}
+
+.cinder-input-sm { height: 34px; }
+.cinder-input-md { height: 42px; }
+.cinder-input-lg { height: 50px; }
+
+.cinder-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--cinder-text);
+  font-size: 13px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.cinder-input-field::placeholder {
+  color: var(--cinder-muted);
+}
+
+.cinder-input-affix-left {
+  margin-right: 8px;
+  color: var(--cinder-muted);
+  display: flex;
+  align-items: center;
+}
+
+.cinder-input-affix-right {
+  margin-left: 8px;
+  color: var(--cinder-muted);
+  display: flex;
+  align-items: center;
+}
+
+.cinder-input-error {
+  border-color: var(--cinder-danger) !important;
+}
+
+.cinder-input-helper {
+  font-size: 11px;
+  color: var(--cinder-muted);
+}
+
+.cinder-input-helper-error {
+  color: var(--cinder-danger);
+}

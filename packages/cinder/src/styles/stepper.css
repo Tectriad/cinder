@@ -1,0 +1,272 @@
+/**
+ * Cinder UI - Stepper Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-stepper {
+  display: flex;
+  box-sizing: border-box;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Horizontal Orientation */
+.cinder-stepper-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cinder-stepper-horizontal .cinder-step {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+  min-width: 0;
+  padding-right: 16px;
+}
+
+.cinder-stepper-horizontal .cinder-step:last-child {
+  flex: 1 1 0;
+  padding-right: 0;
+}
+
+.cinder-stepper-horizontal .cinder-step-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Horizontal Connector */
+.cinder-stepper-horizontal .cinder-step-connector {
+  position: absolute;
+  top: 15px;
+  left: 38px;
+  right: 8px;
+  height: 2px;
+  background-color: var(--cinder-border);
+  transition: background-color 200ms ease;
+  z-index: 1;
+}
+
+.cinder-stepper-horizontal .cinder-step:last-child .cinder-step-connector {
+  display: none;
+}
+
+/* Vertical Orientation */
+.cinder-stepper-vertical {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cinder-stepper-vertical .cinder-step {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  position: relative;
+}
+
+/* Vertical Connector */
+.cinder-stepper-vertical .cinder-step-connector {
+  position: absolute;
+  top: 36px;
+  bottom: -16px;
+  left: 15px;
+  width: 2px;
+  background-color: var(--cinder-border);
+  transition: background-color 200ms ease;
+  z-index: 1;
+}
+
+.cinder-stepper-vertical .cinder-step:last-child .cinder-step-connector {
+  display: none;
+}
+
+/* Icon Container */
+.cinder-step-icon-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: var(--cinder-surface);
+  border: 2px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Size Variants */
+.cinder-stepper-sm .cinder-step-icon-container {
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+}
+
+.cinder-stepper-sm.cinder-stepper-horizontal .cinder-step-connector {
+  top: 11px;
+  left: 30px;
+}
+
+.cinder-stepper-sm.cinder-stepper-vertical .cinder-step-connector {
+  top: 28px;
+  left: 11px;
+}
+
+.cinder-stepper-lg .cinder-step-icon-container {
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.cinder-stepper-lg.cinder-stepper-horizontal .cinder-step-connector {
+  top: 19px;
+  left: 46px;
+}
+
+.cinder-stepper-lg.cinder-stepper-vertical .cinder-step-connector {
+  top: 44px;
+  left: 19px;
+}
+
+/* Step Statuses */
+/* Wait */
+.cinder-step-wait .cinder-step-icon-container {
+  border-color: var(--cinder-border);
+  color: var(--cinder-muted);
+}
+
+.cinder-step-wait .cinder-step-title {
+  color: var(--cinder-muted);
+}
+
+/* Process */
+.cinder-step-process .cinder-step-icon-container {
+  border-color: var(--cinder-primary);
+  background-color: var(--cinder-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+}
+
+.cinder-step-process .cinder-step-title {
+  color: var(--cinder-text);
+  font-weight: 600;
+}
+
+/* Finish */
+.cinder-step-finish .cinder-step-icon-container {
+  border-color: var(--cinder-primary);
+  color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.cinder-step-finish .cinder-step-connector {
+  background-color: var(--cinder-primary);
+}
+
+.cinder-step-finish .cinder-step-title {
+  color: var(--cinder-text);
+}
+
+/* Error */
+.cinder-step-error .cinder-step-icon-container {
+  border-color: #ef4444;
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.cinder-step-error .cinder-step-title {
+  color: #ef4444;
+}
+
+/* Step Dots Variant */
+.cinder-stepper-dots .cinder-step-icon-container {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cinder-border);
+}
+
+.cinder-stepper-dots .cinder-step-process .cinder-step-icon-container {
+  background-color: var(--cinder-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.cinder-stepper-dots .cinder-step-finish .cinder-step-icon-container {
+  background-color: var(--cinder-primary);
+}
+
+.cinder-stepper-dots.cinder-stepper-horizontal .cinder-step-connector {
+  top: 5px;
+  left: 20px;
+}
+
+.cinder-stepper-dots.cinder-stepper-vertical .cinder-step-connector {
+  top: 16px;
+  left: 5px;
+}
+
+/* Content Area */
+.cinder-step-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.cinder-stepper-vertical .cinder-step-content {
+  margin-top: 4px;
+}
+
+.cinder-step-title-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cinder-step-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 150ms ease;
+}
+
+.cinder-step-subtitle {
+  font-size: 12px;
+  color: var(--cinder-muted);
+}
+
+.cinder-step-description {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* Clickable / Interactive */
+.cinder-step-clickable {
+  cursor: pointer;
+  outline: none;
+}
+
+.cinder-step-clickable:hover .cinder-step-icon-container {
+  border-color: var(--cinder-primary);
+  transform: scale(1.05);
+}
+
+.cinder-step-clickable:focus-visible .cinder-step-icon-container {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+.cinder-step-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}

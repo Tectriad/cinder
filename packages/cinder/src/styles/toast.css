@@ -1,0 +1,363 @@
+/**
+ * Cinder UI - Toast & Snackbar Styles
+ * Theme: Cinder Slate (Dark & Light)
+ * Senior UX/UI Standards: Multi-placement portals, directional ease-in/ease-out animations,
+ * countdown progress bar, and user-customizable surface colors.
+ */
+
+/* =========================================
+   CONTAINER PORTALS
+   ========================================= */
+.cinder-toast-container {
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Placements */
+.cinder-toast-placement-top-right {
+  top: 20px;
+  right: 20px;
+  align-items: flex-end;
+}
+
+.cinder-toast-placement-top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.cinder-toast-placement-top-left {
+  top: 20px;
+  left: 20px;
+  align-items: flex-start;
+}
+
+.cinder-toast-placement-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  align-items: flex-end;
+}
+
+.cinder-toast-placement-bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.cinder-toast-placement-bottom-left {
+  bottom: 20px;
+  left: 20px;
+  align-items: flex-start;
+}
+
+/* =========================================
+   ANIMATION KEYFRAMES (EASE-IN & EASE-OUT)
+   ========================================= */
+/* Slide from Top */
+@keyframes cinderToastSlideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes cinderToastSlideOutTop {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.95);
+  }
+}
+
+/* Slide from Bottom */
+@keyframes cinderToastSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes cinderToastSlideOutBottom {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+}
+
+/* Fade */
+@keyframes cinderToastFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes cinderToastFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Zoom */
+@keyframes cinderToastZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes cinderToastZoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+/* Bounce */
+@keyframes cinderToastBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Countdown Progress Bar */
+@keyframes cinderToastCountdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* =========================================
+   TOAST ITEM CORE
+   ========================================= */
+.cinder-toast {
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--cinder-radius-md, 8px);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow: hidden;
+  transition:
+    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.18s ease;
+}
+
+:root[data-theme="light"] .cinder-toast {
+  box-shadow: 0 10px 30px rgba(9, 9, 11, 0.12);
+  background-color: #ffffff;
+}
+
+.cinder-toast:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================
+   ANIMATION VARIANT ATTACHMENTS
+   ========================================= */
+/* Slide (Default) */
+.cinder-toast-anim-slide.cinder-toast-pos-top {
+  animation: cinderToastSlideInTop 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.cinder-toast-anim-slide.cinder-toast-pos-top.cinder-toast-exiting {
+  animation: cinderToastSlideOutTop 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.cinder-toast-anim-slide.cinder-toast-pos-bottom {
+  animation: cinderToastSlideInBottom 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.cinder-toast-anim-slide.cinder-toast-pos-bottom.cinder-toast-exiting {
+  animation: cinderToastSlideOutBottom 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+/* Fade */
+.cinder-toast-anim-fade {
+  animation: cinderToastFadeIn 0.22s ease-out forwards;
+}
+.cinder-toast-anim-fade.cinder-toast-exiting {
+  animation: cinderToastFadeOut 0.2s ease-in forwards;
+}
+
+/* Zoom */
+.cinder-toast-anim-zoom {
+  animation: cinderToastZoomIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.cinder-toast-anim-zoom.cinder-toast-exiting {
+  animation: cinderToastZoomOut 0.2s ease-in forwards;
+}
+
+/* Bounce */
+.cinder-toast-anim-bounce {
+  animation: cinderToastBounceIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.cinder-toast-anim-bounce.cinder-toast-exiting {
+  animation: cinderToastZoomOut 0.2s ease-in forwards;
+}
+
+/* =========================================
+   STATUS ICONS & ACCENTS
+   ========================================= */
+.cinder-toast-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 12px;
+  margin-top: 1px;
+}
+
+.cinder-toast-type-info .cinder-toast-status-icon {
+  color: var(--cinder-primary);
+}
+.cinder-toast-type-success .cinder-toast-status-icon {
+  color: var(--cinder-success);
+}
+.cinder-toast-type-warning .cinder-toast-status-icon {
+  color: var(--cinder-warning);
+}
+.cinder-toast-type-error .cinder-toast-status-icon {
+  color: var(--cinder-danger);
+}
+.cinder-toast-type-neutral .cinder-toast-status-icon {
+  color: var(--cinder-muted);
+}
+
+.cinder-toast-type-info { border-left: 3px solid var(--cinder-primary); }
+.cinder-toast-type-success { border-left: 3px solid var(--cinder-success); }
+.cinder-toast-type-warning { border-left: 3px solid var(--cinder-warning); }
+.cinder-toast-type-error { border-left: 3px solid var(--cinder-danger); }
+
+/* =========================================
+   BODY CONTENT
+   ========================================= */
+.cinder-toast-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-toast-title {
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.cinder-toast-description {
+  font-size: 13px;
+  color: var(--cinder-muted);
+  line-height: 1.4;
+}
+
+/* =========================================
+   ACTION & CLOSE
+   ========================================= */
+.cinder-toast-action {
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.cinder-toast-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.cinder-toast-close-btn:hover {
+  color: var(--cinder-text);
+}
+
+.cinder-toast-close-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--cinder-focus-ring);
+}
+
+/* =========================================
+   COUNTDOWN PROGRESS BAR
+   ========================================= */
+.cinder-toast-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+:root[data-theme="light"] .cinder-toast-progress-track {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.cinder-toast-progress-bar {
+  height: 100%;
+  width: 100%;
+  animation: cinderToastCountdown linear forwards;
+  background-color: var(--cinder-primary);
+}
+
+.cinder-toast-type-success .cinder-toast-progress-bar {
+  background-color: var(--cinder-success);
+}
+.cinder-toast-type-warning .cinder-toast-progress-bar {
+  background-color: var(--cinder-warning);
+}
+.cinder-toast-type-error .cinder-toast-progress-bar {
+  background-color: var(--cinder-danger);
+}
+.cinder-toast-type-neutral .cinder-toast-progress-bar {
+  background-color: var(--cinder-muted);
+}

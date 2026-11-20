@@ -1,0 +1,273 @@
+/**
+ * Cinder UI - Typography Component Styles
+ * Cinder Slate Design System Token Adherence
+ * Fonts: Plus Jakarta Sans (UI) & JetBrains Mono (Code/Kbd)
+ */
+
+.cinder-typography {
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  color: var(--cinder-text);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Headings */
+.cinder-heading {
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  color: var(--cinder-text);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cinder-heading-h1 {
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.cinder-heading-h2 {
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cinder-heading-h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.cinder-heading-h4 {
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cinder-heading-h5 {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.cinder-heading-h6 {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Gradient Hero Heading Accent */
+.cinder-heading-gradient {
+  background: linear-gradient(135deg, var(--cinder-text) 0%, var(--cinder-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text Element */
+.cinder-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+.cinder-text-xs { font-size: 11px; }
+.cinder-text-sm { font-size: 13px; }
+.cinder-text-md { font-size: 14px; }
+.cinder-text-lg { font-size: 16px; }
+.cinder-text-xl { font-size: 18px; }
+
+/* Font Weights */
+.cinder-font-normal { font-weight: 400; }
+.cinder-font-medium { font-weight: 500; }
+.cinder-font-semibold { font-weight: 600; }
+.cinder-font-bold { font-weight: 700; }
+.cinder-font-extrabold { font-weight: 800; }
+
+/* Semantic Types */
+.cinder-typography-secondary { color: var(--cinder-muted); }
+.cinder-typography-muted { color: var(--cinder-muted); }
+.cinder-typography-primary { color: var(--cinder-primary); }
+.cinder-typography-success { color: var(--cinder-success, #34d399); }
+.cinder-typography-warning { color: var(--cinder-warning, #fbbf24); }
+.cinder-typography-danger { color: var(--cinder-danger, #f87171); }
+
+/* Paragraph */
+.cinder-paragraph {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: var(--cinder-text);
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cinder-paragraph-sm { font-size: 13px; line-height: 1.55; }
+.cinder-paragraph-md { font-size: 15px; line-height: 1.6; }
+.cinder-paragraph-lg { font-size: 17px; line-height: 1.65; }
+
+.cinder-paragraph-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--cinder-muted);
+}
+
+.cinder-paragraph-spacing-tight { margin-bottom: 0.5em; }
+.cinder-paragraph-spacing-normal { margin-bottom: 1em; }
+.cinder-paragraph-spacing-relaxed { margin-bottom: 1.6em; }
+
+/* Text Inline Code */
+.cinder-text-inline-code,
+.cinder-code {
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+  font-size: 0.88em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+[data-theme="light"] .cinder-text-inline-code,
+[data-theme="light"] .cinder-code {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.cinder-code-sm { font-size: 0.8em; padding: 1px 4px; }
+.cinder-code-md { font-size: 0.88em; padding: 2px 6px; }
+.cinder-code-lg { font-size: 0.95em; padding: 3px 8px; }
+
+/* Keyboard Kbd Pill */
+.cinder-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-bottom: 2px solid var(--cinder-border-strong, #3f3f46);
+  color: var(--cinder-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  vertical-align: baseline;
+}
+
+.cinder-kbd-sm { font-size: 10px; padding: 2px 5px; }
+.cinder-kbd-md { font-size: 11px; padding: 3px 6px; }
+.cinder-kbd-lg { font-size: 13px; padding: 4px 8px; }
+
+/* Text Highlight Mark */
+.cinder-text-mark {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: inherit;
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Label */
+.cinder-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--cinder-text);
+  user-select: none;
+}
+
+.cinder-label-sm { font-size: 12px; }
+.cinder-label-md { font-size: 13px; }
+.cinder-label-lg { font-size: 15px; }
+
+.cinder-label-asterisk {
+  color: #ef4444;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cinder-label-optional {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  font-weight: 400;
+}
+
+.cinder-label-tooltip-trigger {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-muted);
+  cursor: help;
+  transition: color 150ms ease;
+}
+
+.cinder-label-tooltip-trigger:hover {
+  color: var(--cinder-text);
+}
+
+/* Micro Actions (Copy & Edit) */
+.cinder-typography-copy-btn,
+.cinder-typography-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: all 120ms ease;
+  vertical-align: middle;
+}
+
+.cinder-typography-copy-btn:hover,
+.cinder-typography-edit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--cinder-text);
+}
+
+[data-theme="light"] .cinder-typography-copy-btn:hover,
+[data-theme="light"] .cinder-typography-edit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.cinder-typography-copy-btn:focus-visible,
+.cinder-typography-edit-btn:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 1px;
+}
+
+/* Inline Edit Input */
+.cinder-typography-inline-editor {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cinder-typography-inline-input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-primary);
+  border-radius: 4px;
+  padding: 2px 6px;
+  outline: 2px solid rgba(59, 130, 246, 0.25);
+}

@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production and Build Outputs
+dist/
+dist-ssr/
+build/
+out/
+*.tsbuildinfo
+
+# Local Environment and Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# Cache and Temporary Files
+.cache/
+.temp/
+tmp/
+.npm/
+.vite/
+.turbo/
+.eslintcache
+.stylelintcache
+.parcel-cache
+
+# Testing and Coverage
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and IDE Directories
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# AI and Agent Local Workspaces
+.gemini/
+.antigravity/

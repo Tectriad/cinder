@@ -1,0 +1,159 @@
+/**
+ * Cinder UI - Progress Bar Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderProgressActive {
+  0% {
+    opacity: 0.1;
+    width: 0;
+  }
+  20% {
+    opacity: 0.5;
+    width: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+@keyframes cinderProgressIndeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+.cinder-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* =========================================
+   TRACK
+   ========================================= */
+.cinder-progress-track {
+  position: relative;
+  flex: 1;
+  background-color: var(--cinder-surface-hover);
+  border-radius: var(--cinder-radius-full, 9999px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"] .cinder-progress-track {
+  background-color: #e4e4e7;
+}
+
+/* Sizes */
+.cinder-progress-size-sm .cinder-progress-track {
+  height: 4px;
+}
+.cinder-progress-size-md .cinder-progress-track {
+  height: 8px;
+}
+.cinder-progress-size-lg .cinder-progress-track {
+  height: 12px;
+}
+
+/* =========================================
+   FILL
+   ========================================= */
+.cinder-progress-fill {
+  position: relative;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--cinder-primary);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Buffer */
+.cinder-progress-buffer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: width 0.35s ease;
+}
+
+:root[data-theme="light"] .cinder-progress-buffer {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Status Colors */
+.cinder-progress-status-success .cinder-progress-fill {
+  background-color: var(--cinder-success);
+}
+
+.cinder-progress-status-warning .cinder-progress-fill {
+  background-color: var(--cinder-warning);
+}
+
+.cinder-progress-status-danger .cinder-progress-fill {
+  background-color: var(--cinder-danger);
+}
+
+/* Active Shimmer Wave */
+.cinder-progress-fill-active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  border-radius: inherit;
+  opacity: 0;
+  animation: cinderProgressActive 2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+/* Indeterminate Motion */
+.cinder-progress-indeterminate .cinder-progress-track {
+  position: relative;
+}
+
+.cinder-progress-indeterminate .cinder-progress-fill {
+  position: absolute;
+  background-color: var(--cinder-primary);
+  animation: cinderProgressIndeterminate 1.8s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+/* =========================================
+   TEXT LABEL
+   ========================================= */
+.cinder-progress-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cinder-muted);
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.cinder-progress-info-icon {
+  vertical-align: middle;
+}
+
+.cinder-progress-status-success .cinder-progress-text {
+  color: var(--cinder-success);
+}
+
+.cinder-progress-status-danger .cinder-progress-text {
+  color: var(--cinder-danger);
+}

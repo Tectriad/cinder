@@ -1,0 +1,283 @@
+import type { CDFormFieldConfig, CDFormActionsConfig } from "@cinder-ui/core";
+
+export const COMPREHENSIVE_FIELDS: CDFormFieldConfig[] = [
+  {
+    name: "clusterName",
+    label: "Cluster Identifier",
+    type: "text",
+    placeholder: "e.g. cinder-prod-us-east-1",
+    tooltip: "Must start with a letter and contain lowercase alphanumeric and hyphens",
+    colSpan: 6,
+    required: true,
+    validation: {
+      pattern: /^[a-z][a-z0-9-]*[a-z0-9]$/,
+      patternMessage: "Identifier must start with a lowercase letter and contain hyphens",
+    },
+  },
+  {
+    name: "region",
+    label: "Cloud Region",
+    type: "select",
+    placeholder: "Select deployment region",
+    colSpan: 6,
+    required: true,
+    options: [
+      { label: "US East (N. Virginia)", value: "us-east-1" },
+      { label: "US West (Oregon)", value: "us-west-2" },
+      { label: "EU Central (Frankfurt)", value: "eu-central-1" },
+      { label: "AP South (Mumbai)", value: "ap-south-1" },
+    ],
+  },
+  {
+    name: "hourlyBudget",
+    label: "Hourly Budget Limit (Decimal)",
+    type: "decimal",
+    placeholder: "0.00",
+    colSpan: 6,
+    min: 0.5,
+    max: 1000,
+    step: 0.25,
+    defaultValue: 12.5,
+    helpText: "Precision decimal budget rate in USD",
+    validation: {
+      preset: "decimal",
+    },
+  },
+  {
+    name: "environment",
+    label: "Deployment Environment",
+    type: "radio",
+    colSpan: 6,
+    defaultValue: "staging",
+    options: [
+      { label: "Development", value: "dev" },
+      { label: "Staging", value: "staging" },
+      { label: "Production", value: "prod" },
+    ],
+  },
+  {
+    name: "serviceTags",
+    label: "Infrastructure Tags",
+    type: "multiselect",
+    placeholder: "Select tags...",
+    colSpan: 6,
+    options: [
+      { label: "High Availability", value: "ha" },
+      { label: "Auto Healing", value: "healing" },
+      { label: "PCI-DSS Compliant", value: "pci" },
+      { label: "Telemetry Monitored", value: "telemetry" },
+    ],
+  },
+  {
+    name: "launchDate",
+    label: "Scheduled Provision Date",
+    type: "date-picker",
+    colSpan: 6,
+    placeholder: "Select target launch date",
+  },
+  {
+    name: "autoScale",
+    label: "Elastic Scaling",
+    type: "switch",
+    placeholder: "Enable dynamic worker auto-scaling",
+    colSpan: 6,
+    defaultValue: true,
+  },
+  {
+    name: "workerInstances",
+    label: "Min Worker Capacity (Slider)",
+    type: "slider",
+    colSpan: 6,
+    min: 1,
+    max: 20,
+    step: 1,
+    defaultValue: 4,
+  },
+  {
+    name: "manifestUpload",
+    label: "Custom Helm / Kubernetes Manifest",
+    type: "file-picker",
+    colSpan: 12,
+    placeholder: "Select Manifest (.yaml, .json)",
+    accept: ".yaml,.yml,.json",
+  },
+  {
+    name: "releaseNotes",
+    label: "Release Notes & Annotations",
+    type: "textarea",
+    placeholder: "Provide release details and change logs...",
+    colSpan: 12,
+    rows: 3,
+    showCount: true,
+  },
+];
+
+export const ACTION_BUTTONS_CONFIG: CDFormActionsConfig = {
+  enabled: true,
+  align: "between",
+  showSubmit: true,
+  submitText: "Deploy Cluster",
+  showReset: true,
+  resetText: "Reset Form",
+  showCancel: true,
+  cancelText: "Cancel",
+  extraButtons: [
+    {
+      key: "save-draft",
+      label: "Save Draft",
+      variant: "secondary",
+      onClick: (ctx) => {
+        alert(`Draft saved with ${Object.keys(ctx.values).length} properties!`);
+      },
+    },
+  ],
+};
+
+export const SURVEY_FIELDS: CDFormFieldConfig[] = [
+  {
+    name: "satisfaction",
+    label: "Overall Experience with Cinder UI",
+    subtitle: "How satisfied are you with the component primitives and design system tokens?",
+    type: "radio",
+    required: true,
+    defaultValue: "very_satisfied",
+    options: [
+      { label: "Very Satisfied — Exceeds our team expectations", value: "very_satisfied" },
+      { label: "Satisfied — Meets enterprise production requirements", value: "satisfied" },
+      { label: "Neutral — Good foundation, needs additional patterns", value: "neutral" },
+      { label: "Unsatisfied — Missing key workflow components", value: "unsatisfied" },
+    ],
+  },
+  {
+    name: "primaryUseCase",
+    label: "Primary Application Domain",
+    subtitle: "Select the primary environment where you are deploying Cinder UI components.",
+    type: "select",
+    required: true,
+    placeholder: "Select domain...",
+    options: [
+      { label: "Cloud Infrastructure & DevOps Consoles", value: "devops" },
+      { label: "Fintech & Data Analytics Portals", value: "fintech" },
+      { label: "Internal Operations & Workflow Tools", value: "internal" },
+      { label: "Customer-Facing B2B SaaS Platforms", value: "saas" },
+    ],
+  },
+  {
+    name: "priorityFeatures",
+    label: "Requested High-Level Primitives",
+    subtitle: "Which upcoming high-level patterns would accelerate your engineering roadmap?",
+    type: "multiselect",
+    placeholder: "Select requested components...",
+    options: [
+      { label: "Dynamic JSON Form Builder (with Google & Microsoft Forms Cards)", value: "form_builder" },
+      { label: "High-Performance Virtualized Data Grid & Table", value: "data_grid" },
+      { label: "Enterprise Outlook Calendar & Event Scheduler", value: "calendar" },
+      { label: "Drag-and-Drop File Upload with Image Lightbox", value: "file_picker" },
+    ],
+  },
+  {
+    name: "recommendScore",
+    label: "Likelihood to Recommend (NPS 0-10)",
+    subtitle: "On a scale from 0 to 10, how likely are you to recommend Cinder UI?",
+    type: "slider",
+    min: 0,
+    max: 10,
+    step: 1,
+    defaultValue: 9,
+  },
+  {
+    name: "feedbackNotes",
+    label: "Detailed Feedback & Ideas",
+    subtitle: "Please share suggestions, API improvements, or patterns you would like to see.",
+    type: "textarea",
+    placeholder: "Share your thoughts with the Cinder UI team...",
+    rows: 3,
+  },
+];
+
+export const REGEX_VALIDATION_FIELDS: CDFormFieldConfig[] = [
+  {
+    name: "cidrBlock",
+    label: "VPC CIDR IPv4 Range (Regex Injected)",
+    type: "text",
+    placeholder: "10.0.0.0/16",
+    required: true,
+    colSpan: 6,
+    validation: {
+      pattern: /^([0-9]{1,3}\.){3}[0-9]{1,3}\/([0-9]|[1-2][0-9]|3[0-2])$/,
+      patternMessage: "Must be a valid IPv4 CIDR notation (e.g. 10.0.0.0/16)",
+    },
+  },
+  {
+    name: "operatorEmail",
+    label: "Cluster Administrator Email (Preset)",
+    type: "text",
+    placeholder: "admin@enterprise.io",
+    required: true,
+    colSpan: 6,
+    validation: {
+      preset: "email",
+    },
+  },
+  {
+    name: "rootPassword",
+    label: "Vault Root Password (Strong Preset)",
+    type: "text",
+    subType: "password",
+    placeholder: "Enter robust master secret",
+    required: true,
+    colSpan: 6,
+    validation: {
+      preset: "strong-password",
+    },
+  },
+  {
+    name: "port",
+    label: "Ingress Port (Min / Max Bound)",
+    type: "number",
+    placeholder: "443",
+    colSpan: 6,
+    min: 1,
+    max: 65535,
+    defaultValue: 443,
+    validation: {
+      min: 1,
+      max: 65535,
+      minMessage: "Port must be greater than 0",
+      maxMessage: "Port cannot exceed 65535",
+    },
+  },
+];
+
+export const CONDITIONAL_FIELDS: CDFormFieldConfig[] = [
+  {
+    name: "useCustomDns",
+    label: "Use Custom Private DNS",
+    type: "switch",
+    placeholder: "Enable Private Nameserver Resolution",
+    colSpan: 12,
+    defaultValue: false,
+  },
+  {
+    name: "primaryDnsServer",
+    label: "Primary DNS Nameserver IP",
+    type: "text",
+    placeholder: "10.0.0.2",
+    colSpan: 6,
+    required: true,
+    visible: (values) => Boolean(values.useCustomDns),
+    validation: {
+      pattern: /^([0-9]{1,3}\.){3}[0-9]{1,3}$/,
+      patternMessage: "Must be a valid IPv4 address",
+    },
+  },
+  {
+    name: "searchDomain",
+    label: "DNS Search Domain",
+    type: "text",
+    placeholder: "internal.corp.net",
+    colSpan: 6,
+    required: true,
+    visible: (values) => Boolean(values.useCustomDns),
+  },
+];

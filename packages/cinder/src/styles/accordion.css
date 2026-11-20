@@ -1,0 +1,148 @@
+/**
+ * Cinder UI - Accordion & Collapse Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+.cinder-accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--cinder-radius-lg, 12px);
+  border: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Variants */
+.cinder-accordion-surface {
+  background-color: var(--cinder-surface);
+}
+
+.cinder-accordion-ghost {
+  border: none;
+  background-color: transparent;
+}
+
+.cinder-accordion-ghost .cinder-accordion-item {
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-accordion-bordered {
+  border: 1px solid var(--cinder-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Accordion Item */
+.cinder-accordion-item:not(:last-child) {
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+/* Header Trigger */
+.cinder-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--cinder-text);
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.cinder-accordion-header:hover {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.03));
+}
+
+.cinder-accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Expand Arrow */
+.cinder-accordion-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.cinder-accordion-header:hover .cinder-accordion-arrow {
+  color: var(--cinder-text);
+}
+
+.cinder-accordion-arrow-expanded {
+  transform: rotate(90deg);
+  color: var(--cinder-primary);
+}
+
+/* Titles */
+.cinder-accordion-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cinder-accordion-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cinder-text);
+  line-height: 1.4;
+}
+
+.cinder-accordion-subtitle {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.4;
+}
+
+.cinder-accordion-extra {
+  margin-left: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Collapse Body */
+.cinder-accordion-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-accordion-collapse-expanded {
+  grid-template-rows: 1fr;
+}
+
+.cinder-accordion-body {
+  overflow: hidden;
+  padding: 0 18px;
+  color: var(--cinder-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  border-top: 0px solid transparent;
+}
+
+.cinder-accordion-collapse-expanded .cinder-accordion-body {
+  padding-bottom: 16px;
+  padding-top: 4px;
+}
+
+/* Disabled */
+.cinder-accordion-item-disabled .cinder-accordion-header {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}

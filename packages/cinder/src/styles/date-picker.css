@@ -1,0 +1,485 @@
+/**
+ * Cinder UI - DatePicker, TimePicker & Calendar Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+/* ==========================================================================
+   INPUT TRIGGER WRAPPER
+   ========================================================================== */
+
+.cinder-datepicker-wrapper {
+  display: inline-block;
+  position: relative;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.cinder-datepicker-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md, 8px);
+  color: var(--cinder-text);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  user-select: none;
+  min-width: 160px;
+}
+
+.cinder-datepicker-range-input {
+  min-width: 250px;
+}
+
+/* Sizes */
+.cinder-datepicker-sm .cinder-datepicker-input {
+  height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.cinder-datepicker-md .cinder-datepicker-input {
+  height: 36px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.cinder-datepicker-lg .cinder-datepicker-input {
+  height: 42px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+/* Focused & Hover */
+.cinder-datepicker-input:hover {
+  border-color: var(--cinder-border-strong, #3f3f46);
+}
+
+.cinder-datepicker-focused .cinder-datepicker-input {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Statuses */
+.cinder-datepicker-status-error .cinder-datepicker-input {
+  border-color: var(--cinder-error, #ef4444);
+}
+
+.cinder-datepicker-status-warning .cinder-datepicker-input {
+  border-color: var(--cinder-warning, #f59e0b);
+}
+
+/* Disabled */
+.cinder-datepicker-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cinder-datepicker-prefix-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cinder-muted);
+  flex-shrink: 0;
+}
+
+.cinder-datepicker-value {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinder-datepicker-placeholder {
+  color: var(--cinder-muted);
+}
+
+.cinder-datepicker-range-separator {
+  color: var(--cinder-muted);
+  padding: 0 4px;
+}
+
+.cinder-datepicker-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--cinder-muted);
+  transition: color 0.15s ease;
+  line-height: 1;
+}
+
+.cinder-datepicker-clear-btn:hover {
+  color: var(--cinder-text);
+}
+
+/* ==========================================================================
+   POPOVER DROPDOWN (PORTAL)
+   ========================================================================== */
+
+.cinder-datepicker-popover {
+  position: absolute;
+  z-index: 1250;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--cinder-text);
+  overflow: hidden;
+  animation: cinderDatepickerFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cinderDatepickerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   CALENDAR PANEL
+   ========================================================================== */
+
+.cinder-calendar-panel {
+  width: 288px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.cinder-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-calendar-header-nav {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.cinder-calendar-nav-btn {
+  background: none;
+  border: none;
+  color: var(--cinder-muted);
+  font-size: 15px;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--cinder-radius-sm, 4px);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.cinder-calendar-nav-btn:hover {
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.05));
+}
+
+.cinder-calendar-header-titles {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.cinder-calendar-view-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--cinder-text);
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: var(--cinder-radius-sm, 4px);
+  transition: background-color 0.15s ease;
+}
+
+.cinder-calendar-view-btn:hover {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.05));
+  color: var(--cinder-primary);
+}
+
+/* Table */
+.cinder-calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.cinder-calendar-th {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  padding: 6px 0;
+  user-select: none;
+}
+
+.cinder-calendar-th-week {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  opacity: 0.6;
+  width: 24px;
+}
+
+.cinder-calendar-cell {
+  padding: 2px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cinder-calendar-date-value {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: var(--cinder-radius-sm, 6px);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.cinder-calendar-cell:hover:not(.cinder-calendar-cell-disabled) .cinder-calendar-date-value {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.08));
+}
+
+.cinder-calendar-cell-overflow {
+  opacity: 0.3;
+}
+
+.cinder-calendar-cell-today .cinder-calendar-date-value {
+  border: 1px solid var(--cinder-primary);
+  color: var(--cinder-primary);
+}
+
+.cinder-calendar-cell-selected .cinder-calendar-date-value {
+  background-color: var(--cinder-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Range Highlighting */
+.cinder-calendar-cell-range-start .cinder-calendar-date-value {
+  background-color: var(--cinder-primary) !important;
+  color: #ffffff !important;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cinder-calendar-cell-range-end .cinder-calendar-date-value {
+  background-color: var(--cinder-primary) !important;
+  color: #ffffff !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.cinder-calendar-cell-in-range {
+  background-color: rgba(59, 130, 246, 0.12);
+}
+
+/* Week Mode */
+.cinder-calendar-week-row:hover {
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+.cinder-calendar-week-selected {
+  background-color: rgba(59, 130, 246, 0.16) !important;
+}
+
+.cinder-calendar-week-number {
+  font-size: 10px;
+  color: var(--cinder-muted);
+  font-family: var(--cinder-font-mono, monospace);
+  user-select: none;
+}
+
+/* Disabled Cell */
+.cinder-calendar-cell-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Month & Year Grids */
+.cinder-calendar-month-grid,
+.cinder-calendar-year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.cinder-calendar-month-cell,
+.cinder-calendar-year-cell {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--cinder-text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 10px 0;
+  border-radius: var(--cinder-radius-sm, 6px);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.cinder-calendar-month-cell:hover,
+.cinder-calendar-year-cell:hover {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.05));
+}
+
+.cinder-calendar-month-selected,
+.cinder-calendar-year-selected {
+  background-color: var(--cinder-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.cinder-calendar-year-overflow {
+  opacity: 0.3;
+}
+
+/* Footer */
+.cinder-calendar-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--cinder-border);
+  display: flex;
+  justify-content: center;
+}
+
+.cinder-calendar-today-btn {
+  background: none;
+  border: none;
+  color: var(--cinder-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--cinder-radius-sm, 4px);
+  transition: background-color 0.15s ease;
+}
+
+.cinder-calendar-today-btn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* ==========================================================================
+   TIME PICKER POPOVER & COLUMNS
+   ========================================================================== */
+
+.cinder-timepicker-columns {
+  display: flex;
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.cinder-timepicker-col {
+  width: 56px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-timepicker-col:not(:last-child) {
+  border-right: 1px solid var(--cinder-border);
+}
+
+.cinder-timepicker-cell {
+  background: none;
+  border: none;
+  color: var(--cinder-text);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.cinder-timepicker-cell:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.05));
+}
+
+.cinder-timepicker-cell-selected {
+  background-color: var(--cinder-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.cinder-timepicker-cell-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.cinder-timepicker-footer {
+  padding: 8px 12px;
+  border-top: 1px solid var(--cinder-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   STANDALONE CALENDAR WIDGET
+   ========================================================================== */
+
+.cinder-calendar-standalone {
+  width: 100%;
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  background-color: var(--cinder-surface);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cinder-calendar-standalone-toolbar {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cinder-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cinder-calendar-standalone-mode-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.cinder-calendar-standalone-panel {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+}
+
+.cinder-calendar-standalone .cinder-calendar-date-value {
+  width: 36px;
+  height: 36px;
+  font-size: 13px;
+}

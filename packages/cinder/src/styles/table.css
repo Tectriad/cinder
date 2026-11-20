@@ -1,0 +1,205 @@
+/**
+ * Cinder UI - Table & DataGrid Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+.cinder-table-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--cinder-radius-lg, 12px);
+  background-color: var(--cinder-surface);
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--cinder-text);
+  overflow: hidden;
+}
+
+.cinder-table-bordered {
+  border: 1px solid var(--cinder-border);
+}
+
+.cinder-table-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.cinder-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 13px;
+}
+
+/* Table Header */
+.cinder-table-thead {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.03));
+}
+
+.cinder-table-th {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  border-bottom: 1px solid var(--cinder-border);
+  white-space: nowrap;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.cinder-table-th-sortable {
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cinder-table-th-sortable:hover {
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.05));
+}
+
+.cinder-table-th-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Sorter Carets */
+.cinder-table-sorter {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--cinder-muted);
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+}
+
+.cinder-table-sorter-up.active,
+.cinder-table-sorter-down.active {
+  color: var(--cinder-primary);
+  opacity: 1;
+}
+
+/* Table Body Rows */
+.cinder-table-row {
+  transition: background-color 0.15s ease;
+}
+
+.cinder-table-row-hoverable:hover {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.03));
+}
+
+.cinder-table-row-selected {
+  background-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+.cinder-table-striped tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+:root[data-theme="light"] .cinder-table-striped tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.cinder-table-td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.cinder-table-tbody tr:last-child .cinder-table-td {
+  border-bottom: none;
+}
+
+/* Alignments */
+.cinder-table-align-center {
+  text-align: center;
+}
+
+.cinder-table-align-right {
+  text-align: right;
+}
+
+.cinder-table-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Selection Checkbox Column */
+.cinder-table-selection-col {
+  width: 48px;
+  text-align: center;
+  padding-left: 14px;
+  padding-right: 8px;
+}
+
+/* Size Presets */
+.cinder-table-sm .cinder-table-th {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.cinder-table-sm .cinder-table-td {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.cinder-table-lg .cinder-table-th {
+  padding: 16px 20px;
+  font-size: 14px;
+}
+
+.cinder-table-lg .cinder-table-td {
+  padding: 16px 20px;
+  font-size: 14px;
+}
+
+/* Empty State */
+.cinder-table-empty-row {
+  background: transparent;
+}
+
+.cinder-table-empty-cell {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--cinder-muted);
+  font-size: 13px;
+  border-bottom: none;
+}
+
+/* Loading Overlay */
+.cinder-table-loading-mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(9, 9, 11, 0.65);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+:root[data-theme="light"] .cinder-table-loading-mask {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Pagination Footer */
+.cinder-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.02));
+  font-size: 12px;
+  color: var(--cinder-muted);
+}
+
+.cinder-table-pagination-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

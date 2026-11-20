@@ -1,0 +1,169 @@
+/**
+ * Cinder UI - Modal & Dialog Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cinderModalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* =========================================
+   ROOT OVERLAY
+   ========================================= */
+.cinder-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+.cinder-modal-centered {
+  align-items: center;
+  padding: 24px 16px;
+}
+
+/* Backdrop Mask */
+.cinder-modal-mask {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
+  cursor: pointer;
+  animation: cinderModalFadeIn 0.2s ease-out;
+}
+
+:root[data-theme="light"] .cinder-modal-mask {
+  background-color: rgba(9, 9, 11, 0.45);
+}
+
+/* =========================================
+   DIALOG CARD
+   ========================================= */
+.cinder-modal-dialog {
+  position: relative;
+  z-index: 1;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--cinder-text);
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  animation: cinderModalScaleUp 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+:root[data-theme="light"] .cinder-modal-dialog {
+  background-color: #ffffff;
+  box-shadow: 0 20px 48px rgba(9, 9, 11, 0.16);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.cinder-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-modal-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-modal-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+.cinder-modal-description {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--cinder-muted);
+  line-height: 1.45;
+}
+
+.cinder-modal-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cinder-modal-close-btn:hover {
+  color: var(--cinder-text);
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-modal-close-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--cinder-focus-ring);
+}
+
+/* =========================================
+   BODY
+   ========================================= */
+.cinder-modal-body {
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cinder-text);
+  overflow-y: auto;
+  max-height: calc(85vh - 160px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.cinder-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+}
+
+:root[data-theme="light"] .cinder-modal-footer {
+  background-color: #fafafa;
+}

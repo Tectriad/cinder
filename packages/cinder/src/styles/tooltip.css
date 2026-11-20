@@ -1,0 +1,142 @@
+/**
+ * Cinder UI - Tooltip Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+@keyframes cinderTooltipScaleTop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% + 4px)) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
+  }
+}
+
+@keyframes cinderTooltipScaleBottom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -4px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes cinderTooltipScaleLeft {
+  from {
+    opacity: 0;
+    transform: translate(calc(-100% + 4px), -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-100%, -50%) scale(1);
+  }
+}
+
+@keyframes cinderTooltipScaleRight {
+  from {
+    opacity: 0;
+    transform: translate(-4px, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+/* =========================================
+   TOOLTIP WRAPPER
+   ========================================= */
+.cinder-tooltip {
+  position: absolute;
+  z-index: 1060;
+  pointer-events: none;
+  max-width: 280px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Placements */
+.cinder-tooltip-placement-top {
+  transform: translate(-50%, -100%);
+  animation: cinderTooltipScaleTop 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-tooltip-placement-bottom {
+  transform: translate(-50%, 0);
+  animation: cinderTooltipScaleBottom 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-tooltip-placement-left {
+  transform: translate(-100%, -50%);
+  animation: cinderTooltipScaleLeft 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinder-tooltip-placement-right {
+  transform: translate(0, -50%);
+  animation: cinderTooltipScaleRight 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Inner balloon */
+.cinder-tooltip-inner {
+  padding: 6px 10px;
+  background-color: #18181b;
+  color: #fafafa;
+  border-radius: 6px;
+  border: 1px solid var(--cinder-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  word-wrap: break-word;
+}
+
+:root[data-theme="light"] .cinder-tooltip-inner {
+  background-color: #09090b;
+  color: #ffffff;
+  border-color: #27272a;
+  box-shadow: 0 4px 14px rgba(9, 9, 11, 0.18);
+}
+
+/* Arrow */
+.cinder-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.cinder-tooltip-placement-top .cinder-tooltip-arrow {
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: #18181b transparent transparent transparent;
+}
+
+.cinder-tooltip-placement-bottom .cinder-tooltip-arrow {
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #18181b transparent;
+}
+
+.cinder-tooltip-placement-left .cinder-tooltip-arrow {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #18181b;
+}
+
+.cinder-tooltip-placement-right .cinder-tooltip-arrow {
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #18181b transparent transparent;
+}

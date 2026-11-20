@@ -1,0 +1,161 @@
+/**
+ * Cinder UI - List & ListItem Styles
+ * Theme: Cinder Slate (Dark & Light)
+ */
+
+.cinder-list {
+  position: relative;
+  width: 100%;
+  font-family: inherit;
+  color: var(--cinder-text);
+  box-sizing: border-box;
+}
+
+.cinder-list-bordered {
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  background-color: var(--cinder-surface);
+  overflow: hidden;
+}
+
+/* Header & Footer */
+.cinder-list-header,
+.cinder-list-footer {
+  padding: 12px 20px;
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.02));
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cinder-text);
+}
+
+.cinder-list-header {
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-list-footer {
+  border-top: 1px solid var(--cinder-border);
+}
+
+.cinder-list-container {
+  position: relative;
+  min-height: 48px;
+}
+
+/* Size Presets */
+.cinder-list-sm .cinder-list-item {
+  padding: 8px 16px;
+}
+
+.cinder-list-md .cinder-list-item {
+  padding: 14px 20px;
+}
+
+.cinder-list-lg .cinder-list-item {
+  padding: 18px 24px;
+}
+
+/* List Item */
+.cinder-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: background-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.cinder-list-item:hover {
+  background-color: var(--cinder-surface-hover, rgba(255, 255, 255, 0.02));
+}
+
+.cinder-list-split .cinder-list-item:not(:last-child) {
+  border-bottom: 1px solid var(--cinder-border);
+}
+
+.cinder-list-item-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ListItem.Meta */
+.cinder-list-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cinder-list-item-meta-avatar {
+  flex-shrink: 0;
+}
+
+.cinder-list-item-meta-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cinder-list-item-meta-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cinder-text);
+  line-height: 1.4;
+}
+
+.cinder-list-item-meta-desc {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.5;
+}
+
+/* Actions */
+.cinder-list-item-actions {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.cinder-list-item-action:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: var(--cinder-border);
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.cinder-list-item-extra {
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* Empty State */
+.cinder-list-empty {
+  padding: 32px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--cinder-muted);
+}
+
+/* Loading Overlay */
+.cinder-list-loading-mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(9, 9, 11, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+:root[data-theme="light"] .cinder-list-loading-mask {
+  background-color: rgba(255, 255, 255, 0.6);
+}

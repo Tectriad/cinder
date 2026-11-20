@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Ant Design Inspired Documentation Demos & Tables Styles
+   ========================================================================== */
+
+/* Demos Grid */
+.antd-demos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .antd-demos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* AntD Demo Card */
+.antd-demo-card {
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg);
+  background-color: var(--cinder-surface);
+  position: relative;
+  overflow: visible;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.antd-demo-card-full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.antd-demo-card-full-width .antd-demo-preview {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.antd-demo-card-full-width .antd-demo-preview > * {
+  width: 100%;
+}
+
+.antd-demo-card:hover {
+  border-color: var(--cinder-border-strong);
+}
+
+.antd-demo-card:focus-within,
+.antd-demo-card:has(.cinder-select-focused),
+.antd-demo-card:has([aria-expanded="true"]) {
+  z-index: 40;
+}
+
+.antd-demo-preview {
+  padding: 32px 24px;
+  background-color: var(--cinder-bg);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--cinder-border);
+  position: relative;
+  overflow: visible;
+}
+
+.antd-demo-meta {
+  padding: 16px 20px;
+  position: relative;
+}
+
+.antd-demo-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cinder-text);
+  margin-bottom: 6px;
+}
+
+.antd-demo-desc {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.5;
+  padding-right: 60px;
+}
+
+.antd-demo-actions {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.antd-demo-action-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.antd-demo-action-btn:hover {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-text);
+}
+
+.antd-demo-action-active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+}
+
+.antd-demo-code-wrapper {
+  background-color: var(--cinder-surface-hover);
+  border-top: 1px solid var(--cinder-border);
+  padding: 16px 20px;
+  overflow-x: auto;
+}
+
+.antd-demo-code {
+  font-family: var(--cinder-font-mono) !important;
+  font-size: 12px;
+  color: var(--cinder-text);
+  line-height: 1.6;
+}
+
+/* API Tables */
+.antd-api-section {
+  margin-top: 48px;
+}
+
+.antd-api-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cinder-text);
+  margin-bottom: 16px;
+}
+
+.antd-api-table-wrapper {
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  overflow-x: auto;
+  background-color: var(--cinder-surface);
+}
+
+.antd-api-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.antd-api-table th {
+  padding: 12px 16px;
+  color: var(--cinder-muted);
+  font-size: 11px;
+  font-family: var(--cinder-font-mono);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface-hover);
+}
+
+.antd-api-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+}
+
+.antd-api-prop {
+  font-family: var(--cinder-font-mono);
+  font-weight: 600;
+  color: var(--cinder-primary);
+}
+
+.antd-api-desc {
+  color: var(--cinder-text);
+}
+
+.antd-api-type code {
+  color: var(--cinder-accent);
+  font-family: var(--cinder-font-mono);
+  font-size: 12px;
+}
+
+.antd-api-default code {
+  color: var(--cinder-muted);
+  font-family: var(--cinder-font-mono);
+  font-size: 12px;
+}
+
+.antd-api-version {
+  font-family: var(--cinder-font-mono);
+  font-size: 11px;
+  color: var(--cinder-muted);
+}
+
+/* Overview Catalog Grid */
+.antd-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.antd-overview-card {
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-md);
+  background-color: var(--cinder-surface);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.antd-overview-card:hover {
+  border-color: var(--cinder-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--cinder-shadow-md);
+}
+
+.antd-overview-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.antd-overview-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.antd-overview-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cinder-text);
+  letter-spacing: -0.01em;
+}
+
+.antd-overview-card-sub {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.3;
+}
+
+.antd-overview-card-desc {
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.antd-overview-card-preview {
+  padding-top: 12px;
+  border-top: 1px solid var(--cinder-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .antd-sidebar {
+    display: none;
+  }
+  .antd-main-content {
+    padding: 24px;
+  }
+  .antd-demos-grid {
+    grid-template-columns: 1fr;
+  }
+}

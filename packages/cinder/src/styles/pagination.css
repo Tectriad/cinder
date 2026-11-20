@@ -1,0 +1,189 @@
+/**
+ * Cinder UI - Pagination Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-pagination {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--cinder-text);
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.cinder-pagination-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cinder-pagination-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.cinder-pagination-item:hover:not(:disabled) {
+  border-color: var(--cinder-primary);
+  color: var(--cinder-primary);
+}
+
+.cinder-pagination-item:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+.cinder-pagination-item:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Active Page Item */
+.cinder-pagination-item-active {
+  background-color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Ellipsis */
+.cinder-pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  padding: 0 4px;
+}
+
+/* Sizing */
+.cinder-pagination-sm .cinder-pagination-item {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  font-size: 12px;
+}
+
+.cinder-pagination-md .cinder-pagination-item {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+.cinder-pagination-lg .cinder-pagination-item {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 15px;
+}
+
+/* Total Summary Text */
+.cinder-pagination-total {
+  font-size: 13px;
+  color: var(--cinder-muted);
+}
+
+/* Size Changer */
+.cinder-pagination-size-changer {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cinder-pagination-select {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 6px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.cinder-pagination-select:focus-visible {
+  border-color: var(--cinder-primary);
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 1px;
+}
+
+.cinder-pagination-sm .cinder-pagination-select {
+  height: 28px;
+  font-size: 12px;
+}
+
+.cinder-pagination-lg .cinder-pagination-select {
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Quick Jumper */
+.cinder-pagination-quick-jumper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--cinder-muted);
+}
+
+.cinder-pagination-jumper-input {
+  width: 44px;
+  height: 34px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 6px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.cinder-pagination-jumper-input:focus-visible {
+  border-color: var(--cinder-primary);
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 1px;
+}
+
+.cinder-pagination-sm .cinder-pagination-jumper-input {
+  height: 28px;
+  width: 38px;
+  font-size: 12px;
+}
+
+.cinder-pagination-lg .cinder-pagination-jumper-input {
+  height: 40px;
+  width: 50px;
+  font-size: 14px;
+}
+
+/* Disabled container */
+.cinder-pagination-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

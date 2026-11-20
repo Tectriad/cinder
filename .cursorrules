@@ -1,0 +1,13 @@
+# Cursor Rules — Cinder UI Monorepo
+
+You are assisting with the Cinder UI React component library monorepo. Follow these strict rules:
+
+1. FILE SIZE: No single file may exceed 500 lines of code. Split files into modular submodules whenever approaching this limit.
+2. STRICT TYPING: Add explicit TypeScript types to every variable, constant, function argument, function return type, and React hook state. No implicit `any`.
+3. COMPONENT FOLDERS: Group every component in its own folder under `packages/cinder/src/components/<component-name>/` containing `CD<Name>.tsx`, `types.ts`, and `index.ts`. All button-related files must live in `src/components/button/`.
+4. COMPONENT NAMING: Prefix components with `CD` (e.g. `CDButton`, `CDIconButton`, `CDButtonGroup`, `CDButtonDropdown`, `CDCopyButton`, `CDInput`, `CDBadge`, `CDCard`, `CDGlassPanel`, `CDSnippet`). Always re-export non-prefixed aliases (`export const Button = CDButton;`).
+5. NO EMOJIS: Never use emojis anywhere in code, comments, JSX, markdown, or documentation. Use vector SVG icons (Lucide or inline SVG).
+6. GRADIENTS & COLORS: Use gradient colors only when intentionally needed for a component or theme accent. Adhere to Cinder Slate dark (`#09090b` / `#3b82f6`) and light (`#fafafa` / `#2563eb`) design tokens.
+7. TYPOGRAPHY: Ensure 'Plus Jakarta Sans' is used for typography.
+8. ENGLISH ONLY: Strictly English throughout the codebase. Zero Chinese characters.
+9. SENIOR UX/UI ENGINEER MINDSET: Always think like a senior UX/UI engineer before and during implementation. Enforce strict typographic hierarchy (no awkward line wraps), complete interactive states (hover/active/focus-visible/disabled/loading), body portals for floating overlays (dropdowns, float buttons, tooltips) to prevent overflow clipping, and accessible keyboard interactions.

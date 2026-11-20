@@ -1,0 +1,106 @@
+/**
+ * Cinder UI - Breadcrumb Component Styles
+ * Cinder Slate Design System Token Adherence
+ */
+
+.cinder-breadcrumb {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.cinder-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cinder-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cinder-muted);
+}
+
+.cinder-breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--cinder-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  border-radius: 3px;
+}
+
+.cinder-breadcrumb-link:hover {
+  color: var(--cinder-text);
+}
+
+.cinder-breadcrumb-link:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+.cinder-breadcrumb-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--cinder-text);
+  font-weight: 600;
+}
+
+.cinder-breadcrumb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cinder-breadcrumb-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinder-muted);
+  opacity: 0.6;
+  user-select: none;
+  margin-left: 2px;
+}
+
+/* Ellipsis collapse trigger */
+.cinder-breadcrumb-ellipsis {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 150ms ease;
+}
+
+[data-theme="light"] .cinder-breadcrumb-ellipsis {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.cinder-breadcrumb-ellipsis:hover {
+  color: var(--cinder-text);
+  border-color: var(--cinder-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.cinder-breadcrumb-ellipsis:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 1px;
+}

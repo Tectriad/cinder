@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Cinder UI — Layout Primitives Styles (Cinder Slate Semantic Tokens)
+   ========================================================================== */
+
+/* ==========================================================================
+   Box
+   ========================================================================== */
+
+.cinder-box {
+  box-sizing: border-box;
+}
+
+.cinder-box-bg-canvas {
+  background-color: var(--cinder-canvas);
+}
+
+.cinder-box-bg-surface {
+  background-color: var(--cinder-surface);
+}
+
+.cinder-box-bg-card {
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+}
+
+.cinder-box-bg-glass {
+  background-color: rgba(18, 18, 21, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--cinder-border);
+}
+
+[data-theme="light"] .cinder-box-bg-glass {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cinder-box-bg-transparent {
+  background-color: transparent;
+}
+
+.cinder-box-border {
+  border: 1px solid var(--cinder-border);
+}
+
+.cinder-box-rounded-none { border-radius: 0; }
+.cinder-box-rounded-sm { border-radius: 4px; }
+.cinder-box-rounded-md { border-radius: 8px; }
+.cinder-box-rounded-lg { border-radius: 12px; }
+.cinder-box-rounded-xl { border-radius: 16px; }
+.cinder-box-rounded-full { border-radius: 9999px; }
+
+.cinder-box-shadow-none { box-shadow: none; }
+.cinder-box-shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+.cinder-box-shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1); }
+.cinder-box-shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1); }
+
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+.cinder-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cinder-container-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cinder-container-sm { max-width: 640px; }
+.cinder-container-md { max-width: 768px; }
+.cinder-container-lg { max-width: 1024px; }
+.cinder-container-xl { max-width: 1280px; }
+.cinder-container-2xl { max-width: 1536px; }
+.cinder-container-fluid { max-width: 100%; }
+
+.cinder-container-gutter-none { padding-left: 0; padding-right: 0; }
+.cinder-container-gutter-sm { padding-left: 12px; padding-right: 12px; }
+.cinder-container-gutter-md { padding-left: 20px; padding-right: 20px; }
+.cinder-container-gutter-lg { padding-left: 32px; padding-right: 32px; }
+
+/* ==========================================================================
+   Grid & GridItem
+   ========================================================================== */
+
+.cinder-grid {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cinder-grid-item {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Stack (Flexbox)
+   ========================================================================== */
+
+.cinder-stack {
+  box-sizing: border-box;
+}
+
+.cinder-stack-align-start { align-items: flex-start; }
+.cinder-stack-align-center { align-items: center; }
+.cinder-stack-align-end { align-items: flex-end; }
+.cinder-stack-align-stretch { align-items: stretch; }
+.cinder-stack-align-baseline { align-items: baseline; }
+
+.cinder-stack-justify-start { justify-content: flex-start; }
+.cinder-stack-justify-center { justify-content: center; }
+.cinder-stack-justify-end { justify-content: flex-end; }
+.cinder-stack-justify-between { justify-content: space-between; }
+.cinder-stack-justify-around { justify-content: space-around; }
+.cinder-stack-justify-evenly { justify-content: space-evenly; }
+
+/* ==========================================================================
+   Divider
+   ========================================================================== */
+
+.cinder-divider {
+  box-sizing: border-box;
+  color: var(--cinder-border);
+  font-size: 13px;
+  border-color: var(--cinder-border);
+}
+
+.cinder-divider-horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 16px 0;
+  border-top: 1px solid var(--cinder-border);
+}
+
+.cinder-divider-horizontal.cinder-divider-dashed {
+  border-top-style: dashed;
+}
+
+.cinder-divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid var(--cinder-border);
+}
+
+.cinder-divider-vertical.cinder-divider-dashed {
+  border-left-style: dashed;
+}
+
+/* Divider with inner text (Ant Design layout pattern) */
+.cinder-divider-with-text {
+  display: flex;
+  align-items: center;
+  border-top: 0;
+  color: var(--cinder-muted);
+  font-weight: 500;
+  margin: 16px 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.cinder-divider-with-text::before,
+.cinder-divider-with-text::after {
+  content: "";
+  position: relative;
+  width: 50%;
+  border-top: 1px solid var(--cinder-border);
+  transform: translateY(50%);
+}
+
+.cinder-divider-with-text.cinder-divider-dashed::before,
+.cinder-divider-with-text.cinder-divider-dashed::after {
+  border-top-style: dashed;
+}
+
+.cinder-divider-text-left::before { width: 5%; }
+.cinder-divider-text-left::after { width: 95%; }
+
+.cinder-divider-text-right::before { width: 95%; }
+.cinder-divider-text-right::after { width: 5%; }
+
+.cinder-divider-inner-text {
+  display: inline-block;
+  padding: 0 14px;
+}
+
+.cinder-divider-plain .cinder-divider-inner-text {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   Spacer
+   ========================================================================== */
+
+.cinder-spacer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}

@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Float Button & Floating Actions (Cinder Slate)
+   ========================================================================== */
+
+.cinder-float-wrapper {
+  position: fixed;
+  z-index: 1000;
+  display: inline-flex;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.cinder-float-wrapper-absolute {
+  position: absolute !important;
+}
+
+/* Positions */
+.cinder-float-pos-bottom-right {
+  bottom: 24px;
+  right: 24px;
+}
+
+.cinder-float-pos-bottom-left {
+  bottom: 24px;
+  left: 24px;
+}
+
+.cinder-float-pos-top-right {
+  top: 24px;
+  right: 24px;
+}
+
+.cinder-float-pos-top-left {
+  top: 24px;
+  left: 24px;
+}
+
+/* Stack Directions */
+.cinder-float-dir-up {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.cinder-float-dir-down {
+  flex-direction: column;
+  align-items: center;
+}
+
+.cinder-float-dir-left {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.cinder-float-dir-right {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Float Button Base */
+.cinder-float-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+  color: var(--cinder-text);
+  box-shadow: var(--cinder-shadow-md);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.cinder-float-btn:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  border-color: var(--cinder-primary);
+  color: var(--cinder-primary);
+  box-shadow: 0 8px 24px -2px var(--cinder-focus-ring);
+  transform: translateY(-2px);
+}
+
+.cinder-float-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.cinder-float-btn:focus-visible {
+  outline: 2px solid var(--cinder-primary);
+  outline-offset: 2px;
+}
+
+.cinder-float-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary Variant */
+.cinder-float-btn-primary {
+  background-color: var(--cinder-primary);
+  color: var(--cinder-primary-text);
+  border-color: var(--cinder-primary);
+}
+
+.cinder-float-btn-primary:hover:not(:disabled) {
+  background-color: var(--cinder-primary-hover);
+  border-color: var(--cinder-primary-hover);
+  color: var(--cinder-primary-text);
+}
+
+/* Shapes */
+.cinder-float-shape-circle {
+  border-radius: 50% !important;
+}
+
+.cinder-float-shape-square {
+  border-radius: var(--cinder-radius-md);
+}
+
+.cinder-float-shape-square.cinder-float-size-xs,
+.cinder-float-shape-square.cinder-float-size-sm {
+  border-radius: var(--cinder-radius-sm);
+}
+
+/* Sizes */
+.cinder-float-size-xs {
+  width: 28px;
+  height: 28px;
+  font-size: 11px;
+}
+
+.cinder-float-size-sm {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+}
+
+.cinder-float-size-md {
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.cinder-float-size-lg {
+  width: 52px;
+  height: 52px;
+  font-size: 16px;
+}
+
+/* Badge on FloatButton */
+.cinder-float-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background-color: var(--cinder-danger);
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  box-shadow: 0 0 0 2px var(--cinder-surface);
+  box-sizing: border-box;
+}
+
+.cinder-float-badge-dot {
+  width: 8px;
+  min-width: 8px;
+  height: 8px;
+  padding: 0;
+  top: -2px;
+  right: -2px;
+}
+
+/* Actions Speed Dial Stack */
+.cinder-float-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cinder-float-dir-up .cinder-float-actions {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.cinder-float-dir-down .cinder-float-actions {
+  flex-direction: column;
+  align-items: center;
+}
+
+.cinder-float-dir-left .cinder-float-actions {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.cinder-float-dir-right .cinder-float-actions {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Action Item with Label */
+.cinder-float-action-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: cinderFloatActionEnter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@keyframes cinderFloatActionEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.cinder-float-action-label {
+  padding: 4px 10px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-sm);
+  color: var(--cinder-text);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: var(--cinder-shadow-sm);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Trigger Icon Rotation */
+.cinder-float-trigger-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinder-float-trigger-icon-rotated {
+  transform: rotate(45deg);
+}
