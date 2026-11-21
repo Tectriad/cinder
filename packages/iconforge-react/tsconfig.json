@@ -2,10 +2,12 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "paths": {
+      "@tec-triad/iconforge-core": ["../iconforge-core/src/index.ts"]
+    }
   },
   "include": ["src/**/*"]
 }
