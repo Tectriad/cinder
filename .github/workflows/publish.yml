@@ -1,0 +1,56 @@
+name: Publish Packages to npm
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (simulate publish without uploading to npm)"
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    name: Build & Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages in dependency order
+        run: npm run build:packages
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+            echo "Running in dry-run mode..."
+          fi
+
+          echo "Publishing @iconforge/core..."
+          npm publish --workspace=@iconforge/core --access public $DRY_RUN_FLAG
+
+          echo "Publishing @iconforge/svg..."
+          npm publish --workspace=@iconforge/svg --access public $DRY_RUN_FLAG
+
+          echo "Publishing @iconforge/react..."
+          npm publish --workspace=@iconforge/react --access public $DRY_RUN_FLAG
+
+          echo "Publishing @cinder-ui/core..."
+          npm publish --workspace=@cinder-ui/core --access public $DRY_RUN_FLAG
