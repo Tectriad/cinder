@@ -1,4 +1,4 @@
-import type { IconDefinition, IconVariant, IconCategorySlug } from "@iconforge/core";
+import type { IconDefinition, IconVariant, IconCategorySlug } from "@tec-triad/iconforge-core";
 
 export type IconExplorerTab = "explorer" | "playground";
 export type IconViewMode = "grid" | "list";

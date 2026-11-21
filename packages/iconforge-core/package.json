@@ -1,5 +1,5 @@
 {
-  "name": "@iconforge/core",
+  "name": "@tec-triad/iconforge-core",
   "version": "0.1.0",
   "description": "Core icon definitions, metadata, SVG generation, and search engine for the IconForge ecosystem",
   "type": "module",

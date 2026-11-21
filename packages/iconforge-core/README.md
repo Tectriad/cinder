@@ -1,4 +1,4 @@
-# @iconforge/core
+# @tec-triad/iconforge-core
 
 Core icon registry, geometry generators, and search engine for the IconForge vector ecosystem.
 
@@ -13,13 +13,13 @@ Core icon registry, geometry generators, and search engine for the IconForge vec
 ## Installation
 
 ```bash
-npm install @iconforge/core
+npm install @tec-triad/iconforge-core
 ```
 
 ## Basic Usage
 
 ```typescript
-import { ICONS, searchIcons, renderIconSvg } from "@iconforge/core";
+import { ICONS, searchIcons, renderIconSvg } from "@tec-triad/iconforge-core";
 
 // Search icons by keyword
 const results = searchIcons("search");

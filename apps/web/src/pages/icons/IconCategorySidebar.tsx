@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { ALL_ICON_CATEGORIES, ALL_ICONS, type IconCategorySlug } from "@iconforge/core";
+import { ALL_ICON_CATEGORIES, ALL_ICONS, type IconCategorySlug } from "@tec-triad/iconforge-core";
 
 interface IconCategorySidebarProps {
   selectedCategory: IconCategorySlug | "all";

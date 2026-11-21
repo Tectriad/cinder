@@ -1,4 +1,4 @@
-# @iconforge/react
+# @tec-triad/iconforge-react
 
 Tree-shakable React icon components with support for 6 visual styles: Outline, Filled, Duotone, Multicolor, Gradient, and Rounded.
 
@@ -13,14 +13,14 @@ Tree-shakable React icon components with support for 6 visual styles: Outline, F
 ## Installation
 
 ```bash
-npm install @iconforge/react @iconforge/core
+npm install @tec-triad/iconforge-react @tec-triad/iconforge-core
 ```
 
 ## Usage
 
 ```tsx
 import React from "react";
-import { IconSearch, IconHeart, IconShield, IconSparkles } from "@iconforge/react";
+import { IconSearch, IconHeart, IconShield, IconSparkles } from "@tec-triad/iconforge-react";
 
 export function Example(): React.JSX.Element {
   return (
@@ -40,17 +40,6 @@ export function Example(): React.JSX.Element {
   );
 }
 ```
-
-## Available Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `size` | `number \| string` | `24` | Icon width and height in pixels |
-| `style` | `IconStyle` | `'outline'` | One of `'outline'`, `'filled'`, `'duotone'`, `'multicolor'`, `'gradient'`, `'rounded'` |
-| `color` | `string` | `'currentColor'` | Primary stroke or fill color |
-| `secondaryColor` | `string` | `'currentColor'` | Secondary color layer (used in duotone style) |
-| `strokeWidth` | `number` | `2` | Stroke width for outline and rounded styles |
-| `className` | `string` | `undefined` | CSS class name applied to root `<svg>` |
 
 ## License
 

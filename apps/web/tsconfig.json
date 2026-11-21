@@ -7,9 +7,13 @@
     "strict": true,
     "noEmit": true,
     "paths": {
-      "@cinder-ui/core": ["../../packages/cinder/src/index.ts"]
+      "@tec-triad/cinder-ui": ["../../packages/cinder/src/index.ts"],
+      "@cinder-ui/core": ["../../packages/cinder/src/index.ts"],
+      "@cinderui/core": ["../../packages/cinder/src/index.ts"],
+      "@tec-triad/iconforge-core": ["../../packages/iconforge-core/src/index.ts"],
+      "@tec-triad/iconforge-react": ["../../packages/iconforge-react/src/index.ts"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

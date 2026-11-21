@@ -9,7 +9,7 @@ import {
   getIconDefinition,
   type IconSvgNode,
   type IconDefinition,
-} from "@iconforge/core";
+} from "@tec-triad/iconforge-core";
 import type { IconForgeProps, IconSize } from "./types";
 
 export function resolveIconDimension(size?: IconSize): number | string {

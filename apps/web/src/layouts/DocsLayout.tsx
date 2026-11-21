@@ -207,7 +207,7 @@ export function DocsLayout(): ReactElement {
                   onClick={() => setShowLibDropdown(false)}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ fontWeight: 600 }}>@iconforge/react</span>
+                    <span style={{ fontWeight: 600 }}>@tec-triad/iconforge-react</span>
                     <Badge variant="success" size="sm">Ecosystem</Badge>
                   </div>
                   <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>

@@ -10,7 +10,7 @@ export function toPascalCase(str: string): string {
 
 export function generateReactImport(iconName: string): string {
   const componentName = toPascalCase(iconName);
-  return `import { ${componentName} } from "@iconforge/react";`;
+  return `import { ${componentName} } from "@tec-triad/iconforge-react";`;
 }
 
 export function generateJsxSnippet(

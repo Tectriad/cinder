@@ -1,12 +1,12 @@
 import { useState, type ReactElement, type MouseEvent } from "react";
-import { IconForge } from "@iconforge/react";
+import { IconForge } from "@tec-triad/iconforge-react";
 import {
   generateSvgString,
   generateJsxSnippet,
   downloadSvgFile,
   type IconDefinition,
   type IconVariant,
-} from "@iconforge/core";
+} from "@tec-triad/iconforge-core";
 
 interface IconCardProps {
   icon: IconDefinition;

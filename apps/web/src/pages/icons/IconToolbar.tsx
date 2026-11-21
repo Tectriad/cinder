@@ -1,6 +1,6 @@
 import type { ReactElement, ChangeEvent } from "react";
 import { useCinderTheme } from "@cinder-ui/core";
-import type { IconVariant } from "@iconforge/core";
+import type { IconVariant } from "@tec-triad/iconforge-core";
 import type { IconExplorerState, IconViewMode, CanvasBackground } from "./types";
 
 interface IconToolbarProps {

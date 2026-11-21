@@ -8,7 +8,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   treeshake: true,
-  external: ["react", "react-dom", "@iconforge/core"],
+  external: ["react", "react-dom", "@tec-triad/iconforge-core"],
   outExtension({ format }) {
     return {
       js: format === "esm" ? ".js" : ".cjs",

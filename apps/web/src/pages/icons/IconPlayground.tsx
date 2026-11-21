@@ -1,13 +1,13 @@
 import { useState, useEffect, type ReactElement } from "react";
 import { useCinderTheme } from "@cinder-ui/core";
-import { IconForge } from "@iconforge/react";
+import { IconForge } from "@tec-triad/iconforge-react";
 import {
   ALL_ICONS,
   generateSvgString,
   generateJsxSnippet,
   type IconDefinition,
   type IconVariant,
-} from "@iconforge/core";
+} from "@tec-triad/iconforge-core";
 
 export function IconPlayground(): ReactElement {
   const { resolvedMode } = useCinderTheme();

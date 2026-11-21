@@ -2,8 +2,8 @@ import type {
   IconForgeProps,
   IconForgeBaseProps,
   IconSize,
-} from "@iconforge/react";
-import type { IconVariant, IconCategorySlug } from "@iconforge/core";
+} from "@tec-triad/iconforge-react";
+import type { IconVariant, IconCategorySlug } from "@tec-triad/iconforge-core";
 
 export type CDIconForgeSize = IconSize;
 export type CDIconForgeVariant = IconVariant;

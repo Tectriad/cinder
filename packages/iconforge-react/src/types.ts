@@ -1,5 +1,5 @@
 import type { SVGAttributes, CSSProperties } from "react";
-import type { IconVariant } from "@iconforge/core";
+import type { IconVariant } from "@tec-triad/iconforge-core";
 
 export type IconSize = "xs" | "sm" | "md" | "lg" | "xl" | number | string;
 

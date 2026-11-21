@@ -9,13 +9,13 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=@cinder-ui/web",
-    "dev:lib": "npm run dev --workspace=@cinder-ui/core",
+    "dev:lib": "npm run dev --workspace=@tec-triad/cinder-ui",
     "build": "npm run build:packages && npm run build:web",
-    "build:packages": "npm run build --workspace=@iconforge/core && npm run build --workspace=@iconforge/svg && npm run build --workspace=@iconforge/react && npm run build --workspace=@cinder-ui/core",
-    "build:lib": "npm run build --workspace=@cinder-ui/core",
+    "build:packages": "npm run build --workspace=@tec-triad/iconforge-core && npm run build --workspace=@tec-triad/iconforge-svg && npm run build --workspace=@tec-triad/iconforge-react && npm run build --workspace=@tec-triad/cinder-ui",
+    "build:lib": "npm run build --workspace=@tec-triad/cinder-ui",
     "build:web": "npm run build --workspace=@cinder-ui/web",
-    "publish:packages": "npm publish --workspace=@iconforge/core && npm publish --workspace=@iconforge/svg && npm publish --workspace=@iconforge/react && npm publish --workspace=@cinder-ui/core",
-    "typecheck": "npm run typecheck --workspace=@iconforge/core && npm run typecheck --workspace=@iconforge/react && npm run typecheck --workspace=@cinder-ui/core && npm run typecheck --workspace=@cinder-ui/web",
+    "publish:packages": "npm publish --workspace=@tec-triad/iconforge-core --access public && npm publish --workspace=@tec-triad/iconforge-svg --access public && npm publish --workspace=@tec-triad/iconforge-react --access public && npm publish --workspace=@tec-triad/cinder-ui --access public",
+    "typecheck": "npm run typecheck --workspace=@tec-triad/iconforge-core && npm run typecheck --workspace=@tec-triad/iconforge-react && npm run typecheck --workspace=@tec-triad/cinder-ui && npm run typecheck --workspace=@cinder-ui/web",
     "clean": "rm -rf node_modules packages/*/dist packages/*/node_modules apps/*/dist apps/*/node_modules"
   },
   "devDependencies": {

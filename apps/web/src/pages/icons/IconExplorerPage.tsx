@@ -8,7 +8,7 @@ import {
   type IconDefinition,
   type IconVariant,
   type IconCategorySlug,
-} from "@iconforge/core";
+} from "@tec-triad/iconforge-core";
 import { IconToolbar } from "./IconToolbar";
 import { IconCategorySidebar } from "./IconCategorySidebar";
 import { IconCard } from "./IconCard";

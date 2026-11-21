@@ -1,5 +1,5 @@
 import { forwardRef, type ReactElement } from "react";
-import { IconForge as BaseIconForge } from "@iconforge/react";
+import { IconForge as BaseIconForge } from "@tec-triad/iconforge-react";
 import type { CDIconForgeProps } from "./types";
 
 export const CDIconForge = forwardRef<SVGSVGElement, CDIconForgeProps>(

@@ -6,7 +6,7 @@ import {
   generateReactImport,
   type IconVariant,
   type IconDefinition,
-} from "@iconforge/core";
+} from "@tec-triad/iconforge-core";
 
 interface IconBatchTrayProps {
   selectedNames: string[];

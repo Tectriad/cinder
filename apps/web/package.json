@@ -10,9 +10,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@tec-triad/cinder-ui": "*",
+    "@tec-triad/iconforge-core": "*",
+    "@tec-triad/iconforge-react": "*",
     "@cinder-ui/core": "*",
-    "@iconforge/core": "*",
-    "@iconforge/react": "*",
+    "@cinderui/core": "*",
     "chart.js": "^4.6.1",
     "clsx": "^2.1.1",
     "lottie-web": "^5.13.0",
