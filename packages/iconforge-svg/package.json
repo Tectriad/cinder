@@ -1,0 +1,13 @@
+{
+  "name": "@iconforge/svg",
+  "version": "0.1.0",
+  "description": "Framework-agnostic raw SVG vector icon assets for IconForge in 6 visual styles",
+  "files": [
+    "svg",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/generate-svgs.mjs",
+    "generate": "node scripts/generate-svgs.mjs"
+  }
+}

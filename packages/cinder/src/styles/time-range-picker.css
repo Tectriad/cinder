@@ -1,0 +1,263 @@
+/**
+ * Cinder UI - TimeRangePicker Stylesheet
+ * Modular Architecture (< 500 lines)
+ */
+
+.cinder-time-range-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cinder-bg-surface, #121215);
+  border: 1px solid var(--cinder-border, #27272a);
+  border-radius: var(--cinder-radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  gap: 14px;
+}
+
+[data-theme="light"] .cinder-time-range-card {
+  background-color: var(--cinder-bg-surface, #ffffff);
+  border-color: var(--cinder-border, #e4e4e7);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
+}
+
+.cinder-time-range-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cinder-time-header-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cinder-time-header-title {
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cinder-text-primary, #fafafa);
+}
+
+[data-theme="light"] .cinder-time-header-title {
+  color: var(--cinder-text-primary, #09090b);
+}
+
+.cinder-time-header-count {
+  font-size: 11px;
+  color: var(--cinder-text-muted, #a1a1aa);
+}
+
+.cinder-time-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-time-total-pill {
+  padding: 3px 10px;
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-primary, #3b82f6);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cinder-time-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cinder-border, #27272a);
+}
+
+[data-theme="light"] .cinder-time-presets-bar {
+  border-bottom-color: var(--cinder-border, #e4e4e7);
+}
+
+.cinder-time-presets-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-text-muted, #71717a);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 4px;
+}
+
+.cinder-time-preset-chip {
+  padding: 3px 9px;
+  font-size: 11px;
+  background: var(--cinder-bg-canvas, #09090b);
+  border: 1px solid var(--cinder-border, #27272a);
+  border-radius: 6px;
+  color: var(--cinder-text-secondary, #d4d4d8);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+[data-theme="light"] .cinder-time-preset-chip {
+  background: #f8fafc;
+  border-color: var(--cinder-border, #e4e4e7);
+  color: #334155;
+}
+
+.cinder-time-preset-chip:hover {
+  background: var(--cinder-bg-surface-elevated, #27272a);
+  border-color: var(--cinder-primary, #3b82f6);
+  color: var(--cinder-text-primary, #fafafa);
+}
+
+[data-theme="light"] .cinder-time-preset-chip:hover {
+  background: #ffffff;
+  color: var(--cinder-text-primary, #09090b);
+}
+
+.cinder-time-slots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cinder-time-slot-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--cinder-bg-canvas, #09090b);
+  border: 1px solid var(--cinder-border, #27272a);
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+  flex-wrap: wrap;
+}
+
+[data-theme="light"] .cinder-time-slot-row {
+  background: #f8fafc;
+  border-color: var(--cinder-border, #e4e4e7);
+}
+
+.cinder-time-slot-row.has-error {
+  border-color: rgba(239, 68, 68, 0.6);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.cinder-time-slot-index {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-text-muted, #a1a1aa);
+  min-width: 44px;
+}
+
+.cinder-time-inputs-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-time-input-field {
+  position: relative;
+}
+
+.cinder-time-picker-control {
+  background: var(--cinder-bg-surface, #121215);
+  border: 1px solid var(--cinder-border, #27272a);
+  border-radius: 6px;
+  padding: 5px 10px;
+  color: var(--cinder-text-primary, #fafafa);
+  font-family: var(--cinder-font-mono, monospace);
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+[data-theme="light"] .cinder-time-picker-control {
+  background: #ffffff;
+  border-color: var(--cinder-border, #e4e4e7);
+  color: #09090b;
+}
+
+.cinder-time-picker-control:focus {
+  border-color: var(--cinder-primary, #3b82f6);
+}
+
+.cinder-time-separator {
+  font-size: 12px;
+  color: var(--cinder-text-muted, #71717a);
+}
+
+.cinder-time-duration-badge {
+  font-family: var(--cinder-font-mono, monospace);
+  font-size: 11px;
+  color: var(--cinder-text-muted, #a1a1aa);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="light"] .cinder-time-duration-badge {
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+}
+
+.cinder-time-conflict-tag {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cinder-time-remove-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--cinder-text-muted, #71717a);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.cinder-time-remove-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.cinder-time-add-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cinder-time-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px dashed var(--cinder-border, #3f3f46);
+  border-radius: 8px;
+  color: var(--cinder-primary, #3b82f6);
+  font-family: var(--cinder-font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+[data-theme="light"] .cinder-time-add-btn {
+  border-color: #cbd5e1;
+}
+
+.cinder-time-add-btn:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: var(--cinder-primary, #3b82f6);
+}

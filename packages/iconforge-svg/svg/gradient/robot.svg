@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-robot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="8" width="16" height="12" rx="3" fill="url(#iconforge-grad-robot)" />
+  <circle cx="9" cy="13" r="1.5" fill="#ffffff" />
+  <circle cx="15" cy="13" r="1.5" fill="#ffffff" />
+  <line x1="9" y1="17" x2="15" y2="17" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+  <line x1="12" y1="2" x2="12" y2="8" stroke="url(#iconforge-grad-robot)" strokeWidth="2" />
+  <circle cx="12" cy="2" r="1.5" fill="url(#iconforge-grad-robot)" />
+</svg>

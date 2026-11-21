@@ -8,3 +8,8 @@
 @import "./styles/docs-layout.css";
 @import "./styles/docs-sidebar.css";
 @import "./styles/docs-demos.css";
+@import "./styles/icon-explorer.css";
+@import "./styles/icon-toolbar.css";
+@import "./styles/icon-cards.css";
+@import "./styles/icon-modal.css";
+@import "./styles/icon-playground.css";

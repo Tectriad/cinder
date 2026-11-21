@@ -72,30 +72,30 @@ export const CDSidebar = forwardRef<HTMLElement, CDSidebarProps>(
     const renderCollapseIcon = (): ReactElement => {
       if (placement === "left") {
         return isCollapsed ? (
-          <CDChevronRightIcon size={14} />
+          <CDChevronRightIcon size={14} strokeWidth={2.2} />
         ) : (
-          <CDChevronLeftIcon size={14} />
+          <CDChevronLeftIcon size={14} strokeWidth={2.2} />
         );
       }
       if (placement === "right") {
         return isCollapsed ? (
-          <CDChevronLeftIcon size={14} />
+          <CDChevronLeftIcon size={14} strokeWidth={2.2} />
         ) : (
-          <CDChevronRightIcon size={14} />
+          <CDChevronRightIcon size={14} strokeWidth={2.2} />
         );
       }
       if (placement === "top") {
         return isCollapsed ? (
-          <CDChevronDownIcon size={14} />
+          <CDChevronDownIcon size={14} strokeWidth={2.2} />
         ) : (
-          <CDChevronUpIcon size={14} />
+          <CDChevronUpIcon size={14} strokeWidth={2.2} />
         );
       }
       // placement === "bottom"
       return isCollapsed ? (
-        <CDChevronUpIcon size={14} />
+        <CDChevronUpIcon size={14} strokeWidth={2.2} />
       ) : (
-        <CDChevronDownIcon size={14} />
+        <CDChevronDownIcon size={14} strokeWidth={2.2} />
       );
     };
 

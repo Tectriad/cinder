@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-alert-triangle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <path d="M12 2.5a2 2 0 0 1 1.73 1l8.47 14.12a2 2 0 0 1-1.73 3H3.53a2 2 0 0 1-1.73-3L10.27 3.5a2 2 0 0 1 1.73-1z" fill="url(#iconforge-grad-alert-triangle)" />
+  <line x1="12" y1="8.5" x2="12" y2="13" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+  <circle cx="12" cy="16.5" r="1" fill="#ffffff" />
+</svg>

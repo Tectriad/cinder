@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-arrow-up" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <path d="M4.29 10.71a1 1 0 0 1 0-1.42l7-7a1 1 0 0 1 1.42 0l7 7a1 1 0 0 1-1.42 1.42L13 5.41V21a1 1 0 0 1-2 0V5.41l-5.29 5.3a1 1 0 0 1-1.42 0z" fill="url(#iconforge-grad-arrow-up)" />
+</svg>

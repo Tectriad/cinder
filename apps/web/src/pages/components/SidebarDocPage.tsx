@@ -229,7 +229,7 @@ export default () => {
                   flexDirection: placement === "top" || placement === "bottom" ? "column" : "row",
                   border: "1px solid var(--cinder-border)",
                   borderRadius: "8px",
-                  overflow: "hidden",
+                  overflow: "visible",
                   backgroundColor: "var(--cinder-canvas)",
                   position: "relative",
                 }}

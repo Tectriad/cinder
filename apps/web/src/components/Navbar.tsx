@@ -12,7 +12,7 @@ export function Navbar() {
         {/* Brand */}
         <Link to="/" className="brand-wrapper">
           <div className="brand-logo-icon">
-            <CinderLogo size={28} />
+            <CinderLogo size={32} />
           </div>
           <span className="brand-name">CINDER</span>
           <Badge variant="primary" size="sm" dot pulse>

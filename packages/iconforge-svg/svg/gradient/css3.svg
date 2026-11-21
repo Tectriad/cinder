@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-css3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" fill="url(#iconforge-grad-css3)" />
+  <path d="M16 7H8l.5 4.5h7l-.5 4.5L12 17l-3-.9" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+</svg>

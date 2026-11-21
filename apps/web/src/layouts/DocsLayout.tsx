@@ -22,6 +22,7 @@ const COMPONENT_CATEGORIES: ComponentCategory[] = [
       { name: "CDButton", subtitle: "Action trigger", path: "/components/button" },
       { name: "CDFloatButton", subtitle: "Floating actions", path: "/components/float-button" },
       { name: "CDIcon", subtitle: "Vector iconography", path: "/components/icon" },
+      { name: "CDIconForge", subtitle: "1,000+ Icons in 6 Styles", path: "/icons", badge: "Studio" },
       { name: "CDIconButton", subtitle: "Icon trigger", path: "/components/icon-button" },
       { name: "CDTypography", subtitle: "Text & headings", path: "/components/typography" },
     ],
@@ -54,7 +55,16 @@ const COMPONENT_CATEGORIES: ComponentCategory[] = [
   {
     title: "Data Entry",
     items: [
-      { name: "CDFormBuilder", subtitle: "Dynamic schema form", path: "/components/form-builder", badge: "New" },
+      { name: "CDEditor", subtitle: "Rich text & mentions", path: "/components/editor", badge: "New" },
+      { name: "CDJSONEditor", subtitle: "JSON tree & code", path: "/components/json-editor", badge: "Pro" },
+      { name: "CDCodeEditor", subtitle: "Syntax highlighting", path: "/components/code-editor", badge: "Pro" },
+      { name: "CDColorPickerPro", subtitle: "Gradients & palettes", path: "/components/color-picker-pro", badge: "Pro" },
+      { name: "CDTimeRangePicker", subtitle: "Multi-interval shifts", path: "/components/time-range-picker", badge: "Pro" },
+      { name: "CDPhoneInput", subtitle: "Country code & masks", path: "/components/phone-input", badge: "Pro" },
+      { name: "CDAddressAutocomplete", subtitle: "Location search", path: "/components/address-autocomplete", badge: "Pro" },
+      { name: "CDMultiSelectPro", subtitle: "Search & async groups", path: "/components/multi-select-pro", badge: "Pro" },
+      { name: "CDOTPInput", subtitle: "Verification code", path: "/components/otp-input", badge: "Pro" },
+      { name: "CDFormBuilder", subtitle: "Dynamic schema form", path: "/components/form-builder" },
       { name: "CDInput", subtitle: "Form control", path: "/components/input" },
       { name: "CDSelect", subtitle: "Options select", path: "/components/select" },
       { name: "CDRadio", subtitle: "Single option selector", path: "/components/radio" },
@@ -70,6 +80,7 @@ const COMPONENT_CATEGORIES: ComponentCategory[] = [
   {
     title: "Data Display",
     items: [
+      { name: "CDCharts", subtitle: "Chart.js visualizations", path: "/components/chart", badge: "New" },
       { name: "CDTable", subtitle: "Data grid table", path: "/components/table" },
       { name: "CDCalendar", subtitle: "Event calendar", path: "/components/calendar" },
       { name: "CDOutlookCalendar", subtitle: "Outlook scheduler", path: "/components/calendar" },
@@ -115,6 +126,7 @@ export function DocsLayout(): ReactElement {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeLibrary, setActiveLibrary] = useState<string>("@cinder-ui/core");
   const [showLibDropdown, setShowLibDropdown] = useState<boolean>(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
   const { resolvedMode, setMode } = useCinderTheme();
 
   // Filter categories by search term
@@ -137,10 +149,24 @@ export function DocsLayout(): ReactElement {
           {/* Brand */}
           <Link to="/" className="cinder-brand">
             <div className="cinder-brand-icon">
-              <CinderLogo size={24} />
+              <CinderLogo size={32} />
             </div>
             <span className="cinder-brand-title">CINDER UI</span>
           </Link>
+
+          {/* Sidebar Collapse Toggle Button in Header */}
+          <button
+            type="button"
+            className="cinder-docs-sidebar-toggle-btn"
+            onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+            aria-label={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+            </svg>
+          </button>
 
           {/* Multiple Component Library Switcher */}
           <div className="cinder-lib-switcher">
@@ -174,6 +200,20 @@ export function DocsLayout(): ReactElement {
                     Core UI Primitives &amp; Foundation
                   </div>
                 </div>
+                <Link
+                  to="/icons"
+                  className="cinder-lib-menu-item"
+                  style={{ textDecoration: "none", color: "inherit", display: "block" }}
+                  onClick={() => setShowLibDropdown(false)}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ fontWeight: 600 }}>@iconforge/react</span>
+                    <Badge variant="success" size="sm">Ecosystem</Badge>
+                  </div>
+                  <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>
+                    1,000+ Icons in 6 Visual Styles
+                  </div>
+                </Link>
                 <div
                   className="cinder-lib-menu-item"
                   style={{ opacity: 0.6 }}
@@ -229,6 +269,9 @@ export function DocsLayout(): ReactElement {
             <NavLink to="/components/button" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Components
             </NavLink>
+            <NavLink to="/icons" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
+              Icon Studio
+            </NavLink>
             <NavLink to="/tokens" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Design Tokens
             </NavLink>
@@ -247,24 +290,40 @@ export function DocsLayout(): ReactElement {
 
       {/* Main Body: Sidebar + Content */}
       <div className="cinder-body-container">
+        {/* Floating Edge Collapse Toggle */}
+        <button
+          type="button"
+          className="cinder-docs-sidebar-edge-toggle"
+          style={{ left: isSidebarCollapsed ? "8px" : "268px" }}
+          onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+          aria-label={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          title={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          {isSidebarCollapsed ? (
+            <CDIcons.ChevronRight size={14} />
+          ) : (
+            <CDIcons.ChevronLeft size={14} />
+          )}
+        </button>
+
         {/* Left Sidebar */}
-        <aside className="cinder-sidebar">
+        <aside className={`cinder-docs-sidebar ${isSidebarCollapsed ? "collapsed" : ""}`}>
           {/* Sidebar Header with Quick Filter & Navigation */}
-          <div className="cinder-sidebar-header">
-            <div className="cinder-sidebar-search">
-              <CDIcons.Search size={13} className="cinder-sidebar-search-icon" />
+          <div className="cinder-docs-sidebar-header">
+            <div className="cinder-docs-sidebar-search">
+              <CDIcons.Search size={13} className="cinder-docs-sidebar-search-icon" />
               <input
                 type="text"
                 placeholder="Filter components..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="cinder-sidebar-search-input"
+                className="cinder-docs-sidebar-search-input"
               />
               {searchTerm && (
                 <button
                   type="button"
                   onClick={() => setSearchTerm("")}
-                  className="cinder-sidebar-search-clear"
+                  className="cinder-docs-sidebar-search-clear"
                   aria-label="Clear filter"
                 >
                   &times;
@@ -272,11 +331,11 @@ export function DocsLayout(): ReactElement {
               )}
             </div>
 
-            <nav className="cinder-sidebar-quick-nav">
+            <nav className="cinder-docs-sidebar-quick-nav">
               <NavLink
                 to="/components/overview"
                 className={({ isActive }) =>
-                  `cinder-sidebar-quick-link ${isActive ? "active" : ""}`
+                  `cinder-docs-sidebar-quick-link ${isActive ? "active" : ""}`
                 }
               >
                 <CDIcons.Box size={13} />
@@ -285,7 +344,7 @@ export function DocsLayout(): ReactElement {
               <NavLink
                 to="/tokens"
                 className={({ isActive }) =>
-                  `cinder-sidebar-quick-link ${isActive ? "active" : ""}`
+                  `cinder-docs-sidebar-quick-link ${isActive ? "active" : ""}`
                 }
               >
                 <CDIcons.Sparkles size={13} />
@@ -295,41 +354,41 @@ export function DocsLayout(): ReactElement {
           </div>
 
           {/* Categorized Nav Groups */}
-          <div className="cinder-sidebar-groups">
+          <div className="cinder-docs-sidebar-groups">
             {filteredCategories.length === 0 ? (
-              <div className="cinder-sidebar-empty">
-                <span className="cinder-sidebar-empty-text">No components found</span>
+              <div className="cinder-docs-sidebar-empty">
+                <span className="cinder-docs-sidebar-empty-text">No components found</span>
                 <button
                   type="button"
                   onClick={() => setSearchTerm("")}
-                  className="cinder-sidebar-empty-btn"
+                  className="cinder-docs-sidebar-empty-btn"
                 >
                   Clear filter
                 </button>
               </div>
             ) : (
               filteredCategories.map((cat: ComponentCategory) => (
-                <div key={cat.title} className="cinder-sidebar-group">
-                  <div className="cinder-sidebar-group-header">
-                    <span className="cinder-sidebar-group-title">{cat.title}</span>
-                    <span className="cinder-sidebar-group-count">{cat.items.length}</span>
+                <div key={cat.title} className="cinder-docs-sidebar-group">
+                  <div className="cinder-docs-sidebar-group-header">
+                    <span className="cinder-docs-sidebar-group-title">{cat.title}</span>
+                    <span className="cinder-docs-sidebar-group-count">{cat.items.length}</span>
                   </div>
-                  <div className="cinder-sidebar-items">
+                  <div className="cinder-docs-sidebar-items">
                     {cat.items.map((item: ComponentNavItem) => (
                       <NavLink
                         key={item.path}
                         to={item.path}
                         className={({ isActive }) =>
-                          `cinder-sidebar-item ${isActive ? "active" : ""}`
+                          `cinder-docs-sidebar-item ${isActive ? "active" : ""}`
                         }
                         title={`${item.name} — ${item.subtitle}`}
                       >
-                        <div className="cinder-sidebar-item-left">
-                          <span className="cinder-sidebar-item-name">{item.name}</span>
-                          <span className="cinder-sidebar-item-sub">{item.subtitle}</span>
+                        <div className="cinder-docs-sidebar-item-left">
+                          <span className="cinder-docs-sidebar-item-name">{item.name}</span>
+                          <span className="cinder-docs-sidebar-item-sub">{item.subtitle}</span>
                         </div>
                         {item.badge && (
-                          <span className="cinder-sidebar-badge">{item.badge}</span>
+                          <span className="cinder-docs-sidebar-badge">{item.badge}</span>
                         )}
                       </NavLink>
                     ))}

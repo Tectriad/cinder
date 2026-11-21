@@ -1,4 +1,5 @@
 import { useState, useMemo, type ReactElement } from "react";
+import { Link } from "react-router-dom";
 import {
   CDIcons,
   CDButton,
@@ -83,6 +84,49 @@ export function IconDocPage(): ReactElement {
 
         <div className="cinder-doc-import">
           <code>import &#123; CDIcon, CDIcons, CDSparklesIcon, ALL_CD_ICONS &#125; from '@cinder-ui/core';</code>
+        </div>
+
+        {/* IconForge Ecosystem Callout */}
+        <div style={{
+          marginTop: "20px",
+          padding: "16px 20px",
+          borderRadius: "12px",
+          background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
+          border: "1px solid rgba(59, 130, 246, 0.3)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "12px",
+        }}>
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+              <span style={{ fontWeight: 700, fontSize: "15px", color: "var(--cinder-text, #fafafa)" }}>
+                IconForge Ecosystem Available
+              </span>
+              <CDBadge variant="primary" size="sm">6 Visual Styles</CDBadge>
+            </div>
+            <p style={{ margin: 0, fontSize: "13px", color: "var(--cinder-muted, #a1a1aa)" }}>
+              Explore 1,000+ icons with Outline, Filled, Duotone, Multicolor, Gradient, and Rounded styles in the interactive Icon Studio.
+            </p>
+          </div>
+          <Link
+            to="/icons"
+            style={{
+              padding: "8px 16px",
+              borderRadius: "8px",
+              backgroundColor: "#3b82f6",
+              color: "#ffffff",
+              fontSize: "13px",
+              fontWeight: 600,
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+            }}
+          >
+            Open Icon Studio
+          </Link>
         </div>
       </div>
 

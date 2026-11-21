@@ -5,21 +5,24 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="app-container footer-content">
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <div style={{
-            width: "28px",
-            height: "28px",
+            width: "32px",
+            height: "32px",
             borderRadius: "8px",
             backgroundColor: "rgba(59, 130, 246, 0.12)",
+            border: "1px solid rgba(59, 130, 246, 0.25)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "var(--cinder-primary)"
+            color: "var(--cinder-primary)",
+            flexShrink: 0,
+            overflow: "hidden"
           }}>
-            <CinderLogo size={22} />
+            <CinderLogo size={26} />
           </div>
-          <span style={{ fontWeight: 800, color: "var(--cinder-text)" }}>CINDER UI</span>
-          <span>&mdash; React Component Library</span>
+          <span style={{ fontWeight: 800, color: "var(--cinder-text)", lineHeight: 1 }}>CINDER UI</span>
+          <span style={{ color: "var(--cinder-muted)", fontSize: "14px" }}>&mdash; React Component Library</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-database" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="12" cy="5" rx="9" ry="3" fill="url(#iconforge-grad-database)" />
+  <path d="M3 6.8v4.4c0 1.6 4 3 9 3s9-1.4 9-3V6.8C19.7 8 16 9 12 9S4.3 8 3 6.8zm0 7v4.4c0 1.6 4 3 9 3s9-1.4 9-3v-4.4C19.7 15 16 16 12 16s-7.7-1-9-2.2z" fill="url(#iconforge-grad-database)" />
+</svg>

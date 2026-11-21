@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Cinder UI — Chart Components Stylesheet (Chart.js Engine)
+   Adheres strictly to Cinder Slate design tokens and < 500 lines limit
+   ========================================================================== */
+
+.cinder-chart-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 12px);
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
+  position: relative;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cinder-chart-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+}
+
+.cinder-chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cinder-chart-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cinder-chart-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cinder-text);
+  letter-spacing: -0.015em;
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+}
+
+.cinder-chart-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: var(--cinder-muted);
+  line-height: 1.45;
+}
+
+.cinder-chart-extra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Canvas body container */
+.cinder-chart-body {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.cinder-chart-body canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Center Metric Overlay for Donut & Radial Charts */
+.cinder-pie-chart-body,
+.cinder-radial-chart-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinder-chart-center-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+  z-index: 2;
+}
+
+.cinder-chart-center-value {
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cinder-text);
+  line-height: 1.15;
+}
+
+.cinder-chart-center-label {
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Radial Bar Chart Layout & Custom Legend */
+.cinder-radial-chart-layout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.cinder-radial-chart-layout .cinder-radial-chart-body {
+  flex: 1;
+}
+
+.cinder-radial-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 170px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--cinder-border);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.cinder-radial-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.cinder-radial-legend-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cinder-radial-legend-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cinder-radial-legend-label {
+  color: var(--cinder-text);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinder-radial-legend-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+}
+
+.cinder-radial-legend-val {
+  color: var(--cinder-muted);
+  font-size: 11px;
+}
+
+.cinder-radial-legend-pct {
+  color: var(--cinder-primary);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .cinder-radial-chart-layout {
+    flex-direction: column;
+  }
+  .cinder-radial-legend-list {
+    width: 100%;
+  }
+}

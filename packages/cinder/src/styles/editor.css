@@ -1,0 +1,319 @@
+/* ==========================================================================
+   Cinder UI — CDEditor Component Stylesheet
+   Adheres to Cinder Slate design tokens and strict < 500 lines rule
+   ========================================================================== */
+
+.cinder-editor-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg, 10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.cinder-editor-container.cinder-editor-focused {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.22);
+}
+
+.cinder-editor-container.cinder-editor-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  background-color: var(--cinder-bg);
+}
+
+.cinder-editor-container.cinder-editor-readonly .cinder-editor-toolbar {
+  display: none;
+}
+
+/* Variant: Filled */
+.cinder-editor-variant-filled {
+  background-color: var(--cinder-bg);
+  border-color: transparent;
+}
+
+.cinder-editor-variant-filled.cinder-editor-focused {
+  background-color: var(--cinder-surface);
+  border-color: var(--cinder-primary);
+}
+
+/* Variant: Ghost */
+.cinder-editor-variant-ghost {
+  border-color: transparent;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Toolbar */
+.cinder-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 12px;
+  background-color: var(--cinder-surface);
+  border-bottom: 1px solid var(--cinder-border);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  user-select: none;
+}
+
+.cinder-editor-btn-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.cinder-editor-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--cinder-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cinder-editor-tool-btn:hover:not(:disabled) {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-text);
+}
+
+.cinder-editor-tool-btn:active:not(:disabled) {
+  background-color: rgba(59, 130, 246, 0.16);
+  color: var(--cinder-primary);
+}
+
+.cinder-editor-divider {
+  width: 1px;
+  height: 18px;
+  background-color: var(--cinder-border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.cinder-editor-toolbar-extra {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Dropdown popovers */
+.cinder-editor-dropdown-popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.cinder-editor-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  color: var(--cinder-text);
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.cinder-editor-dropdown-item:hover {
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-editor-kbd {
+  font-family: var(--cinder-font-mono, monospace);
+  font-size: 11px;
+  color: var(--cinder-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--cinder-border);
+}
+
+/* Color Palette Popovers */
+.cinder-editor-color-popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 10px;
+  width: 160px;
+}
+
+.cinder-editor-color-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.cinder-editor-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.cinder-editor-color-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid var(--cinder-border);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.cinder-editor-color-swatch:hover {
+  transform: scale(1.15);
+  border-color: var(--cinder-text);
+}
+
+/* Content Surface */
+.cinder-editor-content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinder-editor-surface {
+  padding: 14px 18px;
+  font-family: var(--cinder-font-sans, "Plus Jakarta Sans", sans-serif);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cinder-text);
+  outline: none;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+.cinder-editor-surface:empty::before {
+  content: attr(data-placeholder);
+  color: var(--cinder-muted);
+  pointer-events: none;
+}
+
+/* Typography styles inside editor */
+.cinder-editor-surface p {
+  margin: 0 0 10px 0;
+}
+
+.cinder-editor-surface ul {
+  list-style-type: disc;
+  margin: 8px 0 8px 24px;
+  padding: 0;
+}
+
+.cinder-editor-surface ol {
+  margin: 8px 0 8px 24px;
+  padding: 0;
+}
+
+.cinder-editor-surface li {
+  margin-bottom: 4px;
+}
+
+/* Code Blocks & Inline Code */
+.cinder-editor-code-block {
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+  font-size: 13px;
+  background-color: #09090b;
+  border: 1px solid var(--cinder-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: #38bdf8;
+  overflow-x: auto;
+  margin: 12px 0;
+  white-space: pre-wrap;
+}
+
+.cinder-editor-inline-code {
+  font-family: var(--cinder-font-mono, "JetBrains Mono", monospace);
+  font-size: 12px;
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-primary);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Status Bar */
+.cinder-editor-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  border-top: 1px solid var(--cinder-border);
+  font-size: 11px;
+  color: var(--cinder-muted);
+  background-color: var(--cinder-surface);
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.cinder-editor-status-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cinder-editor-status-tag {
+  font-family: var(--cinder-font-mono, monospace);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cinder-primary);
+}
+
+.cinder-editor-status-hint {
+  font-size: 11px;
+}
+
+.cinder-editor-status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--cinder-font-mono, monospace);
+}
+
+.cinder-editor-stat-divider {
+  color: var(--cinder-border);
+}
+
+@keyframes cinderFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

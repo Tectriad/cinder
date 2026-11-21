@@ -129,17 +129,19 @@ export function HomePage() {
               <Card variant="glass" interactive>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                   <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "8px",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
                     backgroundColor: "rgba(59, 130, 246, 0.15)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     color: "var(--cinder-primary)",
-                    border: "1px solid rgba(59, 130, 246, 0.3)"
+                    border: "1px solid rgba(59, 130, 246, 0.3)",
+                    flexShrink: 0,
+                    overflow: "hidden"
                   }}>
-                    <CinderLogo size={20} />
+                    <CinderLogo size={28} />
                   </div>
                   <Badge variant="primary" size="sm" dot>Cinder Slate</Badge>
                 </div>

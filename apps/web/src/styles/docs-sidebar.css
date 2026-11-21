@@ -2,8 +2,63 @@
    Cinder Documentation Sidebar Styles
    ========================================================================== */
 
-/* Sidebar */
-.cinder-sidebar {
+/* Toggle Button in Top Nav */
+.cinder-docs-sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.cinder-docs-sidebar-toggle-btn:hover {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+}
+
+/* Floating Edge Collapse Toggle */
+.cinder-docs-sidebar-edge-toggle {
+  position: fixed;
+  top: 80px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--cinder-surface, #121215);
+  border: 1px solid var(--cinder-border, #27272a);
+  color: var(--cinder-muted, #a1a1aa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 120;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: left 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 150ms ease, border-color 150ms ease;
+  outline: none;
+}
+
+[data-theme="light"] .cinder-docs-sidebar-edge-toggle {
+  background-color: #ffffff;
+  border-color: var(--cinder-border, #e4e4e7);
+  color: #09090b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cinder-docs-sidebar-edge-toggle:hover {
+  color: var(--cinder-primary, #3b82f6);
+  border-color: var(--cinder-primary, #3b82f6);
+  transform: scale(1.1);
+}
+
+/* Sidebar Container */
+.cinder-docs-sidebar {
   width: 280px;
   border-right: 1px solid var(--cinder-border);
   background-color: var(--cinder-bg);
@@ -14,28 +69,39 @@
   top: 64px;
   display: flex;
   flex-direction: column;
+  transition: width 200ms cubic-bezier(0.16, 1, 0.3, 1), opacity 150ms ease;
+}
+
+.cinder-docs-sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  border-right: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Custom Scrollbar for Sidebar */
-.cinder-sidebar::-webkit-scrollbar {
+.cinder-docs-sidebar::-webkit-scrollbar {
   width: 5px;
 }
 
-.cinder-sidebar::-webkit-scrollbar-track {
+.cinder-docs-sidebar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.cinder-sidebar::-webkit-scrollbar-thumb {
+.cinder-docs-sidebar::-webkit-scrollbar-thumb {
   background: var(--cinder-border);
   border-radius: 4px;
 }
 
-.cinder-sidebar::-webkit-scrollbar-thumb:hover {
+.cinder-docs-sidebar::-webkit-scrollbar-thumb:hover {
   background: var(--cinder-muted);
 }
 
 /* Sidebar Header & Search */
-.cinder-sidebar-header {
+.cinder-docs-sidebar-header {
   padding: 14px 14px 12px 14px;
   border-bottom: 1px solid var(--cinder-border);
   display: flex;
@@ -47,21 +113,21 @@
   z-index: 10;
 }
 
-.cinder-sidebar-search {
+.cinder-docs-sidebar-search {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.cinder-sidebar-search-icon {
+.cinder-docs-sidebar-search-icon {
   position: absolute;
   left: 10px;
   color: var(--cinder-muted);
   pointer-events: none;
 }
 
-.cinder-sidebar-search-input {
+.cinder-docs-sidebar-search-input {
   width: 100%;
   height: 32px;
   padding: 0 28px 0 30px;
@@ -76,17 +142,17 @@
   box-sizing: border-box;
 }
 
-.cinder-sidebar-search-input:focus {
+.cinder-docs-sidebar-search-input:focus {
   border-color: var(--cinder-primary);
   box-shadow: 0 0 0 2px var(--cinder-focus-ring);
 }
 
-.cinder-sidebar-search-input::placeholder {
+.cinder-docs-sidebar-search-input::placeholder {
   color: var(--cinder-muted);
   opacity: 0.8;
 }
 
-.cinder-sidebar-search-clear {
+.cinder-docs-sidebar-search-clear {
   position: absolute;
   right: 6px;
   top: 50%;
@@ -100,18 +166,18 @@
   line-height: 1;
 }
 
-.cinder-sidebar-search-clear:hover {
+.cinder-docs-sidebar-search-clear:hover {
   color: var(--cinder-text);
 }
 
 /* Quick Navigation Links */
-.cinder-sidebar-quick-nav {
+.cinder-docs-sidebar-quick-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px;
 }
 
-.cinder-sidebar-quick-link {
+.cinder-docs-sidebar-quick-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,13 +193,13 @@
   transition: all 0.12s ease;
 }
 
-.cinder-sidebar-quick-link:hover {
+.cinder-docs-sidebar-quick-link:hover {
   color: var(--cinder-text);
   border-color: var(--cinder-border-strong);
   background-color: var(--cinder-surface-hover);
 }
 
-.cinder-sidebar-quick-link.active {
+.cinder-docs-sidebar-quick-link.active {
   background-color: rgba(59, 130, 246, 0.12);
   color: var(--cinder-primary);
   border-color: var(--cinder-primary);
@@ -141,27 +207,27 @@
 }
 
 /* Sidebar Groups */
-.cinder-sidebar-groups {
+.cinder-docs-sidebar-groups {
   padding: 12px 12px 40px 12px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.cinder-sidebar-group {
+.cinder-docs-sidebar-group {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.cinder-sidebar-group-header {
+.cinder-docs-sidebar-group-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 4px 8px 6px 8px;
 }
 
-.cinder-sidebar-group-title {
+.cinder-docs-sidebar-group-title {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -169,7 +235,7 @@
   color: var(--cinder-muted);
 }
 
-.cinder-sidebar-group-count {
+.cinder-docs-sidebar-group-count {
   font-size: 10px;
   font-weight: 600;
   color: var(--cinder-muted);
@@ -177,14 +243,14 @@
   font-family: var(--cinder-font-mono);
 }
 
-.cinder-sidebar-items {
+.cinder-docs-sidebar-items {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
 /* Individual Sidebar Item (Single-Line High-Density) */
-.cinder-sidebar-item {
+.cinder-docs-sidebar-item {
   position: relative;
   display: flex;
   align-items: center;
@@ -201,18 +267,18 @@
   gap: 6px;
 }
 
-.cinder-sidebar-item:hover {
+.cinder-docs-sidebar-item:hover {
   background-color: var(--cinder-surface-hover);
   color: var(--cinder-text);
 }
 
-.cinder-sidebar-item.active {
+.cinder-docs-sidebar-item.active {
   background-color: rgba(59, 130, 246, 0.12);
   color: var(--cinder-primary);
   font-weight: 600;
 }
 
-.cinder-sidebar-item.active::before {
+.cinder-docs-sidebar-item.active::before {
   content: "";
   position: absolute;
   left: 0;
@@ -224,7 +290,7 @@
   border-radius: 0 2px 2px 0;
 }
 
-.cinder-sidebar-item-left {
+.cinder-docs-sidebar-item-left {
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -232,7 +298,7 @@
   flex: 1;
 }
 
-.cinder-sidebar-item-name {
+.cinder-docs-sidebar-item-name {
   font-weight: 500;
   font-size: 13px;
   color: inherit;
@@ -240,12 +306,12 @@
   flex-shrink: 0;
 }
 
-.cinder-sidebar-item.active .cinder-sidebar-item-name {
+.cinder-docs-sidebar-item.active .cinder-docs-sidebar-item-name {
   font-weight: 600;
   color: var(--cinder-primary);
 }
 
-.cinder-sidebar-item-sub {
+.cinder-docs-sidebar-item-sub {
   font-size: 11px;
   color: var(--cinder-muted);
   white-space: nowrap;
@@ -255,12 +321,12 @@
   transition: opacity 0.12s ease;
 }
 
-.cinder-sidebar-item:hover .cinder-sidebar-item-sub {
+.cinder-docs-sidebar-item:hover .cinder-docs-sidebar-item-sub {
   opacity: 0.9;
   color: var(--cinder-text);
 }
 
-.cinder-sidebar-badge {
+.cinder-docs-sidebar-badge {
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
@@ -275,7 +341,7 @@
 }
 
 /* Empty Search State */
-.cinder-sidebar-empty {
+.cinder-docs-sidebar-empty {
   padding: 32px 16px;
   text-align: center;
   display: flex;
@@ -284,12 +350,12 @@
   gap: 8px;
 }
 
-.cinder-sidebar-empty-text {
+.cinder-docs-sidebar-empty-text {
   font-size: 12px;
   color: var(--cinder-muted);
 }
 
-.cinder-sidebar-empty-btn {
+.cinder-docs-sidebar-empty-btn {
   background: none;
   border: 1px solid var(--cinder-border);
   border-radius: 4px;
@@ -300,6 +366,6 @@
   transition: all 0.12s ease;
 }
 
-.cinder-sidebar-empty-btn:hover {
+.cinder-docs-sidebar-empty-btn:hover {
   background-color: var(--cinder-surface-hover);
 }

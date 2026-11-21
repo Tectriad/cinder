@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-git-pull-request" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <circle cx="18" cy="18" r="3.5" fill="url(#iconforge-grad-git-pull-request)" />
+  <circle cx="6" cy="6" r="3.5" fill="url(#iconforge-grad-git-pull-request)" />
+  <path d="M13 6h3a2 2 0 0 1 2 2v7" fill="none" stroke="url(#iconforge-grad-git-pull-request)" strokeWidth="2.5" strokeLinecap="round" />
+  <line x1="6" y1="9" x2="6" y2="21" stroke="url(#iconforge-grad-git-pull-request)" strokeWidth="2.5" strokeLinecap="round" />
+</svg>

@@ -1,0 +1,228 @@
+/* ==========================================================================
+   IconForge - Playground & Docs Tabs Styles
+   ========================================================================== */
+
+.icon-playground-root {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.icon-pg-controls-card,
+.icon-pg-preview-card {
+  background-color: var(--cinder-surface, #121215);
+  border: 1px solid var(--cinder-border, #27272a);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.icon-pg-controls-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icon-pg-card-title {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.icon-pg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.icon-pg-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinder-muted, #a1a1aa);
+}
+
+.icon-pg-label-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-pg-val {
+  font-size: 12px;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.icon-pg-select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #09090b;
+  border: 1px solid var(--cinder-border, #27272a);
+  color: #fafafa;
+  font-size: 13px;
+  outline: none;
+}
+
+.icon-pg-button-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.icon-pg-btn {
+  padding: 6px 4px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #09090b;
+  border: 1px solid var(--cinder-border, #27272a);
+  color: var(--cinder-muted, #a1a1aa);
+  cursor: pointer;
+}
+
+.icon-pg-btn.active {
+  color: #ffffff;
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.icon-pg-color-row,
+.icon-pg-gradient-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-pg-hex {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--cinder-muted, #a1a1aa);
+}
+
+.icon-pg-bg-options {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-pg-bg-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.icon-pg-bg-btn.active {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.icon-pg-preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon-pg-stage {
+  height: 260px;
+  border-radius: 12px;
+  border: 1px solid var(--cinder-border, #27272a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-pg-code-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icon-pg-code-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.icon-pg-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-pg-code-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cinder-muted, #a1a1aa);
+}
+
+.icon-pg-copy-btn {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   IconForge Playground - Light Theme Tokens
+   ========================================================================== */
+
+[data-theme="light"] .icon-pg-controls-card,
+[data-theme="light"] .icon-pg-preview-card {
+  background-color: #ffffff;
+  border-color: #e4e4e7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .icon-pg-card-title {
+  color: #09090b;
+}
+
+[data-theme="light"] .icon-pg-label {
+  color: #71717a;
+}
+
+[data-theme="light"] .icon-pg-select {
+  background-color: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #09090b;
+}
+
+[data-theme="light"] .icon-pg-btn {
+  background-color: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #71717a;
+}
+
+[data-theme="light"] .icon-pg-btn:hover {
+  color: #09090b;
+  background-color: #e4e4e7;
+}
+
+[data-theme="light"] .icon-pg-btn.active {
+  color: #ffffff;
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+[data-theme="light"] .icon-pg-stage {
+  border-color: #e4e4e7;
+}
+
+[data-theme="light"] .icon-pg-copy-btn {
+  background-color: #f4f4f5;
+  border-color: #e4e4e7;
+  color: #09090b;
+}
+
+[data-theme="light"] .icon-pg-copy-btn:hover {
+  background-color: #e4e4e7;
+}
+
+

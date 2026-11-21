@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-server" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="20" height="8" rx="2" fill="url(#iconforge-grad-server)" />
+  <rect x="2" y="14" width="20" height="8" rx="2" fill="url(#iconforge-grad-server)" />
+  <circle cx="6" cy="6" r="1" fill="#ffffff" />
+  <circle cx="6" cy="18" r="1" fill="#ffffff" />
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iconforge-grad-terminal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="3" width="20" height="18" rx="3" fill="url(#iconforge-grad-terminal)" />
+  <polyline points="6 15 10 12 6 9" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <line x1="12" y1="15" x2="17" y2="15" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+</svg>

@@ -1,0 +1,287 @@
+import type { IconDefinition } from "../types";
+
+export const FRAMEWORK_WEB_ICONS: IconDefinition[] = [
+  // 30. React
+  {
+    name: "react",
+    label: "React",
+    category: "frontend",
+    tags: ["reactjs", "atom", "library", "jsx", "meta", "ui"],
+    aliases: ["reactjs", "atom"],
+    variants: {
+      outline: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(30 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(150 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "circle",
+          attrs: { cx: 12, cy: 12, r: 1.8, fill: "currentColor" },
+        },
+      ],
+      filled: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(30 12 12)",
+            fill: "currentColor",
+            opacity: 0.8,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "currentColor",
+            opacity: 0.8,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(150 12 12)",
+            fill: "currentColor",
+            opacity: 0.8,
+          },
+        },
+        { tag: "circle", attrs: { cx: 12, cy: 12, r: 2.5, fill: "#ffffff" } },
+      ],
+      duotone: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "currentColor",
+            opacity: 0.25,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(30 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(150 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 1.75,
+          },
+        },
+        {
+          tag: "circle",
+          attrs: { cx: 12, cy: 12, r: 1.8, fill: "currentColor" },
+        },
+      ],
+      multicolor: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(30 12 12)",
+            fill: "none",
+            stroke: "#00d8ff",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "none",
+            stroke: "#00b4d8",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(150 12 12)",
+            fill: "none",
+            stroke: "#0077b6",
+            strokeWidth: 2,
+          },
+        },
+        { tag: "circle", attrs: { cx: 12, cy: 12, r: 2, fill: "#00d8ff" } },
+      ],
+      gradient: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(30 12 12)",
+            fill: "none",
+            stroke: "url(#icon-grad)",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(90 12 12)",
+            fill: "none",
+            stroke: "url(#icon-grad)",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9.5,
+            ry: 4,
+            transform: "rotate(150 12 12)",
+            fill: "none",
+            stroke: "url(#icon-grad)",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "circle",
+          attrs: { cx: 12, cy: 12, r: 2, fill: "url(#icon-grad)" },
+        },
+      ],
+      rounded: [
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9,
+            ry: 4.5,
+            transform: "rotate(30 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9,
+            ry: 4.5,
+            transform: "rotate(90 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "ellipse",
+          attrs: {
+            cx: 12,
+            cy: 12,
+            rx: 9,
+            ry: 4.5,
+            transform: "rotate(150 12 12)",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: 2,
+          },
+        },
+        {
+          tag: "circle",
+          attrs: { cx: 12, cy: 12, r: 2, fill: "currentColor" },
+        },
+      ],
+    },
+    }
+];

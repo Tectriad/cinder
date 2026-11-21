@@ -43,9 +43,20 @@ import { TextAreaDocPage } from "./pages/components/TextAreaDocPage";
 import { TypographyDocPage } from "./pages/components/TypographyDocPage";
 import { FilePickerDocPage } from "./pages/components/FilePickerDocPage";
 import { FormBuilderDocPage } from "./pages/components/FormBuilderDocPage";
+import { EditorDocPage } from "./pages/components/EditorDocPage";
+import { ChartDocPage } from "./pages/components/ChartDocPage";
 import { LayoutDocPage } from "./pages/components/LayoutDocPage";
+import { JSONEditorDocPage } from "./pages/components/JSONEditorDocPage";
+import { CodeEditorDocPage } from "./pages/components/CodeEditorDocPage";
+import { ColorPickerProDocPage } from "./pages/components/ColorPickerProDocPage";
+import { TimeRangePickerDocPage } from "./pages/components/TimeRangePickerDocPage";
+import { PhoneInputDocPage } from "./pages/components/PhoneInputDocPage";
+import { AddressAutocompleteDocPage } from "./pages/components/AddressAutocompleteDocPage";
+import { MultiSelectProDocPage } from "./pages/components/MultiSelectProDocPage";
+import { OTPInputDocPage } from "./pages/components/OTPInputDocPage";
 import { ComponentOverviewPage } from "./pages/ComponentOverviewPage";
 import { TokensPage } from "./pages/TokensPage";
+import { IconExplorerPage } from "./pages/icons/IconExplorerPage";
 
 export function App(): ReactElement {
   return (
@@ -54,6 +65,9 @@ export function App(): ReactElement {
         <Routes>
           {/* Main Landing Route */}
           <Route path="/" element={<HomePage />} />
+
+          {/* IconForge Ecosystem & Studio */}
+          <Route path="/icons" element={<IconExplorerPage />} />
 
           {/* Component Documentation Routes (Cinder Architecture) */}
           <Route path="/components" element={<DocsLayout />}>
@@ -127,6 +141,20 @@ export function App(): ReactElement {
             <Route path="upload" element={<FilePickerDocPage />} />
             <Route path="form-builder" element={<FormBuilderDocPage />} />
             <Route path="form" element={<FormBuilderDocPage />} />
+            <Route path="editor" element={<EditorDocPage />} />
+            <Route path="rich-editor" element={<EditorDocPage />} />
+            <Route path="json-editor" element={<JSONEditorDocPage />} />
+            <Route path="code-editor" element={<CodeEditorDocPage />} />
+            <Route path="color-picker-pro" element={<ColorPickerProDocPage />} />
+            <Route path="time-range-picker" element={<TimeRangePickerDocPage />} />
+            <Route path="phone-input" element={<PhoneInputDocPage />} />
+            <Route path="address-autocomplete" element={<AddressAutocompleteDocPage />} />
+            <Route path="multi-select-pro" element={<MultiSelectProDocPage />} />
+            <Route path="otp-input" element={<OTPInputDocPage />} />
+            <Route path="chart" element={<ChartDocPage />} />
+            <Route path="charts" element={<ChartDocPage />} />
+            <Route path="graph" element={<ChartDocPage />} />
+            <Route path="graphs" element={<ChartDocPage />} />
             <Route path="layout" element={<LayoutDocPage />} />
             <Route path="box" element={<LayoutDocPage />} />
             <Route path="container" element={<LayoutDocPage />} />
