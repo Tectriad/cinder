@@ -6,6 +6,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -62,7 +65,7 @@
   },
   "dependencies": {
     "chart.js": "^4.6.1",
-    "@iconforge/core": "*",
-    "@iconforge/react": "*"
+    "@iconforge/core": "^0.1.0",
+    "@iconforge/react": "^0.1.0"
   }
 }

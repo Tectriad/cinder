@@ -2,6 +2,9 @@
   "name": "@iconforge/svg",
   "version": "0.1.0",
   "description": "Framework-agnostic raw SVG vector icon assets for IconForge in 6 visual styles",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "svg",
     "README.md"

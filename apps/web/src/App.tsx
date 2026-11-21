@@ -61,7 +61,7 @@ import { IconExplorerPage } from "./pages/icons/IconExplorerPage";
 export function App(): ReactElement {
   return (
     <ThemeProvider defaultMode="dark" defaultThemeId="dark">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           {/* Main Landing Route */}
           <Route path="/" element={<HomePage />} />
