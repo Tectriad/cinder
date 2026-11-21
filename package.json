@@ -10,12 +10,12 @@
   "scripts": {
     "dev": "npm run dev --workspace=@cinder-ui/web",
     "dev:lib": "npm run dev --workspace=@cinder-ui/core",
-    "build": "npm run build --workspaces",
+    "build": "npm run build:packages && npm run build:web",
     "build:packages": "npm run build --workspace=@iconforge/core && npm run build --workspace=@iconforge/svg && npm run build --workspace=@iconforge/react && npm run build --workspace=@cinder-ui/core",
     "build:lib": "npm run build --workspace=@cinder-ui/core",
     "build:web": "npm run build --workspace=@cinder-ui/web",
     "publish:packages": "npm publish --workspace=@iconforge/core && npm publish --workspace=@iconforge/svg && npm publish --workspace=@iconforge/react && npm publish --workspace=@cinder-ui/core",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspace=@iconforge/core && npm run typecheck --workspace=@iconforge/react && npm run typecheck --workspace=@cinder-ui/core && npm run typecheck --workspace=@cinder-ui/web",
     "clean": "rm -rf node_modules packages/*/dist packages/*/node_modules apps/*/dist apps/*/node_modules"
   },
   "devDependencies": {
