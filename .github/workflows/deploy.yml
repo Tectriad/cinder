@@ -34,13 +34,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build web showcase
+        env:
+          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path || '/cinder/' }}
         run: |
           npm run build
           cp apps/web/dist/index.html apps/web/dist/404.html
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          touch apps/web/dist/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
