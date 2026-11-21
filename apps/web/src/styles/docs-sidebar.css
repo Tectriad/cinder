@@ -1,0 +1,305 @@
+/* ==========================================================================
+   Cinder Documentation Sidebar Styles
+   ========================================================================== */
+
+/* Sidebar */
+.cinder-sidebar {
+  width: 280px;
+  border-right: 1px solid var(--cinder-border);
+  background-color: var(--cinder-bg);
+  flex-shrink: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar for Sidebar */
+.cinder-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cinder-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cinder-sidebar::-webkit-scrollbar-thumb {
+  background: var(--cinder-border);
+  border-radius: 4px;
+}
+
+.cinder-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--cinder-muted);
+}
+
+/* Sidebar Header & Search */
+.cinder-sidebar-header {
+  padding: 14px 14px 12px 14px;
+  border-bottom: 1px solid var(--cinder-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  background-color: var(--cinder-bg);
+  z-index: 10;
+}
+
+.cinder-sidebar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cinder-sidebar-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--cinder-muted);
+  pointer-events: none;
+}
+
+.cinder-sidebar-search-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 28px 0 30px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 6px;
+  color: var(--cinder-text);
+  font-size: 12px;
+  font-family: var(--cinder-font-sans);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.cinder-sidebar-search-input:focus {
+  border-color: var(--cinder-primary);
+  box-shadow: 0 0 0 2px var(--cinder-focus-ring);
+}
+
+.cinder-sidebar-search-input::placeholder {
+  color: var(--cinder-muted);
+  opacity: 0.8;
+}
+
+.cinder-sidebar-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--cinder-muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.cinder-sidebar-search-clear:hover {
+  color: var(--cinder-text);
+}
+
+/* Quick Navigation Links */
+.cinder-sidebar-quick-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.cinder-sidebar-quick-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  color: var(--cinder-muted);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.12s ease;
+}
+
+.cinder-sidebar-quick-link:hover {
+  color: var(--cinder-text);
+  border-color: var(--cinder-border-strong);
+  background-color: var(--cinder-surface-hover);
+}
+
+.cinder-sidebar-quick-link.active {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+  font-weight: 600;
+}
+
+/* Sidebar Groups */
+.cinder-sidebar-groups {
+  padding: 12px 12px 40px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cinder-sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cinder-sidebar-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px 6px 8px;
+}
+
+.cinder-sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--cinder-muted);
+}
+
+.cinder-sidebar-group-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cinder-muted);
+  opacity: 0.6;
+  font-family: var(--cinder-font-mono);
+}
+
+.cinder-sidebar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Individual Sidebar Item (Single-Line High-Density) */
+.cinder-sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--cinder-muted);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 6px;
+}
+
+.cinder-sidebar-item:hover {
+  background-color: var(--cinder-surface-hover);
+  color: var(--cinder-text);
+}
+
+.cinder-sidebar-item.active {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--cinder-primary);
+  font-weight: 600;
+}
+
+.cinder-sidebar-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background-color: var(--cinder-primary);
+  border-radius: 0 2px 2px 0;
+}
+
+.cinder-sidebar-item-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.cinder-sidebar-item-name {
+  font-weight: 500;
+  font-size: 13px;
+  color: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cinder-sidebar-item.active .cinder-sidebar-item-name {
+  font-weight: 600;
+  color: var(--cinder-primary);
+}
+
+.cinder-sidebar-item-sub {
+  font-size: 11px;
+  color: var(--cinder-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.65;
+  transition: opacity 0.12s ease;
+}
+
+.cinder-sidebar-item:hover .cinder-sidebar-item-sub {
+  opacity: 0.9;
+  color: var(--cinder-text);
+}
+
+.cinder-sidebar-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--cinder-primary);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+/* Empty Search State */
+.cinder-sidebar-empty {
+  padding: 32px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinder-sidebar-empty-text {
+  font-size: 12px;
+  color: var(--cinder-muted);
+}
+
+.cinder-sidebar-empty-btn {
+  background: none;
+  border: 1px solid var(--cinder-border);
+  border-radius: 4px;
+  color: var(--cinder-primary);
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.cinder-sidebar-empty-btn:hover {
+  background-color: var(--cinder-surface-hover);
+}

@@ -19,87 +19,87 @@ const COMPONENT_CATEGORIES: ComponentCategory[] = [
   {
     title: "General",
     items: [
-      { name: "CDButton", subtitle: "Action trigger", path: "/components/button", badge: "Core" },
-      { name: "CDFloatButton", subtitle: "Floating actions", path: "/components/float-button", badge: "New" },
-      { name: "CDIcon", subtitle: "Vector iconography", path: "/components/icon", badge: "New" },
+      { name: "CDButton", subtitle: "Action trigger", path: "/components/button" },
+      { name: "CDFloatButton", subtitle: "Floating actions", path: "/components/float-button" },
+      { name: "CDIcon", subtitle: "Vector iconography", path: "/components/icon" },
       { name: "CDIconButton", subtitle: "Icon trigger", path: "/components/icon-button" },
-      { name: "CDTypography", subtitle: "Text & headings", path: "/components/typography", badge: "New" },
+      { name: "CDTypography", subtitle: "Text & headings", path: "/components/typography" },
     ],
   },
   {
     title: "Layout",
     items: [
-      { name: "CDBox", subtitle: "Polymorphic wrapper", path: "/components/box", badge: "New" },
-      { name: "CDContainer", subtitle: "Centered max-width", path: "/components/container", badge: "New" },
-      { name: "CDGrid", subtitle: "2D CSS grid", path: "/components/grid", badge: "New" },
-      { name: "CDStack", subtitle: "Flexbox stack", path: "/components/stack", badge: "New" },
-      { name: "CDDivider", subtitle: "Line separator", path: "/components/divider", badge: "New" },
-      { name: "CDSpacer", subtitle: "Spatial distribution", path: "/components/spacer", badge: "New" },
+      { name: "CDBox", subtitle: "Polymorphic wrapper", path: "/components/box" },
+      { name: "CDContainer", subtitle: "Centered max-width", path: "/components/container" },
+      { name: "CDGrid", subtitle: "2D CSS grid", path: "/components/grid" },
+      { name: "CDStack", subtitle: "Flexbox stack", path: "/components/stack" },
+      { name: "CDDivider", subtitle: "Line separator", path: "/components/divider" },
+      { name: "CDSpacer", subtitle: "Spatial distribution", path: "/components/spacer" },
     ],
   },
   {
     title: "Navigation",
     items: [
-      { name: "CDNavbar", subtitle: "Header bar", path: "/components/navbar", badge: "New" },
-      { name: "CDSidebar", subtitle: "Side navigation", path: "/components/sidebar", badge: "New" },
-      { name: "CDTabs", subtitle: "Tabbed switching", path: "/components/tabs", badge: "New" },
-      { name: "CDBreadcrumb", subtitle: "Path hierarchy", path: "/components/breadcrumb", badge: "New" },
-      { name: "CDPagination", subtitle: "Page switcher", path: "/components/pagination", badge: "New" },
-      { name: "CDStepper", subtitle: "Step wizard", path: "/components/stepper", badge: "New" },
-      { name: "CDLink", subtitle: "Hyperlink", path: "/components/link", badge: "New" },
-      { name: "CDDropdown", subtitle: "Action menu", path: "/components/dropdown", badge: "New" },
+      { name: "CDNavbar", subtitle: "Header bar", path: "/components/navbar" },
+      { name: "CDSidebar", subtitle: "Side navigation", path: "/components/sidebar" },
+      { name: "CDTabs", subtitle: "Tabbed switching", path: "/components/tabs" },
+      { name: "CDBreadcrumb", subtitle: "Path hierarchy", path: "/components/breadcrumb" },
+      { name: "CDPagination", subtitle: "Page switcher", path: "/components/pagination" },
+      { name: "CDStepper", subtitle: "Step wizard", path: "/components/stepper" },
+      { name: "CDLink", subtitle: "Hyperlink", path: "/components/link" },
+      { name: "CDDropdown", subtitle: "Action menu", path: "/components/dropdown" },
       { name: "CDButtonDropdown", subtitle: "Split button", path: "/components/button-dropdown" },
     ],
   },
   {
     title: "Data Entry",
     items: [
-      { name: "CDRadio", subtitle: "Single option selector", path: "/components/radio", badge: "New" },
-      { name: "CDSwitch", subtitle: "Binary toggle", path: "/components/switch", badge: "New" },
-      { name: "CDSlider", subtitle: "Value & range slider", path: "/components/slider", badge: "New" },
-      { name: "CDTextArea", subtitle: "Multi-line editor", path: "/components/textarea", badge: "New" },
-      { name: "CDDatePicker", subtitle: "Date & range selector", path: "/components/date-picker", badge: "New" },
-      { name: "CDTimePicker", subtitle: "Time selector", path: "/components/time-picker", badge: "New" },
-      { name: "CDCheckbox", subtitle: "Multi-choice selector", path: "/components/checkbox", badge: "New" },
-      { name: "CDInput", subtitle: "Form control", path: "/components/input" },
-      { name: "CDSelect", subtitle: "Options select", path: "/components/select", badge: "New" },
-      { name: "CDFilePicker", subtitle: "File upload & preview", path: "/components/file-picker", badge: "New" },
       { name: "CDFormBuilder", subtitle: "Dynamic schema form", path: "/components/form-builder", badge: "New" },
+      { name: "CDInput", subtitle: "Form control", path: "/components/input" },
+      { name: "CDSelect", subtitle: "Options select", path: "/components/select" },
+      { name: "CDRadio", subtitle: "Single option selector", path: "/components/radio" },
+      { name: "CDCheckbox", subtitle: "Multi-choice selector", path: "/components/checkbox" },
+      { name: "CDSwitch", subtitle: "Binary toggle", path: "/components/switch" },
+      { name: "CDSlider", subtitle: "Value & range slider", path: "/components/slider" },
+      { name: "CDTextArea", subtitle: "Multi-line editor", path: "/components/textarea" },
+      { name: "CDDatePicker", subtitle: "Date & range selector", path: "/components/date-picker" },
+      { name: "CDTimePicker", subtitle: "Time selector", path: "/components/time-picker" },
+      { name: "CDFilePicker", subtitle: "File upload & preview", path: "/components/file-picker" },
     ],
   },
   {
     title: "Data Display",
     items: [
-      { name: "CDOutlookCalendar", subtitle: "Outlook scheduler", path: "/components/calendar", badge: "New" },
-      { name: "CDCalendar", subtitle: "Event calendar", path: "/components/calendar", badge: "New" },
+      { name: "CDTable", subtitle: "Data grid table", path: "/components/table" },
+      { name: "CDCalendar", subtitle: "Event calendar", path: "/components/calendar" },
+      { name: "CDOutlookCalendar", subtitle: "Outlook scheduler", path: "/components/calendar" },
       { name: "CDCard", subtitle: "Content container", path: "/components/card" },
-      { name: "CDTable", subtitle: "Data grid table", path: "/components/table", badge: "New" },
-      { name: "CDList", subtitle: "Item sequence", path: "/components/list", badge: "New" },
-      { name: "CDAccordion", subtitle: "Collapsible panels", path: "/components/accordion", badge: "New" },
-      { name: "CDAvatar", subtitle: "User identity", path: "/components/avatar", badge: "New" },
-      { name: "CDTag", subtitle: "Filter chip", path: "/components/tag", badge: "New" },
+      { name: "CDList", subtitle: "Item sequence", path: "/components/list" },
+      { name: "CDAccordion", subtitle: "Collapsible panels", path: "/components/accordion" },
+      { name: "CDAvatar", subtitle: "User identity", path: "/components/avatar" },
+      { name: "CDTag", subtitle: "Filter chip", path: "/components/tag" },
       { name: "CDBadge", subtitle: "Status pill", path: "/components/badge" },
-      { name: "CDGlassPanel", subtitle: "Frosted container", path: "/components/glass-panel", badge: "Slate" },
+      { name: "CDGlassPanel", subtitle: "Frosted container", path: "/components/glass-panel" },
     ],
   },
   {
     title: "Feedback",
     items: [
-      { name: "CDAlert", subtitle: "Notice banner", path: "/components/alert", badge: "New" },
-      { name: "CDToast", subtitle: "Floating snackbar", path: "/components/toast", badge: "New" },
-      { name: "CDProgressBar", subtitle: "Progress tracker", path: "/components/progress", badge: "New" },
-      { name: "CDSpinner", subtitle: "Loading indicator", path: "/components/spinner", badge: "New" },
-      { name: "CDSkeleton", subtitle: "Content placeholder", path: "/components/skeleton", badge: "New" },
+      { name: "CDAlert", subtitle: "Notice banner", path: "/components/alert" },
+      { name: "CDToast", subtitle: "Floating snackbar", path: "/components/toast" },
+      { name: "CDProgressBar", subtitle: "Progress tracker", path: "/components/progress" },
+      { name: "CDSpinner", subtitle: "Loading indicator", path: "/components/spinner" },
+      { name: "CDSkeleton", subtitle: "Content placeholder", path: "/components/skeleton" },
     ],
   },
   {
     title: "Overlay",
     items: [
-      { name: "CDModal", subtitle: "Dialog overlay", path: "/components/modal", badge: "New" },
-      { name: "CDDrawer", subtitle: "Sliding sheet", path: "/components/drawer", badge: "New" },
-      { name: "CDTooltip", subtitle: "Contextual balloon", path: "/components/tooltip", badge: "New" },
-      { name: "CDPopover", subtitle: "Floating card", path: "/components/popover", badge: "New" },
-      { name: "CDDropdownMenu", subtitle: "Portal menu", path: "/components/dropdown-menu", badge: "New" },
+      { name: "CDModal", subtitle: "Dialog overlay", path: "/components/modal" },
+      { name: "CDDrawer", subtitle: "Sliding sheet", path: "/components/drawer" },
+      { name: "CDTooltip", subtitle: "Contextual balloon", path: "/components/tooltip" },
+      { name: "CDPopover", subtitle: "Floating card", path: "/components/popover" },
+      { name: "CDDropdownMenu", subtitle: "Portal menu", path: "/components/dropdown-menu" },
     ],
   },
   {
@@ -249,56 +249,94 @@ export function DocsLayout(): ReactElement {
       <div className="cinder-body-container">
         {/* Left Sidebar */}
         <aside className="cinder-sidebar">
-          {/* Quick Overview Link */}
-          <div style={{ padding: "16px 16px 8px 16px" }}>
-            <NavLink
-              to="/components/overview"
-              className={({ isActive }) =>
-                `cinder-sidebar-item cinder-overview-item ${isActive ? "active" : ""}`
-              }
-            >
-              <CDIcons.Box size={14} />
-              <span>Component Overview</span>
-            </NavLink>
+          {/* Sidebar Header with Quick Filter & Navigation */}
+          <div className="cinder-sidebar-header">
+            <div className="cinder-sidebar-search">
+              <CDIcons.Search size={13} className="cinder-sidebar-search-icon" />
+              <input
+                type="text"
+                placeholder="Filter components..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="cinder-sidebar-search-input"
+              />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm("")}
+                  className="cinder-sidebar-search-clear"
+                  aria-label="Clear filter"
+                >
+                  &times;
+                </button>
+              )}
+            </div>
+
+            <nav className="cinder-sidebar-quick-nav">
+              <NavLink
+                to="/components/overview"
+                className={({ isActive }) =>
+                  `cinder-sidebar-quick-link ${isActive ? "active" : ""}`
+                }
+              >
+                <CDIcons.Box size={13} />
+                <span>Overview</span>
+              </NavLink>
+              <NavLink
+                to="/tokens"
+                className={({ isActive }) =>
+                  `cinder-sidebar-quick-link ${isActive ? "active" : ""}`
+                }
+              >
+                <CDIcons.Sparkles size={13} />
+                <span>Tokens</span>
+              </NavLink>
+            </nav>
           </div>
 
           {/* Categorized Nav Groups */}
           <div className="cinder-sidebar-groups">
-            {filteredCategories.map((cat: ComponentCategory, idx: number) => (
-              <div key={idx} className="cinder-sidebar-group">
-                <div className="cinder-sidebar-group-title">{cat.title}</div>
-                <div className="cinder-sidebar-items">
-                  {cat.items.map((item: ComponentNavItem) => (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      className={({ isActive }) =>
-                        `cinder-sidebar-item ${isActive ? "active" : ""}`
-                      }
-                    >
-                      <div className="cinder-sidebar-item-main">
-                        <div className="cinder-sidebar-item-row">
-                          <span className="cinder-sidebar-item-name">{item.name}</span>
-                          {item.badge && (
-                            <Badge
-                              variant="accent"
-                              size="sm"
-                              style={{
-                                fontSize: "9px",
-                                padding: "1px 6px",
-                              }}
-                            >
-                              {item.badge}
-                            </Badge>
-                          )}
-                        </div>
-                        <span className="cinder-sidebar-item-sub">{item.subtitle}</span>
-                      </div>
-                    </NavLink>
-                  ))}
-                </div>
+            {filteredCategories.length === 0 ? (
+              <div className="cinder-sidebar-empty">
+                <span className="cinder-sidebar-empty-text">No components found</span>
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm("")}
+                  className="cinder-sidebar-empty-btn"
+                >
+                  Clear filter
+                </button>
               </div>
-            ))}
+            ) : (
+              filteredCategories.map((cat: ComponentCategory) => (
+                <div key={cat.title} className="cinder-sidebar-group">
+                  <div className="cinder-sidebar-group-header">
+                    <span className="cinder-sidebar-group-title">{cat.title}</span>
+                    <span className="cinder-sidebar-group-count">{cat.items.length}</span>
+                  </div>
+                  <div className="cinder-sidebar-items">
+                    {cat.items.map((item: ComponentNavItem) => (
+                      <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({ isActive }) =>
+                          `cinder-sidebar-item ${isActive ? "active" : ""}`
+                        }
+                        title={`${item.name} — ${item.subtitle}`}
+                      >
+                        <div className="cinder-sidebar-item-left">
+                          <span className="cinder-sidebar-item-name">{item.name}</span>
+                          <span className="cinder-sidebar-item-sub">{item.subtitle}</span>
+                        </div>
+                        {item.badge && (
+                          <span className="cinder-sidebar-badge">{item.badge}</span>
+                        )}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </aside>
 
