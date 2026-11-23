@@ -20,6 +20,16 @@ export default defineConfig({
       "@tec-triad/iconforge-react": fileURLToPath(new URL("../../packages/iconforge-react/src/index.ts", import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          "vendor-icons": ["lucide-react"],
+        },
+      },
+    },
+  },
   server: {
     port: 3000,
   },
