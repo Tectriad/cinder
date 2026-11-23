@@ -1,0 +1,339 @@
+/* Component Matrix & Catalog */
+.matrix-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.matrix-search-box {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.matrix-pills-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.matrix-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 9999px;
+  color: var(--cinder-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.matrix-pill-btn:hover {
+  color: var(--cinder-text);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.matrix-pill-btn-active {
+  color: #ffffff;
+  background-color: var(--cinder-primary);
+  border-color: var(--cinder-primary);
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.35);
+}
+
+.matrix-pill-badge {
+  font-size: 11px;
+  font-family: var(--cinder-font-mono);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 9999px;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.matrix-card-link {
+  text-decoration: none;
+  display: flex;
+  height: 100%;
+}
+
+.matrix-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 22px !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.matrix-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.matrix-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.matrix-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cinder-text);
+}
+
+.matrix-card:hover .matrix-card-title {
+  color: var(--cinder-primary);
+}
+
+.matrix-card-desc {
+  font-size: 13px;
+  color: var(--cinder-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.matrix-card-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinder-primary);
+}
+
+.matrix-empty-state {
+  text-align: center;
+  padding: 48px;
+  color: var(--cinder-muted);
+}
+
+/* IconForge 6-Style Gallery */
+.iconforge-styles-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.iconforge-styles-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.iconforge-style-btn {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: var(--cinder-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iconforge-style-btn:hover {
+  color: var(--cinder-text);
+}
+
+.iconforge-style-btn-active {
+  color: #ffffff;
+  background-color: var(--cinder-primary);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.iconforge-style-caption {
+  font-size: 13px;
+  color: var(--cinder-muted);
+  text-align: center;
+}
+
+.iconforge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+
+.iconforge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px !important;
+  text-align: center;
+  gap: 8px;
+}
+
+.iconforge-icon-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.iconforge-icon-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cinder-text);
+}
+
+.iconforge-icon-style-tag {
+  font-family: var(--cinder-font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--cinder-muted);
+  background-color: var(--cinder-surface-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.iconforge-studio-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+  background: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
+  border-radius: var(--cinder-radius-lg);
+  padding: 28px 32px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.iconforge-studio-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cinder-text);
+  margin-bottom: 6px;
+}
+
+.iconforge-studio-desc {
+  font-size: 13px;
+  color: var(--cinder-muted);
+  max-width: 600px;
+  line-height: 1.55;
+}
+
+/* Tokens Showcase Table */
+.tokens-showcase-card {
+  padding: 0 !important;
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tokens-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.token-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.token-table th {
+  padding: 14px 18px;
+  color: var(--cinder-muted);
+  font-family: var(--cinder-font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface-hover);
+  white-space: nowrap;
+}
+
+.token-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--cinder-border);
+  color: var(--cinder-text);
+  white-space: nowrap;
+}
+
+.token-name {
+  color: var(--cinder-primary);
+  font-weight: 600;
+}
+
+.token-role {
+  font-size: 13px;
+  color: var(--cinder-text);
+}
+
+.token-cell-color {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.token-val-text {
+  color: var(--cinder-muted);
+  font-size: 12px;
+}
+
+.token-chip {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--cinder-border);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.token-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--cinder-border);
+  background-color: var(--cinder-surface);
+  color: var(--cinder-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.token-copy-btn:hover {
+  color: var(--cinder-text);
+  border-color: var(--cinder-primary);
+}
+
+.tokens-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--cinder-surface-hover);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tokens-footer-note {
+  font-size: 12px;
+  color: var(--cinder-muted);
+}
