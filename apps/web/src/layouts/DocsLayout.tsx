@@ -83,7 +83,7 @@ const COMPONENT_CATEGORIES: ComponentCategory[] = [
       { name: "CDCharts", subtitle: "Chart.js visualizations", path: "/components/chart", badge: "New" },
       { name: "CDTable", subtitle: "Data grid table", path: "/components/table" },
       { name: "CDCalendar", subtitle: "Event calendar", path: "/components/calendar" },
-      { name: "CDOutlookCalendar", subtitle: "Outlook scheduler", path: "/components/calendar" },
+      { name: "CDOutlookCalendar", subtitle: "Outlook scheduler", path: "/components/outlook-calendar" },
       { name: "CDCard", subtitle: "Content container", path: "/components/card" },
       { name: "CDList", subtitle: "Item sequence", path: "/components/list" },
       { name: "CDAccordion", subtitle: "Collapsible panels", path: "/components/accordion" },
@@ -376,7 +376,7 @@ export function DocsLayout(): ReactElement {
                   <div className="cinder-docs-sidebar-items">
                     {cat.items.map((item: ComponentNavItem) => (
                       <NavLink
-                        key={item.path}
+                        key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
                           `cinder-docs-sidebar-item ${isActive ? "active" : ""}`

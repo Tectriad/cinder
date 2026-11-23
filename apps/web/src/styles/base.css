@@ -43,16 +43,11 @@ body {
     linear-gradient(to bottom, var(--cinder-border) 1px, transparent 1px);
 }
 
-.glow-slate,
-.glow-terracotta {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 720px;
-  height: 480px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.16) 0%, rgba(37, 99, 235, 0.06) 45%, transparent 75%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
+:root[data-theme="light"] .bg-grid-slate,
+[data-theme="light"] .bg-grid-slate {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
+
+

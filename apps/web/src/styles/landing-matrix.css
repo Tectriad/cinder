@@ -55,6 +55,16 @@
   border-radius: 9999px;
 }
 
+[data-theme="light"] .matrix-pill-badge {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--cinder-muted);
+}
+
+[data-theme="light"] .matrix-pill-btn-active .matrix-pill-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
 .matrix-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -170,6 +180,11 @@
   text-align: center;
 }
 
+.iconforge-container-box {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .iconforge-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -236,104 +251,4 @@
   line-height: 1.55;
 }
 
-/* Tokens Showcase Table */
-.tokens-showcase-card {
-  padding: 0 !important;
-  overflow: hidden;
-  max-width: 960px;
-  margin: 0 auto;
-}
 
-.tokens-table-responsive {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.token-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  text-align: left;
-}
-
-.token-table th {
-  padding: 14px 18px;
-  color: var(--cinder-muted);
-  font-family: var(--cinder-font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--cinder-border);
-  background-color: var(--cinder-surface-hover);
-  white-space: nowrap;
-}
-
-.token-table td {
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--cinder-border);
-  color: var(--cinder-text);
-  white-space: nowrap;
-}
-
-.token-name {
-  color: var(--cinder-primary);
-  font-weight: 600;
-}
-
-.token-role {
-  font-size: 13px;
-  color: var(--cinder-text);
-}
-
-.token-cell-color {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.token-val-text {
-  color: var(--cinder-muted);
-  font-size: 12px;
-}
-
-.token-chip {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  border: 1px solid var(--cinder-border);
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.token-copy-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 1px solid var(--cinder-border);
-  background-color: var(--cinder-surface);
-  color: var(--cinder-muted);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.token-copy-btn:hover {
-  color: var(--cinder-text);
-  border-color: var(--cinder-primary);
-}
-
-.tokens-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-  background-color: var(--cinder-surface-hover);
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.tokens-footer-note {
-  font-size: 12px;
-  color: var(--cinder-muted);
-}

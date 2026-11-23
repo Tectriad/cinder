@@ -8,7 +8,6 @@ export function LandingCTASection(): ReactElement {
     <section className="section cta-section" aria-labelledby="cta-heading">
       <div className="app-container">
         <div className="cta-panel">
-          <div className="cta-glow" aria-hidden="true" />
           <div className="cta-content">
             <Badge variant="accent" size="md" dot>
               Open-Source &bull; MIT Licensed

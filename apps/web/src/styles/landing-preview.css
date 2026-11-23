@@ -15,6 +15,10 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--cinder-border);
 }
 
+[data-theme="light"] .preview-deck-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 0 0 1px var(--cinder-border);
+}
+
 .preview-deck-header {
   display: flex;
   align-items: center;
@@ -145,10 +149,28 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 16px;
+  padding: 14px 18px;
   background-color: var(--cinder-bg);
   border: 1px solid var(--cinder-border);
-  border-radius: var(--cinder-radius-md);
+  border-radius: var(--cinder-radius-lg);
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.preview-toggle-row:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+  background-color: var(--cinder-surface-hover);
+}
+
+.preview-toggle-row .cinder-switch {
+  min-block-size: unset !important;
+  min-inline-size: unset !important;
+  height: 24px !important;
+  width: 44px !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .preview-toggle-info {
@@ -232,8 +254,8 @@
 }
 
 .preview-code-viewport {
-  background-color: var(--cinder-bg);
-  border: 1px solid var(--cinder-border);
+  background-color: #09090b;
+  border: 1px solid #27272a;
   border-radius: var(--cinder-radius-md);
   padding: 20px;
   overflow-x: auto;

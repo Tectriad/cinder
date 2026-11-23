@@ -9,7 +9,7 @@
   }
 }
 
-:where(button, .matrix-pill-btn, .hero-install-tab, .mobile-menu-toggle-btn) {
+:where(button:not(.cinder-switch), .matrix-pill-btn, .hero-install-tab, .mobile-menu-toggle-btn) {
   min-block-size: var(--target-size);
 }
 

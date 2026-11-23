@@ -169,21 +169,41 @@ export function LandingLivePreview(): ReactElement {
                       />
                     </div>
 
-                    <div className="preview-control-group preview-toggle-row">
+                    <div
+                      className="preview-control-group preview-toggle-row"
+                      onClick={() => setWafProtection(!wafProtection)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setWafProtection(!wafProtection);
+                        }
+                      }}
+                      aria-label="Toggle Shield WAF Protection"
+                    >
                       <div className="preview-toggle-info">
                         <div className="preview-toggle-title">
                           <ShieldCheck size={16} color="var(--cinder-primary)" aria-hidden="true" />
                           <span>Shield WAF Protection</span>
+                          <Badge variant={wafProtection ? "primary" : "default"} size="sm">
+                            {wafProtection ? "Active" : "Disabled"}
+                          </Badge>
                         </div>
                         <span className="preview-toggle-desc">
                           Autonomous mitigation of DDoS attack vectors.
                         </span>
                       </div>
-                      <Switch
-                        checked={wafProtection}
-                        onChange={(checked: boolean) => setWafProtection(checked)}
-                        aria-label="Toggle shield WAF protection"
-                      />
+                      <div
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
+                      >
+                        <Switch
+                          checked={wafProtection}
+                          onChange={(checked: boolean) => setWafProtection(checked)}
+                          aria-label="Toggle shield WAF protection"
+                        />
+                      </div>
                     </div>
                   </div>
 

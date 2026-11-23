@@ -33,7 +33,6 @@ export function LandingHero(): ReactElement {
 
   return (
     <section className="hero-section bg-grid-slate" aria-labelledby="hero-heading">
-      <div className="glow-slate" aria-hidden="true" />
       <div className="app-container hero-container">
         {/* Pill Badge */}
         <div className="hero-pill-wrapper">
@@ -45,7 +44,7 @@ export function LandingHero(): ReactElement {
         {/* Hero Title */}
         <h1 id="hero-heading" className="hero-title">
           The Component Engineering Engine Built in{" "}
-          <span className="hero-gradient-text">Cinder Slate</span>
+          <span className="hero-highlight-text">Cinder Slate</span>
         </h1>
 
         {/* Hero Subtitle */}

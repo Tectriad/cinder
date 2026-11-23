@@ -17,7 +17,7 @@ export interface ComponentMeta {
 }
 
 export interface IconStyleMeta {
-  readonly id: "outline" | "filled" | "duotone" | "multicolor" | "gradient" | "rounded";
+  readonly id: "outline" | "filled" | "duotone" | "rounded";
   readonly label: string;
   readonly description: string;
 }

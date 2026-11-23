@@ -72,11 +72,8 @@
   text-wrap: balance;
 }
 
-.hero-gradient-text {
-  background: linear-gradient(90deg, var(--cinder-primary), #60a5fa, #38bdf8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-highlight-text {
+  color: var(--cinder-primary);
 }
 
 .hero-subtitle {
@@ -108,6 +105,10 @@
   border-radius: var(--cinder-radius-lg);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="light"] .hero-install-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .hero-install-tabs {
@@ -256,24 +257,17 @@
 /* Bottom CTA Panel */
 .cta-panel {
   position: relative;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.04) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.28);
+  background-color: var(--cinder-surface);
+  border: 1px solid var(--cinder-border);
   border-radius: var(--cinder-radius-xl);
   padding: 64px 32px;
   text-align: center;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-.cta-glow {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 250px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22) 0%, transparent 70%);
-  filter: blur(60px);
-  pointer-events: none;
+[data-theme="light"] .cta-panel {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .cta-content {
