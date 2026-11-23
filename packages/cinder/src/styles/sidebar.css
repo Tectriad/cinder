@@ -68,22 +68,30 @@
 
 .cinder-sidebar-left.cinder-sidebar-floating {
   margin: 12px 0 12px 12px;
-  height: calc(100% - 24px);
+  height: calc(100% - 24px) !important;
+  max-height: calc(100% - 24px);
+  box-sizing: border-box;
 }
 
 .cinder-sidebar-right.cinder-sidebar-floating {
   margin: 12px 12px 12px 0;
-  height: calc(100% - 24px);
+  height: calc(100% - 24px) !important;
+  max-height: calc(100% - 24px);
+  box-sizing: border-box;
 }
 
 .cinder-sidebar-top.cinder-sidebar-floating {
-  margin: 12px 12px 0 12px;
-  width: calc(100% - 24px);
+  margin: 12px auto 0 auto;
+  width: calc(100% - 24px) !important;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
 }
 
 .cinder-sidebar-bottom.cinder-sidebar-floating {
-  margin: 0 12px 12px 12px;
-  width: calc(100% - 24px);
+  margin: 0 auto 12px auto;
+  width: calc(100% - 24px) !important;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
 }
 
 .cinder-sidebar-inset {
@@ -334,13 +342,27 @@
 /* Collapse Toggle Button */
 .cinder-sidebar-collapse-btn {
   position: absolute;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  max-width: 26px !important;
+  min-height: 26px !important;
+  max-height: 26px !important;
+  min-block-size: 26px !important;
+  max-block-size: 26px !important;
+  min-inline-size: 26px !important;
+  max-inline-size: 26px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  line-height: 1;
   background-color: var(--cinder-surface, #121215);
   border: 1px solid var(--cinder-border, #27272a);
   color: var(--cinder-text, #fafafa);
-  display: flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
   cursor: pointer;

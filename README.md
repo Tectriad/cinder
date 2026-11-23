@@ -1,95 +1,162 @@
-# Cinder — React Component Library & Showcase Monorepo
+# Cinder UI & IconForge Monorepo
 
-> A high-craft, accessible React component library built on headless primitives, strict polymorphic TypeScript types, and token-driven design.
+> High-performance React component library and vector icon ecosystem built for velocity, strict accessibility, and token-driven design in Cinder Slate.
+
+## Overview
+
+Cinder is an open-source design engineering monorepo containing two core pillars:
+
+1. **`@tec-triad/cinder-ui`**: A foundational React component library built on headless primitives, strict polymorphic TypeScript typing, and token-driven design.
+2. **IconForge Vector Ecosystem**: Over 1,000 developer-first vector icons rendered across 6 distinct visual styles (Outline, Filled, Duotone, Multicolor, Gradient, and Rounded).
+   - **`@tec-triad/iconforge-core`**: Core vector registry, search algorithm, and SVG string generation.
+   - **`@tec-triad/iconforge-react`**: Tree-shakable React icon components.
+   - **`@tec-triad/iconforge-svg`**: Framework-agnostic raw SVG assets.
+
+Documentation Portal: [https://tectriad.github.io/cinder/](https://tectriad.github.io/cinder/)
 
 ---
 
-## Monorepo Architecture
+## Monorepo Packages
+
+| Package | Version | Description |
+| :--- | :--- | :--- |
+| [`@tec-triad/cinder-ui`](packages/cinder) | `0.1.0` | Accessible React UI component library with Cinder Slate tokens |
+| [`@tec-triad/iconforge-core`](packages/iconforge-core) | `0.1.0` | Vector icon registry, geometry generators, and search engine |
+| [`@tec-triad/iconforge-react`](packages/iconforge-react) | `0.1.0` | Tree-shakable React icon components across 6 visual styles |
+| [`@tec-triad/iconforge-svg`](packages/iconforge-svg) | `0.1.0` | Framework-agnostic raw SVG vector icon assets |
+| [`@cinder-ui/web`](apps/web) | Private | Interactive documentation portal and Icon Explorer studio |
+
+---
+
+## Installation
+
+### Cinder UI Components
+
+```bash
+npm install @tec-triad/cinder-ui
+```
+
+### IconForge React Icons
+
+```bash
+npm install @tec-triad/iconforge-react @tec-triad/iconforge-core
+```
+
+### Raw SVG Assets
+
+```bash
+npm install @tec-triad/iconforge-svg
+```
+
+---
+
+## Quick Start
+
+### 1. Using Cinder UI Components
+
+```tsx
+import React from "react";
+import { ThemeProvider, Button, Card, Badge, Input } from "@tec-triad/cinder-ui";
+import "@tec-triad/cinder-ui/styles.css";
+
+export function App(): React.JSX.Element {
+  return (
+    <ThemeProvider defaultMode="dark">
+      <Card>
+        <Badge variant="primary">New Release</Badge>
+        <Input placeholder="Enter username..." />
+        <Button variant="primary">Submit</Button>
+      </Card>
+    </ThemeProvider>
+  );
+}
+```
+
+### 2. Using IconForge React Icons
+
+```tsx
+import React from "react";
+import { IconSearch, IconHeart, IconShield, IconSparkles } from "@tec-triad/iconforge-react";
+
+export function IconShowcase(): React.JSX.Element {
+  return (
+    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+      {/* Outline (Default) */}
+      <IconSearch size={24} color="#3b82f6" strokeWidth={2} />
+
+      {/* Filled */}
+      <IconHeart size={24} variant="filled" color="#ef4444" />
+
+      {/* Duotone */}
+      <IconShield size={24} variant="duotone" color="#10b981" secondaryColor="#6ee7b7" />
+
+      {/* Gradient */}
+      <IconSparkles size={24} variant="gradient" />
+    </div>
+  );
+}
+```
+
+---
+
+## Design System Tokens: Cinder Slate
+
+Cinder Slate provides dark (default) and light themes with consistent semantic tokens:
+
+| Token | Semantic Role | Dark Value | Light Value |
+| :--- | :--- | :--- | :--- |
+| `--cinder-bg` | Canvas Background | `#09090b` | `#fafafa` |
+| `--cinder-surface` | Elevated Surface | `#121215` | `#ffffff` |
+| `--cinder-surface-hover` | Hover Surface | `#1a1a1f` | `#f4f4f5` |
+| `--cinder-border` | Subtle Border | `#27272a` | `#e4e4e7` |
+| `--cinder-primary` | Brand Action | `#3b82f6` | `#2563eb` |
+| `--cinder-primary-hover` | Action Hover | `#2563eb` | `#1d4ed8` |
+| `--cinder-text` | Primary Text | `#fafafa` | `#09090b` |
+| `--cinder-muted` | Muted Text | `#a1a1aa` | `#71717a` |
+
+---
+
+## Local Development
+
+```bash
+# Install all dependencies across monorepo workspaces
+npm install
+
+# Start documentation showcase and Icon Explorer
+npm run dev
+
+# Build all packages in topological order
+npm run build:packages
+
+# Typecheck all workspaces
+npm run typecheck
+
+# Full monorepo production build
+npm run build
+```
+
+---
+
+## Repository Structure
 
 ```
 cinder/
 ├── packages/
-│   └── cinder/                 # @cinder-ui/core: Component library package
-│       ├── src/
-│       │   ├── index.ts        # Main library entry point
-│       │   ├── types/          # Polymorphic props, sizes, intents, variants
-│       │   ├── tokens/         # Design token schema contracts & CSS variable utilities
-│       │   ├── theme/          # ThemeProvider & reactive theme context
-│       │   ├── components/     # Grouped component folders
-│       │   │   ├── button/     # CDButton, CDIconButton, CDButtonGroup, CDButtonDropdown, CDCopyButton
-│       │   │   ├── input/      # CDInput
-│       │   │   ├── badge/      # CDBadge
-│       │   │   ├── card/       # CDCard, CDCardHeader, CDCardTitle, CDCardDescription, etc.
-│       │   │   ├── glass-panel/# CDGlassPanel
-│       │   │   └── snippet/    # CDSnippet
-│       │   ├── styles/         # Modular CSS (< 500 lines per module)
-│       │   │   ├── tokens.css  # Dark & light theme variables
-│       │   │   ├── buttons.css # Button family styles
-│       │   │   ├── input.css   # Input styles
-│       │   │   └── display.css # Badge, Card, GlassPanel, Snippet styles
-│       │   └── utils/          # Class merging and styling utilities
-│       ├── tsup.config.ts      # Dual ESM/CJS build pipeline with .d.ts generation
-│       └── package.json
-└── apps/
-    └── web/                    # @cinder-ui/web: Cinder style documentation portal
-        ├── src/
-        │   ├── components/     # Documentation widgets (DemoCard, ApiTable, TokensTable)
-        │   ├── pages/          # Cinder style documentation pages
-        │   ├── layouts/        # Cinder documentation layout & multi-library switcher
-        │   ├── styles/         # Modular CSS (< 500 lines per module)
-        │   │   ├── base.css    # Typography, reset, atmosphere
-        │   │   ├── landing.css # Landing page sections
-        │   │   ├── docs-layout.css # Sidebar, topnav, switcher
-        │   │   └── docs-demos.css  # Interactive demo cards, API tables
-        │   ├── App.tsx         # Route tree powered by React Router v7
-        │   └── index.css       # Master stylesheet imports
-        ├── vite.config.ts      # Vite dev server & build pipeline
-        └── package.json
+│   ├── cinder/             # @tec-triad/cinder-ui (React UI Components)
+│   ├── iconforge-core/     # @tec-triad/iconforge-core (Vector Engine)
+│   ├── iconforge-react/    # @tec-triad/iconforge-react (React Icons)
+│   └── iconforge-svg/      # @tec-triad/iconforge-svg (Raw SVG Vectors)
+├── apps/
+│   └── web/                # Documentation site & Icon Explorer
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CODE_OF_CONDUCT.md      # Community code of conduct
+├── SECURITY.md             # Vulnerability disclosure policy
+├── CHANGELOG.md            # Version history
+└── LICENSE                 # MIT License
 ```
 
 ---
 
-## Getting Started
+## License
 
-### 1. Install Dependencies
-```bash
-npm install
-```
-
-### 2. Start the Documentation Portal
-```bash
-npm run dev
-```
-Runs the Vite development server on `http://localhost:3000`.
-
-### 3. Build the Library Bundle
-```bash
-npm run build:lib
-```
-Compiles `@cinder-ui/core` into `dist/` with:
-- `dist/index.js` (ESM)
-- `dist/index.cjs` (CommonJS)
-- `dist/index.d.ts` (TypeScript types)
-- `dist/styles.css` (Bundled CSS)
-- `dist/tokens/*`, `dist/theme/*`, and `dist/components/*` modules
-
----
-
-## Design System: Cinder Slate
-
-The core design palette powering Cinder UI with Dark (default) and Light mode duality:
-
-| Token | Semantic Role | Dark Value | Light Value |
-|---|---|---|---|
-| `--cinder-bg` | Primary Canvas | `#09090b` | `#fafafa` |
-| `--cinder-surface` | Cards & Modals | `#121215` | `#ffffff` |
-| `--cinder-surface-hover` | Interactive Hover | `#1a1a1f` | `#f4f4f5` |
-| `--cinder-glass` | Frosted Panels | `rgba(18, 18, 21, 0.8)` | `rgba(255, 255, 255, 0.82)` |
-| `--cinder-primary` | Primary Action | `#3b82f6` | `#2563eb` |
-| `--cinder-primary-hover` | Primary Action Hover | `#2563eb` | `#1d4ed8` |
-| `--cinder-border` | Subtle Divider | `#27272a` | `#e4e4e7` |
-| `--cinder-text` | Primary Copy | `#fafafa` | `#09090b` |
-| `--cinder-muted` | Secondary Copy | `#a1a1aa` | `#71717a` |
-| `--cinder-success` | Success | `#34d399` | `#059669` |
-| `--cinder-warning` | Warning | `#fbbf24` | `#d97706` |
-| `--cinder-danger` | Danger | `#f87171` | `#dc2626` |
+This project is licensed under the [MIT License](LICENSE).

@@ -1,6 +1,7 @@
+import type { ReactElement } from "react";
 import { TokensTable } from "../components/TokensTable";
 
-export function TokensPage() {
+export function TokensPage(): ReactElement {
   return (
     <div className="cinder-doc-page">
       <div className="cinder-doc-header">
