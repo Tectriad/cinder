@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { DocsLayout } from "./layouts/DocsLayout";
 
 // Lazy-loaded routes for optimal initial bundle performance
+const GettingStartedDocPage = lazy(() => import("./pages/GettingStartedDocPage").then((m) => ({ default: m.GettingStartedDocPage })));
 const IconExplorerPage = lazy(() => import("./pages/icons/IconExplorerPage").then((m) => ({ default: m.IconExplorerPage })));
 const ComponentOverviewPage = lazy(() => import("./pages/ComponentOverviewPage").then((m) => ({ default: m.ComponentOverviewPage })));
 const TokensPage = lazy(() => import("./pages/TokensPage").then((m) => ({ default: m.TokensPage })));
@@ -104,7 +105,9 @@ export function App(): ReactElement {
 
             {/* Component Documentation Routes (Cinder Architecture) */}
             <Route path="/components" element={<DocsLayout />}>
-              <Route index element={<Navigate to="/components/button" replace />} />
+              <Route index element={<Navigate to="/components/getting-started" replace />} />
+              <Route path="getting-started" element={<GettingStartedDocPage />} />
+              <Route path="installation" element={<GettingStartedDocPage />} />
               <Route path="overview" element={<ComponentOverviewPage />} />
               <Route path="button" element={<ButtonDocPage />} />
               <Route path="float-button" element={<FloatButtonDocPage />} />

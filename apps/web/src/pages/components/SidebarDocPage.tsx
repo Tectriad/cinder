@@ -225,11 +225,12 @@ export default () => {
                 style={{
                   height: "460px",
                   width: "100%",
+                  boxSizing: "border-box",
                   display: "flex",
                   flexDirection: placement === "top" || placement === "bottom" ? "column" : "row",
                   border: "1px solid var(--cinder-border)",
                   borderRadius: "8px",
-                  overflow: "visible",
+                  overflow: "hidden",
                   backgroundColor: "var(--cinder-canvas)",
                   position: "relative",
                 }}
@@ -241,6 +242,8 @@ export default () => {
                 <div
                   style={{
                     flex: 1,
+                    minHeight: 0,
+                    minWidth: 0,
                     padding: "24px",
                     display: "flex",
                     flexDirection: "column",
