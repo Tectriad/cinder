@@ -55,8 +55,15 @@ export function Navbar(): ReactElement {
         {/* Desktop Navigation Links */}
         <nav className="nav-links" aria-label="Main Navigation">
           <Link
+            to="/components/getting-started"
+            className={`nav-link ${location.pathname === "/components/getting-started" ? "nav-link-active" : ""}`}
+          >
+            <Sparkles size={15} aria-hidden="true" />
+            <span>Docs</span>
+          </Link>
+          <Link
             to="/components/overview"
-            className={`nav-link ${location.pathname.startsWith("/components") ? "nav-link-active" : ""}`}
+            className={`nav-link ${location.pathname.startsWith("/components") && location.pathname !== "/components/getting-started" ? "nav-link-active" : ""}`}
           >
             <Box size={15} aria-hidden="true" />
             <span>Components</span>
@@ -127,6 +134,17 @@ export function Navbar(): ReactElement {
         >
           <div className="mobile-nav-drawer-content app-container">
             <nav className="mobile-nav-links" aria-label="Mobile Menu">
+              <Link to="/components/getting-started" className="mobile-nav-link">
+                <div className="mobile-nav-icon-box">
+                  <Sparkles size={18} color="var(--cinder-primary)" aria-hidden="true" />
+                </div>
+                <div className="mobile-nav-link-text">
+                  <span className="mobile-nav-link-title">Getting Started</span>
+                  <span className="mobile-nav-link-sub">Installation &amp; custom theming setup</span>
+                </div>
+                <ArrowRight size={14} className="mobile-nav-arrow" aria-hidden="true" />
+              </Link>
+
               <Link to="/components/overview" className="mobile-nav-link">
                 <div className="mobile-nav-icon-box">
                   <Box size={18} color="var(--cinder-primary)" aria-hidden="true" />
