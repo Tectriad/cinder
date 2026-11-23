@@ -55,3 +55,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Live Icon Explorer studio with search, filter by style and category, customizable colors, and ZIP batch download.
 - Interactive component playground with props tables and code snippets.
 - Single Page Application routing with GitHub Pages deployment automation.
+- Resolved Sidebar collapse button distortion (oval/eclipse shape) by enforcing strict 1:1 aspect ratio, padding reset, and zero-shrink circular geometry on `.cinder-sidebar-collapse-btn` and `.cinder-docs-sidebar-edge-toggle`, excluding circular buttons from coarse touch stretching.
+- Fixed floating sidebar top and bottom placement overflow by adjusting horizontal margin auto-centering, constraining width to `calc(100% - 24px) !important`, and containing interactive canvas bounds.
+- Created dedicated Getting Started documentation page (`/components/getting-started`) with multi-package manager tabs, root stylesheet imports, `ThemeProvider` setup, live interactive starter view, and simple custom theme injection via 3-line pure CSS overrides and dynamic `ThemeProvider` presets.

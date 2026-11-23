@@ -17,6 +17,14 @@ interface ComponentCategory {
 
 const COMPONENT_CATEGORIES: ComponentCategory[] = [
   {
+    title: "Start",
+    items: [
+      { name: "Getting Started", subtitle: "Install & Setup", path: "/components/getting-started", badge: "Start" },
+      { name: "Component Overview", subtitle: "Catalog & Matrix", path: "/components/overview" },
+      { name: "Design Tokens", subtitle: "Cinder Slate Tokens", path: "/tokens" },
+    ],
+  },
+  {
     title: "General",
     items: [
       { name: "CDButton", subtitle: "Action trigger", path: "/components/button" },
@@ -294,7 +302,20 @@ export function DocsLayout(): ReactElement {
         <button
           type="button"
           className="cinder-docs-sidebar-edge-toggle"
-          style={{ left: isSidebarCollapsed ? "8px" : "268px" }}
+          style={{
+            left: isSidebarCollapsed ? "8px" : "268px",
+            width: 24,
+            height: 24,
+            minWidth: 24,
+            minHeight: 24,
+            maxWidth: 24,
+            maxHeight: 24,
+            borderRadius: "50%",
+            padding: 0,
+            boxSizing: "border-box",
+            aspectRatio: "1 / 1",
+            flexShrink: 0,
+          }}
           onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
           aria-label={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
           title={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
@@ -333,6 +354,15 @@ export function DocsLayout(): ReactElement {
 
             <nav className="cinder-docs-sidebar-quick-nav">
               <NavLink
+                to="/components/getting-started"
+                className={({ isActive }) =>
+                  `cinder-docs-sidebar-quick-link ${isActive ? "active" : ""}`
+                }
+              >
+                <CDIcons.Sparkles size={13} />
+                <span>Start</span>
+              </NavLink>
+              <NavLink
                 to="/components/overview"
                 className={({ isActive }) =>
                   `cinder-docs-sidebar-quick-link ${isActive ? "active" : ""}`
@@ -347,7 +377,7 @@ export function DocsLayout(): ReactElement {
                   `cinder-docs-sidebar-quick-link ${isActive ? "active" : ""}`
                 }
               >
-                <CDIcons.Sparkles size={13} />
+                <CDIcons.Layers size={13} />
                 <span>Tokens</span>
               </NavLink>
             </nav>

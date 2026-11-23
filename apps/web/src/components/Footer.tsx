@@ -49,6 +49,7 @@ export function Footer(): ReactElement {
           <div className="footer-col">
             <h4 className="footer-col-title">Ecosystem</h4>
             <ul className="footer-links-list">
+              <li><Link to="/components/getting-started" className="footer-link">Getting Started Guide</Link></li>
               <li><Link to="/icons" className="footer-link">IconForge Studio</Link></li>
               <li><Link to="/tokens" className="footer-link">Design Tokens</Link></li>
               <li>

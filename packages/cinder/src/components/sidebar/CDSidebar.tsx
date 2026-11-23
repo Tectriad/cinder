@@ -61,12 +61,19 @@ export const CDSidebar = forwardRef<HTMLElement, CDSidebarProps>(
       sidebarStyle.height =
         typeof currentHeight === "number" ? `${currentHeight}px` : currentHeight;
       if (!sidebarStyle.width) {
-        sidebarStyle.width = "100%";
+        sidebarStyle.width = isFloating ? "calc(100% - 24px)" : "100%";
+      }
+      if (isFloating) {
+        sidebarStyle.maxWidth = "calc(100% - 24px)";
       }
     } else {
       const currentWidth: number | string = isCollapsed ? collapsedWidth : width;
       sidebarStyle.width =
         typeof currentWidth === "number" ? `${currentWidth}px` : currentWidth;
+      if (isFloating && !sidebarStyle.height) {
+        sidebarStyle.height = "calc(100% - 24px)";
+        sidebarStyle.maxHeight = "calc(100% - 24px)";
+      }
     }
 
     const renderCollapseIcon = (): ReactElement => {
@@ -135,6 +142,19 @@ export const CDSidebar = forwardRef<HTMLElement, CDSidebarProps>(
                 "cinder-sidebar-collapse-btn",
                 `cinder-sidebar-collapse-btn-${placement}`
               )}
+              style={{
+                width: 26,
+                height: 26,
+                minWidth: 26,
+                minHeight: 26,
+                maxWidth: 26,
+                maxHeight: 26,
+                borderRadius: "50%",
+                padding: 0,
+                boxSizing: "border-box",
+                aspectRatio: "1 / 1",
+                flexShrink: 0,
+              }}
               onClick={() => handleSetCollapsed(!isCollapsed)}
               aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
               title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
