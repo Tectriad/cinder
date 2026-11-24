@@ -259,17 +259,6 @@ export function DocsLayout(): ReactElement {
 
         {/* Global Search & Nav Links */}
         <div className="cinder-top-nav-right">
-          <div className="cinder-nav-search">
-            <CDIcons.Search size={14} color="var(--cinder-muted)" />
-            <input
-              type="text"
-              placeholder="Search components... (e.g. Button, Icon, Input)"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="cinder-nav-search-input"
-            />
-          </div>
-
           <nav className="cinder-nav-menu">
             <NavLink to="/" className={({ isActive }) => `cinder-nav-link ${isActive ? "active" : ""}`}>
               Home
