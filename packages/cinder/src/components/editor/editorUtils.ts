@@ -69,13 +69,25 @@ export function insertMentionPillNode(savedRange: Range | null, user: CDEditorMe
   selection.addRange(savedRange);
 
   const range: Range = savedRange;
-  const textNode: Node = range.startContainer;
-  const text: string = textNode.textContent || "";
-  const atIdx: number = text.lastIndexOf("@", range.startOffset);
+  let textNode: Node = range.startContainer;
 
-  if (atIdx !== -1) {
+  if (textNode.nodeType !== Node.TEXT_NODE && textNode.childNodes.length > 0) {
+    const childIdx: number = Math.max(0, Math.min(range.startOffset - 1, textNode.childNodes.length - 1));
+    const child: Node = textNode.childNodes[childIdx];
+    if (child && child.nodeType === Node.TEXT_NODE) {
+      textNode = child;
+    }
+  }
+
+  const text: string = textNode.textContent || "";
+  const cursorOffset: number = range.startOffset;
+  const textBeforeCursor: string = text.slice(0, cursorOffset);
+  const match: RegExpMatchArray | null = textBeforeCursor.match(/@([a-zA-Z0-9_]*)$/);
+
+  if (match && match.index !== undefined) {
+    const atIdx: number = match.index;
     range.setStart(textNode, atIdx);
-    range.setEnd(textNode, range.startOffset);
+    range.setEnd(textNode, cursorOffset);
     range.deleteContents();
 
     const pill: HTMLSpanElement = document.createElement("span");
