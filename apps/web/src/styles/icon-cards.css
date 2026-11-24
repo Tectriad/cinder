@@ -115,7 +115,23 @@
   border: none;
   color: var(--cinder-muted, #a1a1aa);
   cursor: pointer;
-  padding: 2px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  min-block-size: 22px !important;
+  max-block-size: 22px !important;
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
 }
 
 [data-theme="light"] .icon-batch-checkbox,
@@ -232,31 +248,69 @@
 /* List Mode */
 .icon-card-root.list-mode {
   flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 16px;
-  min-height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 16px;
+  min-height: 56px;
+  gap: 12px;
 }
 
 .icon-card-root.list-mode .icon-card-header-actions {
   position: static;
   opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .icon-card-root.list-mode .icon-card-preview-area {
-  height: auto;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  min-block-size: 40px !important;
+  max-block-size: 40px !important;
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: var(--cinder-canvas, #09090b);
+  border: 1px solid var(--cinder-border, #27272a);
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .icon-card-root.list-mode .icon-card-preview-area {
+  background-color: #f4f4f5;
+  border-color: #e4e4e7;
 }
 
 .icon-card-root.list-mode .icon-card-meta {
   margin-top: 0;
   text-align: left;
   flex: 1;
-  padding: 0 16px;
+  min-width: 0;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .icon-card-root.list-mode .icon-card-hover-actions {
   position: static;
   opacity: 1;
-  width: 140px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  min-width: 150px;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* Batch Tray */

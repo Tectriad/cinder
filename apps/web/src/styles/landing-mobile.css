@@ -9,7 +9,7 @@
   }
 }
 
-:where(button:not(.cinder-switch, .cinder-sidebar-collapse-btn, .cinder-docs-sidebar-edge-toggle, .cinder-icon-btn, .cinder-icon-button), .matrix-pill-btn, .hero-install-tab, .mobile-menu-toggle-btn) {
+:where(button:not(.cinder-switch, .cinder-sidebar-collapse-btn, .cinder-docs-sidebar-edge-toggle, .cinder-icon-btn, .cinder-icon-button, .icon-swatch-circle, .icon-canvas-dot, .icon-batch-checkbox, .icon-fav-btn, .icon-size-pill, .icon-pg-bg-btn, .token-search-clear-btn), .matrix-pill-btn, .hero-install-tab, .mobile-menu-toggle-btn) {
   min-block-size: var(--target-size);
 }
 

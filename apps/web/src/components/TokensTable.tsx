@@ -234,49 +234,28 @@ export function TokensTable(): ReactElement {
               ))}
             </div>
 
-            {/* Quick Search Box */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "6px 12px",
-                borderRadius: "8px",
-                border: "1px solid var(--cinder-border)",
-                backgroundColor: "var(--cinder-canvas)",
-                minWidth: "220px",
-              }}
-            >
+            {/* Quick Search Box (Fixed Height Container) */}
+            <div className="token-search-box">
               <Search size={14} color="var(--cinder-muted)" />
               <input
                 type="text"
                 placeholder="Filter tokens..."
                 value={searchQuery}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-                style={{
-                  border: "none",
-                  outline: "none",
-                  background: "transparent",
-                  color: "var(--cinder-text)",
-                  fontSize: "12px",
-                  width: "100%",
-                }}
+                onChange={(e: ChangeEvent<HTMLInputElement>): void => setSearchQuery(e.target.value)}
+                className="token-search-input"
               />
               {searchQuery && (
                 <button
                   type="button"
-                  onClick={() => setSearchQuery("")}
-                  style={{
-                    border: "none",
-                    background: "transparent",
-                    color: "var(--cinder-muted)",
-                    cursor: "pointer",
-                    padding: 0,
-                    fontSize: "12px",
-                  }}
+                  onClick={(): void => setSearchQuery("")}
+                  className="token-search-clear-btn"
                   aria-label="Clear search"
+                  title="Clear search"
                 >
-                  &times;
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
                 </button>
               )}
             </div>
