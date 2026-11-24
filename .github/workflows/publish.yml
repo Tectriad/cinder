@@ -43,14 +43,14 @@ jobs:
             echo "Running in dry-run mode..."
           fi
 
-          echo "Publishing @iconforge/core..."
-          npm publish --workspace=@iconforge/core --access public $DRY_RUN_FLAG
+          echo "Publishing @tec-triad/iconforge-core..."
+          npm publish --workspace=@tec-triad/iconforge-core --access public $DRY_RUN_FLAG
 
-          echo "Publishing @iconforge/svg..."
-          npm publish --workspace=@iconforge/svg --access public $DRY_RUN_FLAG
+          echo "Publishing @tec-triad/iconforge-svg..."
+          npm publish --workspace=@tec-triad/iconforge-svg --access public $DRY_RUN_FLAG
 
-          echo "Publishing @iconforge/react..."
-          npm publish --workspace=@iconforge/react --access public $DRY_RUN_FLAG
+          echo "Publishing @tec-triad/iconforge-react..."
+          npm publish --workspace=@tec-triad/iconforge-react --access public $DRY_RUN_FLAG
 
-          echo "Publishing @cinder-ui/core..."
-          npm publish --workspace=@cinder-ui/core --access public $DRY_RUN_FLAG
+          echo "Publishing @tec-triad/cinder-ui..."
+          npm publish --workspace=@tec-triad/cinder-ui --access public $DRY_RUN_FLAG
