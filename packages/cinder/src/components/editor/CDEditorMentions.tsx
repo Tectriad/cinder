@@ -57,6 +57,7 @@ export function CDEditorMentions({
       style={{ top: `${position.top}px`, left: `${position.left}px` }}
       role="listbox"
       aria-label="Mentions suggestions"
+      onMouseDown={(e: React.MouseEvent<HTMLDivElement>): void => e.preventDefault()}
     >
       <div className="cinder-editor-mentions-header">
         <span>Mention Collaborator</span>

@@ -4,6 +4,7 @@ import {
   useRef,
   useEffect,
   useCallback,
+  useMemo,
   useImperativeHandle,
   type ReactElement,
   type KeyboardEvent,
@@ -290,22 +291,39 @@ export const CDEditor = forwardRef<HTMLDivElement, CDEditorProps>(
       handleInput();
     };
 
+    // Filtered mentions for keyboard navigation & popup selection
+    const filteredMentions = useMemo<CDEditorMentionUser[]>(() => {
+      const q: string = mentionQuery.toLowerCase().trim();
+      if (!q) return mentions;
+      return mentions.filter((u: CDEditorMentionUser) =>
+        u.name.toLowerCase().includes(q) ||
+        u.handle.toLowerCase().includes(q) ||
+        (u.role && u.role.toLowerCase().includes(q))
+      );
+    }, [mentions, mentionQuery]);
+
     // Keyboard navigation (shortcuts & mentions popup)
     const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {
       if (mentionOpen) {
         if (event.key === "ArrowDown") {
           event.preventDefault();
-          setMentionIndex((prev: number) => (prev + 1) % mentions.length);
+          setMentionIndex((prev: number) =>
+            filteredMentions.length > 0 ? (prev + 1) % filteredMentions.length : 0
+          );
           return;
         }
         if (event.key === "ArrowUp") {
           event.preventDefault();
-          setMentionIndex((prev: number) => (prev - 1 + mentions.length) % mentions.length);
+          setMentionIndex((prev: number) =>
+            filteredMentions.length > 0
+              ? (prev - 1 + filteredMentions.length) % filteredMentions.length
+              : 0
+          );
           return;
         }
         if (event.key === "Enter" || event.key === "Tab") {
           event.preventDefault();
-          const targetUser: CDEditorMentionUser | undefined = mentions[mentionIndex];
+          const targetUser: CDEditorMentionUser | undefined = filteredMentions[mentionIndex];
           if (targetUser) {
             handleSelectMention(targetUser);
           }
