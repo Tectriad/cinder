@@ -194,7 +194,9 @@ export function IconToolbar({
       <div className="icon-toolbar-controls-row">
         {/* Size Slider */}
         <div className="icon-control-item">
-          <span className="icon-control-label">Size: {state.iconSize}px</span>
+          <span className="icon-control-label">
+            Size: <span className="icon-control-value size-val">{state.iconSize}px</span>
+          </span>
           <input
             type="range"
             min="16"
@@ -221,7 +223,9 @@ export function IconToolbar({
         {/* Stroke Width Slider (active for outline/rounded) */}
         {state.selectedVariant !== "filled" && (
           <div className="icon-control-item">
-            <span className="icon-control-label">Stroke: {state.strokeWidth}px</span>
+            <span className="icon-control-label">
+              Stroke: <span className="icon-control-value stroke-val">{state.strokeWidth}px</span>
+            </span>
             <input
               type="range"
               min="1"

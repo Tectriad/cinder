@@ -200,9 +200,11 @@ export function DocsLayout(): ReactElement {
                   role="button"
                   tabIndex={0}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <div className="cinder-lib-menu-header">
                     <span style={{ fontWeight: 600 }}>@cinder-ui/core</span>
-                    <Badge variant="primary" size="sm">Active</Badge>
+                    <Badge variant="primary" size="sm" className="cinder-lib-status-badge">
+                      Active
+                    </Badge>
                   </div>
                   <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>
                     Core UI Primitives &amp; Foundation
@@ -214,44 +216,16 @@ export function DocsLayout(): ReactElement {
                   style={{ textDecoration: "none", color: "inherit", display: "block" }}
                   onClick={() => setShowLibDropdown(false)}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <div className="cinder-lib-menu-header">
                     <span style={{ fontWeight: 600 }}>@tec-triad/iconforge-react</span>
-                    <Badge variant="success" size="sm">Ecosystem</Badge>
+                    <Badge variant="success" size="sm" className="cinder-lib-status-badge">
+                      Ecosystem
+                    </Badge>
                   </div>
                   <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>
                     1,000+ Icons in 6 Visual Styles
                   </div>
                 </Link>
-                <div
-                  className="cinder-lib-menu-item"
-                  style={{ opacity: 0.6 }}
-                  onClick={() => setShowLibDropdown(false)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ fontWeight: 600 }}>@cinder-ui/forms</span>
-                    <Badge variant="warning" size="sm">Planned</Badge>
-                  </div>
-                  <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>
-                    Complex Form Builder &amp; Validation Suite
-                  </div>
-                </div>
-                <div
-                  className="cinder-lib-menu-item"
-                  style={{ opacity: 0.6 }}
-                  onClick={() => setShowLibDropdown(false)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ fontWeight: 600 }}>@cinder-ui/data-grid</span>
-                    <Badge variant="warning" size="sm">Planned</Badge>
-                  </div>
-                  <div style={{ fontSize: "11px", color: "var(--cinder-muted)" }}>
-                    High-density Data Grids &amp; Virtualized Tables
-                  </div>
-                </div>
               </div>
             )}
           </div>

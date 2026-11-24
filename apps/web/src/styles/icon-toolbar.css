@@ -195,7 +195,18 @@
 .icon-canvas-dot {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  min-block-size: 18px !important;
+  max-block-size: 18px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
   border: 1px solid rgba(128, 128, 128, 0.4);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -279,10 +290,37 @@
   font-weight: 500;
   color: var(--cinder-muted, #a1a1aa);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 [data-theme="light"] .icon-control-label {
   color: #71717a;
+}
+
+.icon-control-value {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--cinder-font-mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cinder-text, #fafafa);
+  text-align: left;
+}
+
+[data-theme="light"] .icon-control-value {
+  color: #09090b;
+}
+
+.icon-control-value.stroke-val {
+  width: 50px;
+  min-width: 50px;
+}
+
+.icon-control-value.size-val {
+  width: 36px;
+  min-width: 36px;
 }
 
 .icon-slider-input {
@@ -348,7 +386,18 @@
 .icon-swatch-circle {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  min-block-size: 18px !important;
+  max-block-size: 18px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
   border: 1px solid rgba(128, 128, 128, 0.35);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
