@@ -41,11 +41,12 @@ jobs:
 
       - name: Build web showcase
         env:
-          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path || '/cinder/' }}
+          VITE_BASE_PATH: '/'
         run: |
           npm run build
           cp apps/web/dist/index.html apps/web/dist/404.html
           touch apps/web/dist/.nojekyll
+          echo "cinderui.tectriad.in" > apps/web/dist/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
