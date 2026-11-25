@@ -38,7 +38,7 @@ export function GettingStartedDocPage(): ReactElement {
       <div className="cinder-doc-header">
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
           <CDBadge variant="primary" size="sm">Quickstart Guide</CDBadge>
-          <CDBadge variant="default" size="sm">v0.1.0-alpha</CDBadge>
+          <CDBadge variant="default" size="sm">v0.1.1</CDBadge>
         </div>
         <h1 className="cinder-doc-title">Getting Started</h1>
         <p className="cinder-doc-lead">

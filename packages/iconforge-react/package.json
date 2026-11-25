@@ -1,6 +1,6 @@
 {
   "name": "@tec-triad/iconforge-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tree-shakable React components with 6 visual styles for the IconForge ecosystem",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -31,7 +31,7 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "@tec-triad/iconforge-core": "^0.1.0"
+    "@tec-triad/iconforge-core": "^0.1.1"
   },
   "devDependencies": {
     "@types/react": "^19.0.8",

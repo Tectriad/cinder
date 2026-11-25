@@ -24,7 +24,7 @@ export function Footer(): ReactElement {
             </p>
             <div className="footer-brand-badges">
               <Badge variant="success" size="sm" dot>
-                v0.1.0 Live
+                v0.1.1 Live
               </Badge>
               <Badge variant="primary" size="sm">
                 MIT Licensed
