@@ -1,6 +1,6 @@
 {
   "name": "@tec-triad/cinder-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Foundational React component library engine with headless accessibility and Smolder token-driven design.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,8 +37,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "node init && tsup",
+    "dev": "node init && tsup --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "chart.js": "^4.6.1",
-    "@tec-triad/iconforge-core": "^0.1.0",
-    "@tec-triad/iconforge-react": "^0.1.0"
+    "@tec-triad/iconforge-core": "^0.1.1",
+    "@tec-triad/iconforge-react": "^0.1.1"
   }
 }
