@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [0.1.1] - 2026-11-25
+
+### Changed
+- Monorepo package version bump to `0.1.1` across `@tec-triad/cinder-ui`, `@tec-triad/iconforge-core`, `@tec-triad/iconforge-react`, `@tec-triad/iconforge-svg`, and `@cinder-ui/web`.
+- Synchronized internal package dependency declarations to `^0.1.1`.
+- Configured custom domain deployment for `cinderui.tectriad.in` with root base path (`/`) and CNAME record.
+- Fixed GitHub Pages deployment workflow by decoupling artifact packaging and page deployment into staged jobs.
+- Refined Tokens table visualization with responsive column layouts and token metadata badges.
+- Corrected circular geometry on sidebar collapse trigger buttons.
+
+---
+
 ## [0.1.0] - 2026-11-21
 
 ### Added

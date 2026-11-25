@@ -48,7 +48,7 @@ export function Navbar(): ReactElement {
           </div>
           <span className="brand-name">CINDER</span>
           <Badge variant="primary" size="sm" dot pulse>
-            v0.1.0
+            v0.1.1
           </Badge>
         </Link>
 
