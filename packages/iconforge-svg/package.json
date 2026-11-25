@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "node scripts/generate-svgs.mjs",
+    "build": "node init && node scripts/generate-svgs.mjs",
     "generate": "node scripts/generate-svgs.mjs"
   }
 }
