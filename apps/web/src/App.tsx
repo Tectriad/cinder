@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider, Spinner } from "@tec-triad/cinder-ui";
 import { HomePage } from "./pages/HomePage";
 import { DocsLayout } from "./layouts/DocsLayout";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 // Lazy-loaded routes for optimal initial bundle performance
 const GettingStartedDocPage = lazy(() => import("./pages/GettingStartedDocPage").then((m) => ({ default: m.GettingStartedDocPage })));
@@ -95,6 +96,7 @@ export function App(): ReactElement {
   return (
     <ThemeProvider defaultMode="dark" defaultThemeId="dark">
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <ScrollToTop />
         <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
             {/* Main Landing Route */}
