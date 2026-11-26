@@ -21,8 +21,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "node init && tsup",
-    "dev": "node init && tsup --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
