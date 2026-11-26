@@ -61,4 +61,5 @@ Thumbs.db
 # AI and Agent Local Workspaces
 .gemini/
 .antigravity/
+
 config.bat
