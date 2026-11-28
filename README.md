@@ -20,10 +20,10 @@ Documentation Portal: [https://tectriad.github.io/cinder/](https://tectriad.gith
 
 | Package | Version | Description |
 | :--- | :--- | :--- |
-| [`@tec-triad/cinder-ui`](packages/cinder) | `0.1.1` | Accessible React UI component library with Cinder Slate tokens |
-| [`@tec-triad/iconforge-core`](packages/iconforge-core) | `0.1.1` | Vector icon registry, geometry generators, and search engine |
-| [`@tec-triad/iconforge-react`](packages/iconforge-react) | `0.1.1` | Tree-shakable React icon components across 6 visual styles |
-| [`@tec-triad/iconforge-svg`](packages/iconforge-svg) | `0.1.1` | Framework-agnostic raw SVG vector icon assets |
+| [`@tec-triad/cinder-ui`](packages/cinder) | `0.1.2` | Accessible React UI component library with Cinder Slate tokens |
+| [`@tec-triad/iconforge-core`](packages/iconforge-core) | `0.1.2` | Vector icon registry, geometry generators, and search engine |
+| [`@tec-triad/iconforge-react`](packages/iconforge-react) | `0.1.2` | Tree-shakable React icon components across 6 visual styles |
+| [`@tec-triad/iconforge-svg`](packages/iconforge-svg) | `0.1.2` | Framework-agnostic raw SVG vector icon assets |
 | [`@cinder-ui/web`](apps/web) | Private | Interactive documentation portal and Icon Explorer studio |
 
 ---
