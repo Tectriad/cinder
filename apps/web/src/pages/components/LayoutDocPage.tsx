@@ -284,7 +284,7 @@ export default () => (
   <CDBox bg="surface" border rounded="md" p={3} style={{ width: '100%' }}>
     <CDHStack align="center">
       <span style={{ fontWeight: 600 }}>Cinder Enterprise Engine</span>
-      <CDBadge variant="primary">v0.1.1</CDBadge>
+      <CDBadge variant="primary">v0.1.2</CDBadge>
       <CDSpacer />
       <CDButton size="sm" variant="secondary">Docs</CDButton>
       <CDButton size="sm" variant="primary">Download</CDButton>
@@ -296,7 +296,7 @@ export default () => (
               <CDBox bg="surface" border rounded="md" p={3} style={{ width: "100%" }}>
                 <CDHStack align="center">
                   <span style={{ fontWeight: 600, color: "var(--cinder-text)" }}>Cinder Enterprise Engine</span>
-                  <CDBadge variant="primary">v0.1.1</CDBadge>
+                  <CDBadge variant="primary">v0.1.2</CDBadge>
                   <CDSpacer />
                   <CDButton size="sm" variant="secondary">Docs</CDButton>
                   <CDButton size="sm" variant="primary">Download</CDButton>

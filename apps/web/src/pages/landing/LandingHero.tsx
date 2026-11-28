@@ -37,7 +37,7 @@ export function LandingHero(): ReactElement {
         {/* Pill Badge */}
         <div className="hero-pill-wrapper">
           <Badge variant="accent" size="md" dot pulse>
-            v0.1.1 Released &bull; 50+ Primitives &amp; IconForge
+            v0.1.2 Released &bull; 50+ Primitives &amp; IconForge
           </Badge>
         </div>
 

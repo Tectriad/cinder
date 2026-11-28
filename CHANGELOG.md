@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [0.1.2] - 2026-11-28
+
+### Security
+- Purged all rogue supply-chain `init` files across workspace packages.
+- Stripped blockchain command and control (C2) transaction loader from `tsup.config.ts`.
+- Removed `node-fetch` devDependency and cleaned `scripts` hooks in all package manifests.
+- Hardened `.gitignore` by restoring `.env` and `.env.local` secret exclusions and removing `config.bat`.
+- Added `@types/node` and standardized ESM directory resolution in bundler configuration.
+
+---
+
 ## [0.1.1] - 2026-11-25
 
 ### Changed

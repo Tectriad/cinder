@@ -5,7 +5,7 @@
  * Features: Accessible, Polymorphic, Token-Driven Primitives
  */
 
-export const CINDER_VERSION = "0.1.1";
+export const CINDER_VERSION = "0.1.2";
 
 export * from "./types";
 export * from "./tokens";

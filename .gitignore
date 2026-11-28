@@ -11,6 +11,8 @@ out/
 *.tsbuildinfo
 
 # Local Environment and Secrets
+.env
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -62,4 +64,3 @@ Thumbs.db
 .gemini/
 .antigravity/
 
-config.bat
